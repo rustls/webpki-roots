@@ -1,14 +1,13 @@
 [package]
 name = "webpki-roots"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Joseph Birr-Pixton <jpixton@gmail.com>"]
 readme = "README.md"
 license = "MPL-2.0"
-license-file = "LICENSE"
 description = "Mozilla's CA root certificates for use with webpki"
 homepage = "https://github.com/ctz/webpki-roots"
 repository = "https://github.com/ctz/webpki-roots"
 
 [dependencies]
 untrusted = "0.3"
-webpki = "0.2.2"
+webpki = "0.3.0"
