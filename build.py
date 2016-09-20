@@ -1,4 +1,3 @@
-import requests
 import subprocess
 
 HEADER = """//!
@@ -17,9 +16,10 @@ CERT = """
   %(code)s,"""
 
 def fetch_bundle():
-    r = requests.get('https://mkcert.org/generate/')
-    r.raise_for_status()
-    return r.content
+    proc = subprocess.Popen(['curl', 'https://mkcert.org/generate/'],
+            stdout = subprocess.PIPE)
+    stdout, _ = proc.communicate()
+    return stdout
 
 def split_bundle(bundle):
     cert = ''
