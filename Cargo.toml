@@ -1,6 +1,6 @@
 [package]
 name = "webpki-roots"
-version = "0.2.0"
+version = "0.3.0"
 authors = ["Joseph Birr-Pixton <jpixton@gmail.com>"]
 readme = "README.md"
 license = "MPL-2.0"

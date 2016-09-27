@@ -8,7 +8,7 @@
 
 extern crate webpki;
 
-pub static ROOTS: [webpki::TrustAnchor<'static>; 155] = [
+pub static ROOTS: [webpki::TrustAnchor<'static>; 154] = [
   /*
    * Issuer: CN=Entrust Root Certification Authority - EC1 O=Entrust, Inc. OU=See www.entrust.net/legal-terms/(c) 2012 Entrust, Inc. - for authorized use only
    * Subject: CN=Entrust Root Certification Authority - EC1 O=Entrust, Inc. OU=See www.entrust.net/legal-terms/(c) 2012 Entrust, Inc. - for authorized use only
@@ -4572,45 +4572,6 @@ pub static ROOTS: [webpki::TrustAnchor<'static>; 155] = [
   webpki::TrustAnchor {
     subject: b"1\x0b0\t\x06\x03U\x04\x06\x13\x02FR1\x120\x10\x06\x03U\x04\n\x0c\tOpenTrust1\x1d0\x1b\x06\x03U\x04\x03\x0c\x14OpenTrust Root CA G3",
     spki: b"0\x10\x06\x07*\x86H\xce=\x02\x01\x06\x05+\x81\x04\x00\"\x03b\x00\x04J\xeeX\xaeM\xcaf\xde\x06:\xa3\x11\xfc\xe0\x18\xf0n\x1c\xba-0\x0c\x89\xd9\xd6\xee\x9bs\x83\xa9#\x15\x8c/Y\x8aZ\xdd\x14\xea\x9dY+C\xb7\x06\xec2\xb6\xba\xeeA\xb5\xad]\xa1\x85\xcc\xea\x1d\x14f\xa3g~F\xe2\x94\xf3\xe7\xb6V\xa1\x15Y\xa1O7\x97\xb9\"\x1e\xbd\x11\xeb\xf4\xb2\x1f^\xc3\x14\x9a\xe5\xd9\x97\x99",
-    name_constraints: None
-  },
-
-  /*
-   * Issuer: CN=IGC/A O=PM/SGDN OU=DCSSI
-   * Subject: CN=IGC/A O=PM/SGDN OU=DCSSI
-   * Label: "IGC/A"
-   * Serial: 245102874772
-   * MD5 Fingerprint: 0c:7f:dd:6a:f4:2a:b9:c8:9b:bd:20:7e:a9:db:5c:37
-   * SHA1 Fingerprint: 60:d6:89:74:b5:c2:65:9e:8a:0f:c1:88:7c:88:d2:46:69:1b:18:2c
-   * SHA256 Fingerprint: b9:be:a7:86:0a:96:2e:a3:61:1d:ab:97:ab:6d:a3:e2:1c:10:68:b9:7d:55:57:5e:d0:e1:12:79:c1:1c:89:32
-   * -----BEGIN CERTIFICATE-----
-   * MIIEAjCCAuqgAwIBAgIFORFFEJQwDQYJKoZIhvcNAQEFBQAwgYUxCzAJBgNVBAYT
-   * AkZSMQ8wDQYDVQQIEwZGcmFuY2UxDjAMBgNVBAcTBVBhcmlzMRAwDgYDVQQKEwdQ
-   * TS9TR0ROMQ4wDAYDVQQLEwVEQ1NTSTEOMAwGA1UEAxMFSUdDL0ExIzAhBgkqhkiG
-   * 9w0BCQEWFGlnY2FAc2dkbi5wbS5nb3V2LmZyMB4XDTAyMTIxMzE0MjkyM1oXDTIw
-   * MTAxNzE0MjkyMlowgYUxCzAJBgNVBAYTAkZSMQ8wDQYDVQQIEwZGcmFuY2UxDjAM
-   * BgNVBAcTBVBhcmlzMRAwDgYDVQQKEwdQTS9TR0ROMQ4wDAYDVQQLEwVEQ1NTSTEO
-   * MAwGA1UEAxMFSUdDL0ExIzAhBgkqhkiG9w0BCQEWFGlnY2FAc2dkbi5wbS5nb3V2
-   * LmZyMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsh/R0GLFMzvABIaI
-   * s9z4iPf930Pfeo2aSVz2TqrMHLmh6yeJ8kbpO0px1R2OLc/mratjUMdUC24SyZA2
-   * xtgv2pGqaMVy/hcKshd+ebUyiHDKcMCWSo7kVc0dJ5S/znIq7Fz5cyD+vfcuiWe4
-   * u0dzEvfRNWk68gq5rv9GQkaiv6GFGvm/5P9JhfejcIYyHF2fYPepraX/z9E0+X1b
-   * F8bc1g4oa8Ld8fUzaJ1O/Id8NhLWo4DoQw1VYZTqZDdH6nfK0LJYBcNdfrGoRpAx
-   * Vs5wKpayMLh35nnAvSk7/ZR3TL0gzUEl4C7HG7vupARB0l2tEmqKm0f7yd1GQOGd
-   * PDPQtQIDAQABo3cwdTAPBgNVHRMBAf8EBTADAQH/MAsGA1UdDwQEAwIBRjAVBgNV
-   * HSAEDjAMMAoGCCqBegF5AQEBMB0GA1UdDgQWBBSjBS8YYFDCiQrdKyFP/45OqDAx
-   * NjAfBgNVHSMEGDAWgBSjBS8YYFDCiQrdKyFP/45OqDAxNjANBgkqhkiG9w0BAQUF
-   * AAOCAQEABdwm2Pp3FURo/C9mOnTgXeQp/wYHE4RKq89toB9RlPhJy3Q2FLwV3duJ
-   * L92PoF189RLrn544pEfMs5bZvpwlqwN+Mw+VgQ39FuCIvjfwbF3QMZsyK10XZZOY
-   * YLxuj7GoPB7ZHPOpJkL5ZB3C55L29B5aqhlSXa/oovdgoPaN8In1buAKBQGVyYsg
-   * Crpa/JosPL3Dt8ldeCUFP1YUmwza+zpI/pdpXsoQhvdOlgQITeywvl3cO45Pwf2a
-   * NjSaTFR+FwNIlQgRHAdvhQh+XU3Endv7rs6y0bO4g2wdsrN58dhwmX7wEwLOXt1R
-   * 0982gaEbeC9xs/FZTEYYKKuF0mBWWg==
-   * -----END CERTIFICATE-----
-   */
-  webpki::TrustAnchor {
-    subject: b"1\x0b0\t\x06\x03U\x04\x06\x13\x02FR1\x0f0\r\x06\x03U\x04\x08\x13\x06France1\x0e0\x0c\x06\x03U\x04\x07\x13\x05Paris1\x100\x0e\x06\x03U\x04\n\x13\x07PM/SGDN1\x0e0\x0c\x06\x03U\x04\x0b\x13\x05DCSSI1\x0e0\x0c\x06\x03U\x04\x03\x13\x05IGC/A1#0!\x06\t*\x86H\x86\xf7\r\x01\t\x01\x16\x14igca@sgdn.pm.gouv.fr",
-    spki: b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\n\x02\x82\x01\x01\x00\xb2\x1f\xd1\xd0b\xc53;\xc0\x04\x86\x88\xb3\xdc\xf8\x88\xf7\xfd\xdfC\xdfz\x8d\x9aI\\\xf6N\xaa\xcc\x1c\xb9\xa1\xeb\'\x89\xf2F\xe9;Jq\xd5\x1d\x8e-\xcf\xe6\xad\xabcP\xc7T\x0bn\x12\xc9\x906\xc6\xd8/\xda\x91\xaah\xc5r\xfe\x17\n\xb2\x17~y\xb52\x88p\xcap\xc0\x96J\x8e\xe4U\xcd\x1d\'\x94\xbf\xcer*\xec\\\xf9s \xfe\xbd\xf7.\x89g\xb8\xbbGs\x12\xf7\xd15i:\xf2\n\xb9\xae\xffFBF\xa2\xbf\xa1\x85\x1a\xf9\xbf\xe4\xffI\x85\xf7\xa3p\x862\x1c]\x9f`\xf7\xa9\xad\xa5\xff\xcf\xd14\xf9}[\x17\xc6\xdc\xd6\x0e(k\xc2\xdd\xf1\xf53h\x9dN\xfc\x87|6\x12\xd6\xa3\x80\xe8C\rUa\x94\xead7G\xeaw\xca\xd0\xb2X\x05\xc3]~\xb1\xa8F\x901V\xcep*\x96\xb20\xb8w\xe6y\xc0\xbd);\xfd\x94wL\xbd \xcdA%\xe0.\xc7\x1b\xbb\xee\xa4\x04A\xd2]\xad\x12j\x8a\x9bG\xfb\xc9\xddF@\xe1\x9d<3\xd0\xb5\x02\x03\x01\x00\x01",
     name_constraints: None
   },
 
