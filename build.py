@@ -1,4 +1,5 @@
 import subprocess
+import sys
 
 HEADER = """//!
 //! This library is automatically generated from the Mozilla certificate
@@ -101,6 +102,10 @@ def print_root(cert, data):
 """ % (commentify(cert), subject, spki, nc)
 
 if __name__ == '__main__':
+    if sys.platform == "win32":
+        import os, msvcrt
+        msvcrt.setmode(sys.stdout.fileno(), os.O_BINARY)
+
     bundle = fetch_bundle()
     open('fetched.pem', 'w').write(bundle)
 
