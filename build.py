@@ -17,7 +17,8 @@ CERT = """
   %(code)s,"""
 
 def fetch_bundle():
-    proc = subprocess.Popen(['curl', 'https://mkcert.org/generate/'],
+    proc = subprocess.Popen(['curl',
+                             'https://mkcert.org/generate/all/except/StartCom+WoSign'],
             stdout = subprocess.PIPE)
     stdout, _ = proc.communicate()
     return stdout
