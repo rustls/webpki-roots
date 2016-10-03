@@ -1,6 +1,7 @@
  # -*- coding: utf-8 -*-
 import subprocess
 import sys
+import urllib
 
 HEADER = """//!
 //! This library is automatically generated from the Mozilla certificate
@@ -18,6 +19,11 @@ CERT = """
   %(code)s,"""
 
 excluded_cas = [
+    # https://blog.mozilla.org/security/2015/04/02/distrusting-new-cnnic-certificates/
+    # https://security.googleblog.com/2015/03/maintaining-digital-certificate-security.html
+    "China Internet Network Information Center",
+    "CNNIC",
+
     # See https://wiki.mozilla.org/CA:WoSign_Issues.
     "StartCom",
     "WoSign",
@@ -31,7 +37,7 @@ excluded_cas = [
 def fetch_bundle():
     proc = subprocess.Popen(['curl',
                              'https://mkcert.org/generate/all/except/' +
-                                "+".join(excluded_cas)],
+                                "+".join([urllib.quote(x) for x in excluded_cas])],
             stdout = subprocess.PIPE)
     stdout, _ = proc.communicate()
     return stdout
