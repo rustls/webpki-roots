@@ -17,6 +17,7 @@ CERT = """
   %(code)s,"""
 
 excluded_cas = [
+    # See https://wiki.mozilla.org/CA:WoSign_Issues.
     "StartCom",
     "WoSign",
 ]
