@@ -1,3 +1,4 @@
+ # -*- coding: utf-8 -*-
 import subprocess
 import sys
 
@@ -20,6 +21,11 @@ excluded_cas = [
     # See https://wiki.mozilla.org/CA:WoSign_Issues.
     "StartCom",
     "WoSign",
+
+    # See https://cabforum.org/pipermail/public/2016-September/008475.html.
+    # Both the ASCII and non-ASCII names are required.
+    "TÜRKTRUST",
+    "TURKTRUST",
 ]
 
 def fetch_bundle():
