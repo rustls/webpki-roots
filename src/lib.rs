@@ -8,7 +8,7 @@
 
 extern crate webpki;
 
-pub static ROOTS: [webpki::TrustAnchor<'static>; 142] = [
+pub static ROOTS: [webpki::TrustAnchor<'static>; 141] = [
   /*
    * Issuer: CN=Entrust Root Certification Authority - EC1 O=Entrust, Inc. OU=See www.entrust.net/legal-terms/(c) 2012 Entrust, Inc. - for authorized use only
    * Subject: CN=Entrust Root Certification Authority - EC1 O=Entrust, Inc. OU=See www.entrust.net/legal-terms/(c) 2012 Entrust, Inc. - for authorized use only
@@ -4097,42 +4097,6 @@ pub static ROOTS: [webpki::TrustAnchor<'static>; 142] = [
   webpki::TrustAnchor {
     subject: b"1\x0b0\t\x06\x03U\x04\x06\x13\x02US1 0\x1e\x06\x03U\x04\n\x0c\x17Wells Fargo WellsSecure1\x1c0\x1a\x06\x03U\x04\x0b\x0c\x13Wells Fargo Bank NA1604\x06\x03U\x04\x03\x0c-WellsSecure Public Root Certificate Authority",
     spki: b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\n\x02\x82\x01\x01\x00\xeeo\xb4\xbdy\xe2\x8f\x08!\x9e8\x04A%\xef\xab[\x1cS\x92\xacm\x9e\xdd\xc2\xc4.E\x94\x035\x88gtW\xe3\xdf\x8c\xb8\xa7v\x8f;\xf7\xa8\xc4\xdb)c\x0e\x91h6\x8a\x97\x8e\x8aqh\t\x07\xe4\xe8\xd4\x0eO\xf8\xd6+L\xa4\x16\xf9\xefC\x98\x8f\xb3\x9eR\xdfm\x919\x8f8\xbdw\x8bCc\xeb\xb7\x93\xfc0L\x1c\x01\x93\xb6\x13\xfb\xf7\xa1\x1f\xbf%\xe1t7,\x1e\xa4^<h\xf8K\xbf\r\xb9\x1e.6\xe8\xa9\xe4\xa7\xf8\x0f\xcb\x82u|5-\"\xd6\xc2\xbf\x0b\xf3\xb4\xfcl\x95a\x1eW\xd7\x04\x812\x83Ry\xe6\x83c\xcf\xb7\xcbc\x8b\x11\xe2\xbd^\xeb\xf6\x8d\xed\x95r(\xb4\xac\x12b\xe9J3\xe6\x832\xae\x05u\x95\xbd\x84\x95\xdb*\\\x9b\x8e.\x0c\xb8\x81+A\xe68V\x9fI\x9blv\xfa\x8a]\xf7\x01y\x81|\xc1\x83@\x05\xfeq\xfd\x0c?\xccN`\t\x0eeG\x10/\x01\xc0\x05?\x8f\xf8\xb3A\xefZB~Y\xef\xd2\x97\x0ce\x02\x03\x01\x00\x01",
-    name_constraints: None
-  },
-
-  /*
-   * Issuer: O=RSA Security Inc OU=RSA Security 2048 V3
-   * Subject: O=RSA Security Inc OU=RSA Security 2048 V3
-   * Label: "RSA Security 2048 v3"
-   * Serial: 13297492616345471454730593562152402946
-   * MD5 Fingerprint: 77:0d:19:b1:21:fd:00:42:9c:3e:0c:a5:dd:0b:02:8e
-   * SHA1 Fingerprint: 25:01:90:19:cf:fb:d9:99:1c:b7:68:25:74:8d:94:5f:30:93:95:42
-   * SHA256 Fingerprint: af:8b:67:62:a1:e5:28:22:81:61:a9:5d:5c:55:9e:e2:66:27:8f:75:d7:9e:83:01:89:a5:03:50:6a:bd:6b:4c
-   * -----BEGIN CERTIFICATE-----
-   * MIIDYTCCAkmgAwIBAgIQCgEBAQAAAnwAAAAKAAAAAjANBgkqhkiG9w0BAQUFADA6
-   * MRkwFwYDVQQKExBSU0EgU2VjdXJpdHkgSW5jMR0wGwYDVQQLExRSU0EgU2VjdXJp
-   * dHkgMjA0OCBWMzAeFw0wMTAyMjIyMDM5MjNaFw0yNjAyMjIyMDM5MjNaMDoxGTAX
-   * BgNVBAoTEFJTQSBTZWN1cml0eSBJbmMxHTAbBgNVBAsTFFJTQSBTZWN1cml0eSAy
-   * MDQ4IFYzMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAt49VcdKA3Xtp
-   * eafwGFAyPGJn9gqVB93mG/Oe2dJBVGutn3y+Gc37RqtBaB4Y6lXIL5F4iSj7Jylg
-   * /9+PjDvJSZu1pJTOAeo+tWN7fyb9Gd3AIb2E0S1PRsNO3Ng3OTsor8udGuorryGl
-   * wSMiuLgbWhOHV4PR8CDn6E8jQrAApX2J6elhc5SYcSa8LWrg903w8bYqODGBDSnh
-   * AMFRD0xS+ARaqn1y07iHKrtjEAMqs6FPDVpeRrc9DvV07Jmf+T0kgYim3WBU6JU2
-   * PcYJk5qjEoAAVZkZR73QpXzDuvsf9/UP+Ky5tfQ3mBMY3oVbtwyCO4dvlTlYMNpu
-   * AWgXIszACwIDAQABo2MwYTAPBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQEAwIB
-   * BjAfBgNVHSMEGDAWgBQHw1EwpKrpRa41JPr/JCwz0LGdjDAdBgNVHQ4EFgQUB8NR
-   * MKSq6UWuNST6/yQsM9CxnYwwDQYJKoZIhvcNAQEFBQADggEBAF8+hnZuuDU8TjYc
-   * HnmYv/3VEhF5Ug7uMYm83X/50cYVIeiKAVQNOvtUudZj1LGqlk2iQk3UUx+LEN5/
-   * Zb5gEydxiKRz44Rj0aRV4VCT5hsOedBnvEbIvz8XDZXmxpBp3ue0L96VfdASPz0+
-   * f00/FGj1EVDVwfSQpQgdMWD/YIwjVAqv/qFuxdF6Kmh4zx6CCiC0H63lhbJqaHVO
-   * rSU3lIW+vaHU6rcMSzyd6BIA8F+sDeGscGNz9395nzIlQnQFgCi/vcEkllgVsRch
-   * 6YlL2weIZ/QVrXA+L02FO8K32/6YaCOJ4XQP3vTFhGMpG8zLB8kApKnXwiJPZ9d3
-   * 7CAFYd4=
-   * -----END CERTIFICATE-----
-   */
-  webpki::TrustAnchor {
-    subject: b"1\x190\x17\x06\x03U\x04\n\x13\x10RSA Security Inc1\x1d0\x1b\x06\x03U\x04\x0b\x13\x14RSA Security 2048 V3",
-    spki: b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\n\x02\x82\x01\x01\x00\xb7\x8fUq\xd2\x80\xdd{iy\xa7\xf0\x18P2<bg\xf6\n\x95\x07\xdd\xe6\x1b\xf3\x9e\xd9\xd2ATk\xad\x9f|\xbe\x19\xcd\xfbF\xabAh\x1e\x18\xeaU\xc8/\x91x\x89(\xfb\')`\xff\xdf\x8f\x8c;\xc9I\x9b\xb5\xa4\x94\xce\x01\xea>\xb5c{\x7f&\xfd\x19\xdd\xc0!\xbd\x84\xd1-OF\xc3N\xdc\xd879;(\xaf\xcb\x9d\x1a\xea+\xaf!\xa5\xc1#\"\xb8\xb8\x1bZ\x13\x87W\x83\xd1\xf0 \xe7\xe8O#B\xb0\x00\xa5}\x89\xe9\xe9as\x94\x98q&\xbc-j\xe0\xf7M\xf0\xf1\xb6*81\x81\r)\xe1\x00\xc1Q\x0fLR\xf8\x04Z\xaa}r\xd3\xb8\x87*\xbbc\x10\x03*\xb3\xa1O\rZ^F\xb7=\x0e\xf5t\xec\x99\x9f\xf9=$\x81\x88\xa6\xdd`T\xe8\x956=\xc6\t\x93\x9a\xa3\x12\x80\x00U\x99\x19G\xbd\xd0\xa5|\xc3\xba\xfb\x1f\xf7\xf5\x0f\xf8\xac\xb9\xb5\xf47\x98\x13\x18\xde\x85[\xb7\x0c\x82;\x87o\x959X0\xdan\x01h\x17\"\xcc\xc0\x0b\x02\x03\x01\x00\x01",
     name_constraints: None
   },
 

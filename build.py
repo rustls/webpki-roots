@@ -24,6 +24,9 @@ excluded_cas = [
     "China Internet Network Information Center",
     "CNNIC",
 
+    # See https://bugzilla.mozilla.org/show_bug.cgi?id=1283326.
+    "RSA Security 2048 v3",
+
     # See https://wiki.mozilla.org/CA:WoSign_Issues.
     "StartCom",
     "WoSign",
