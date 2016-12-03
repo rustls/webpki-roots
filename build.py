@@ -19,6 +19,9 @@ CERT = """
   %(code)s,"""
 
 excluded_cas = [
+    # See https://bugzilla.mozilla.org/show_bug.cgi?id=1266574.
+    "Buypass Class 2 CA 1",
+
     # https://blog.mozilla.org/security/2015/04/02/distrusting-new-cnnic-certificates/
     # https://security.googleblog.com/2015/03/maintaining-digital-certificate-security.html
     "China Internet Network Information Center",
@@ -26,6 +29,9 @@ excluded_cas = [
 
     # See https://bugzilla.mozilla.org/show_bug.cgi?id=1283326.
     "RSA Security 2048 v3",
+
+    # https://bugzilla.mozilla.org/show_bug.cgi?id=1272158
+    "Root CA Generalitat Valenciana",
 
     # See https://wiki.mozilla.org/CA:WoSign_Issues.
     "StartCom",
