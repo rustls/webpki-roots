@@ -8,7 +8,7 @@
 
 extern crate webpki;
 
-pub static ROOTS: [webpki::TrustAnchor<'static>; 145] = [
+pub static ROOTS: [webpki::TrustAnchor<'static>; 143] = [
   /*
    * Issuer: CN=Entrust Root Certification Authority - EC1 O=Entrust, Inc. OU=See www.entrust.net/legal-terms/(c) 2012 Entrust, Inc. - for authorized use only
    * Subject: CN=Entrust Root Certification Authority - EC1 O=Entrust, Inc. OU=See www.entrust.net/legal-terms/(c) 2012 Entrust, Inc. - for authorized use only
@@ -1136,43 +1136,6 @@ pub static ROOTS: [webpki::TrustAnchor<'static>; 145] = [
   },
 
   /*
-   * Issuer: O=Japanese Government OU=ApplicationCA
-   * Subject: O=Japanese Government OU=ApplicationCA
-   * Label: "ApplicationCA - Japanese Government"
-   * Serial: 49
-   * MD5 Fingerprint: 7e:23:4e:5b:a7:a5:b4:25:e9:00:07:74:11:62:ae:d6
-   * SHA1 Fingerprint: 7f:8a:b0:cf:d0:51:87:6a:66:f3:36:0f:47:c8:8d:8c:d3:35:fc:74
-   * SHA256 Fingerprint: 2d:47:43:7d:e1:79:51:21:5a:12:f3:c5:8e:51:c7:29:a5:80:26:ef:1f:cc:0a:5f:b3:d9:dc:01:2f:60:0d:19
-   * -----BEGIN CERTIFICATE-----
-   * MIIDoDCCAoigAwIBAgIBMTANBgkqhkiG9w0BAQUFADBDMQswCQYDVQQGEwJKUDEc
-   * MBoGA1UEChMTSmFwYW5lc2UgR292ZXJubWVudDEWMBQGA1UECxMNQXBwbGljYXRp
-   * b25DQTAeFw0wNzEyMTIxNTAwMDBaFw0xNzEyMTIxNTAwMDBaMEMxCzAJBgNVBAYT
-   * AkpQMRwwGgYDVQQKExNKYXBhbmVzZSBHb3Zlcm5tZW50MRYwFAYDVQQLEw1BcHBs
-   * aWNhdGlvbkNBMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp23gdE6H
-   * j6UG3mii24aZS2QNcfAKBZuOquHMLtJqO8F6tJdhjYq+xpqcBrSGUeQ3DnR4fl+K
-   * f5Sk10cI/VBaVuRorChzoHvpfxiSQE8tnfWuREhzNgaeZCw7NCPbXCbkcXmP1G55
-   * IrmTwcrNwVbtiGrXoDkhBFcsovW8R0FPXjQilbUfKW1eSvNNcr5BViCH/OlQR9cw
-   * FO5cjFW6WY2H/CPek9AEjP3vbb3QesmlOmpyM8ZKDQUXKi17safY1vC+9D/qDiht
-   * QWEjdnjDuGWk81quzMKq2edY3rZ+nYVunyoKb58DKTCXKB28t89UKU5RMfkntigm
-   * /qJj5kEW8DOYRwIDAQABo4GeMIGbMB0GA1UdDgQWBBRUWssmP3HMlEYNllPqa0jQ
-   * k/5CdTAOBgNVHQ8BAf8EBAMCAQYwWQYDVR0RBFIwUKROMEwxCzAJBgNVBAYTAkpQ
-   * MRgwFgYDVQQKDA/ml6XmnKzlm73mlL/lupwxIzAhBgNVBAsMGuOCouODl+ODquOC
-   * seODvOOCt+ODp+ODs0NBMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQEFBQAD
-   * ggEBADlqRHZ3ODrso2dGD/mLBqj7apAxzn7s2tGJfHrrLgy9mTLnsCTWw//1sogJ
-   * hyzjVOGjprIIC8CFqMjSnHH2HZ9g/DgzE+Ge3Atf2hZQKXsvcJEPmbo0NI2VdMV+
-   * eKlmXb3KIXdCEKxmJj3ekav9FfBv7WxfEPjzFvYDio+nEhEMy/0/ecGc/WLuo89U
-   * DNErXxc+4z6/wCs+CZv+iKZ+tJIX/COUgb1up8WMwusRRdv4QcmWdupwX3kSa+Sj
-   * B1oF7ydJzyGfikwJcGapJsErEU4z0g781mzSDjJkaP+tBXhfAx2o45CsJOAPQKdL
-   * rosot4LKGAfmt1t06SAZf7IbiVQ=
-   * -----END CERTIFICATE-----
-   */
-  webpki::TrustAnchor {
-    subject: b"1\x0b0\t\x06\x03U\x04\x06\x13\x02JP1\x1c0\x1a\x06\x03U\x04\n\x13\x13Japanese Government1\x160\x14\x06\x03U\x04\x0b\x13\rApplicationCA",
-    spki: b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\n\x02\x82\x01\x01\x00\xa7m\xe0tN\x87\x8f\xa5\x06\xdeh\xa2\xdb\x86\x99Kd\rq\xf0\n\x05\x9b\x8e\xaa\xe1\xcc.\xd2j;\xc1z\xb4\x97a\x8d\x8a\xbe\xc6\x9a\x9c\x06\xb4\x86Q\xe47\x0etx~_\x8a\x7f\x94\xa4\xd7G\x08\xfdPZV\xe4h\xac(s\xa0{\xe9\x7f\x18\x92@O-\x9d\xf5\xaeDHs6\x06\x9ed,;4#\xdb\\&\xe4qy\x8f\xd4ny\"\xb9\x93\xc1\xca\xcd\xc1V\xed\x88j\xd7\xa09!\x04W,\xa2\xf5\xbcGAO^4\"\x95\xb5\x1f)m^J\xf3Mr\xbeAV \x87\xfc\xe9PG\xd70\x14\xee\\\x8cU\xbaY\x8d\x87\xfc#\xde\x93\xd0\x04\x8c\xfd\xefm\xbd\xd0z\xc9\xa5:jr3\xc6J\r\x05\x17*-{\xb1\xa7\xd8\xd6\xf0\xbe\xf4?\xea\x0e(mAa#vx\xc3\xb8e\xa4\xf3Z\xae\xcc\xc2\xaa\xd9\xe7X\xde\xb6~\x9d\x85n\x9f*\no\x9f\x03)0\x97(\x1d\xbc\xb7\xcfT)NQ1\xf9\'\xb6(&\xfe\xa2c\xe6A\x16\xf03\x98G\x02\x03\x01\x00\x01",
-    name_constraints: None
-  },
-
-  /*
    * Issuer: CN=IdenTrust Public Sector Root CA 1 O=IdenTrust
    * Subject: CN=IdenTrust Public Sector Root CA 1 O=IdenTrust
    * Label: "IdenTrust Public Sector Root CA 1"
@@ -1245,64 +1208,6 @@ pub static ROOTS: [webpki::TrustAnchor<'static>; 145] = [
   webpki::TrustAnchor {
     subject: b"1\x0b0\t\x06\x03U\x04\x06\x13\x02US1\x150\x13\x06\x03U\x04\n\x13\x0cDigiCert Inc1\x190\x17\x06\x03U\x04\x0b\x13\x10www.digicert.com1 0\x1e\x06\x03U\x04\x03\x13\x17DigiCert Global Root G3",
     spki: b"0\x10\x06\x07*\x86H\xce=\x02\x01\x06\x05+\x81\x04\x00\"\x03b\x00\x04\xdd\xa7\xd9\xbb\x8a\xb8\x0b\xfb\x0b\x7f!\xd2\xf0\xbe\xbes\xf33]\x1a\xbc4\xea\xde\xc6\x9b\xbc\xd0\x95\xf6\xf0\xcc\xd0\x0b\xbaa[QF~\x9e-\x9f\xee\x8ec\x0c\x17\xec\x07p\xf5\xcf\x84.@\x83\x9c\xe8?Am;\xad\xd3\xa4\x14Y6x\x9d\x03C\xee\x10\x13lr\xde\xae\x88\xa7\xa1k\xb5C\xceg\xdc#\xff\x03\x1c\xa3\xe2>",
-    name_constraints: None
-  },
-
-  /*
-   * Issuer: CN=Microsec e-Szigno Root CA O=Microsec Ltd. OU=e-Szigno CA
-   * Subject: CN=Microsec e-Szigno Root CA O=Microsec Ltd. OU=e-Szigno CA
-   * Label: "Microsec e-Szigno Root CA"
-   * Serial: 272122594155480254301341951808045322001
-   * MD5 Fingerprint: f0:96:b6:2f:c5:10:d5:67:8e:83:25:32:e8:5e:2e:e5
-   * SHA1 Fingerprint: 23:88:c9:d3:71:cc:9e:96:3d:ff:7d:3c:a7:ce:fc:d6:25:ec:19:0d
-   * SHA256 Fingerprint: 32:7a:3d:76:1a:ba:de:a0:34:eb:99:84:06:27:5c:b1:a4:77:6e:fd:ae:2f:df:6d:01:68:ea:1c:4f:55:67:d0
-   * -----BEGIN CERTIFICATE-----
-   * MIIHqDCCBpCgAwIBAgIRAMy4579OKRr9otxmpRwsDxEwDQYJKoZIhvcNAQEFBQAw
-   * cjELMAkGA1UEBhMCSFUxETAPBgNVBAcTCEJ1ZGFwZXN0MRYwFAYDVQQKEw1NaWNy
-   * b3NlYyBMdGQuMRQwEgYDVQQLEwtlLVN6aWdubyBDQTEiMCAGA1UEAxMZTWljcm9z
-   * ZWMgZS1Temlnbm8gUm9vdCBDQTAeFw0wNTA0MDYxMjI4NDRaFw0xNzA0MDYxMjI4
-   * NDRaMHIxCzAJBgNVBAYTAkhVMREwDwYDVQQHEwhCdWRhcGVzdDEWMBQGA1UEChMN
-   * TWljcm9zZWMgTHRkLjEUMBIGA1UECxMLZS1Temlnbm8gQ0ExIjAgBgNVBAMTGU1p
-   * Y3Jvc2VjIGUtU3ppZ25vIFJvb3QgQ0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAw
-   * ggEKAoIBAQDtyADVgXvNOABHzNuEwSFpLHSQDCHZU4ftPkNEU6+r+ICbPHiN1I2u
-   * uO/TEdyB5s87lozWbxXGd36hL+BfkrYn13aaHUM86tnsL+4582pnS4uCzyL4ZVX+
-   * LMsvfUh6PXX5qqAnu3jCBspRwn5mS6/NoqdNAoI/gqyFxuEPkEeZlApxcpMqyabA
-   * vjxWTHOSJ/FrtfX9/DAFYJLG65Z+AZHCabEeHXtTRbjcQR/Ji3HWVBTji1R4P770
-   * Yjtb9aPs1ZJ04nQw7wHb4dSrmZsqa/i9phyGI0Jf7Enemotb9HI6QMVJPqW+jqpx
-   * 62z69Rrkav17fVVA71hu5tnVvCSrwe+3AgMBAAGjggQ3MIIEMzBnBggrBgEFBQcB
-   * AQRbMFkwKAYIKwYBBQUHMAGGHGh0dHBzOi8vcmNhLmUtc3ppZ25vLmh1L29jc3Aw
-   * LQYIKwYBBQUHMAKGIWh0dHA6Ly93d3cuZS1zemlnbm8uaHUvUm9vdENBLmNydDAP
-   * BgNVHRMBAf8EBTADAQH/MIIBcwYDVR0gBIIBajCCAWYwggFiBgwrBgEEAYGoGAIB
-   * AQEwggFQMCgGCCsGAQUFBwIBFhxodHRwOi8vd3d3LmUtc3ppZ25vLmh1L1NaU1ov
-   * MIIBIgYIKwYBBQUHAgIwggEUHoIBEABBACAAdABhAG4A+gBzAO0AdAB2AOEAbgB5
-   * ACAA6QByAHQAZQBsAG0AZQB6AOkAcwDpAGgAZQB6ACAA6QBzACAAZQBsAGYAbwBn
-   * AGEAZADhAHMA4QBoAG8AegAgAGEAIABTAHoAbwBsAGcA4QBsAHQAYQB0APMAIABT
-   * AHoAbwBsAGcA4QBsAHQAYQB0AOEAcwBpACAAUwB6AGEAYgDhAGwAeQB6AGEAdABh
-   * ACAAcwB6AGUAcgBpAG4AdAAgAGsAZQBsAGwAIABlAGwAagDhAHIAbgBpADoAIABo
-   * AHQAdABwADoALwAvAHcAdwB3AC4AZQAtAHMAegBpAGcAbgBvAC4AaAB1AC8AUwBa
-   * AFMAWgAvMIHIBgNVHR8EgcAwgb0wgbqggbeggbSGIWh0dHA6Ly93d3cuZS1zemln
-   * bm8uaHUvUm9vdENBLmNybIaBjmxkYXA6Ly9sZGFwLmUtc3ppZ25vLmh1L0NOPU1p
-   * Y3Jvc2VjJTIwZS1Temlnbm8lMjBSb290JTIwQ0EsT1U9ZS1Temlnbm8lMjBDQSxP
-   * PU1pY3Jvc2VjJTIwTHRkLixMPUJ1ZGFwZXN0LEM9SFU/Y2VydGlmaWNhdGVSZXZv
-   * Y2F0aW9uTGlzdDtiaW5hcnkwDgYDVR0PAQH/BAQDAgEGMIGWBgNVHREEgY4wgYuB
-   * EGluZm9AZS1zemlnbm8uaHWkdzB1MSMwIQYDVQQDDBpNaWNyb3NlYyBlLVN6aWdu
-   * w7MgUm9vdCBDQTEWMBQGA1UECwwNZS1TemlnbsOzIEhTWjEWMBQGA1UEChMNTWlj
-   * cm9zZWMgS2Z0LjERMA8GA1UEBxMIQnVkYXBlc3QxCzAJBgNVBAYTAkhVMIGsBgNV
-   * HSMEgaQwgaGAFMegSXUWYYTbMUuE0vE3QJDvTtz3oXakdDByMQswCQYDVQQGEwJI
-   * VTERMA8GA1UEBxMIQnVkYXBlc3QxFjAUBgNVBAoTDU1pY3Jvc2VjIEx0ZC4xFDAS
-   * BgNVBAsTC2UtU3ppZ25vIENBMSIwIAYDVQQDExlNaWNyb3NlYyBlLVN6aWdubyBS
-   * b290IENBghEAzLjnv04pGv2i3GalHCwPETAdBgNVHQ4EFgQUx6BJdRZhhNsxS4TS
-   * 8TdAkO9O3PcwDQYJKoZIhvcNAQEFBQADggEBANMTnGZjWS7KXHAM/IO8VbH0jgds
-   * ZifOwTsgqRy7RlRw7lrMoHfqaEQn6/Ip3Xep1fvj1KcExJW4C+FEaGAHQzAxQmHl
-   * 7tnlJNUb3+FKG6qfx1/4ehHqE5MAyopYse7tDk2016g2JnzgOsHVV4Lxdbb9iV/a
-   * 86g4nzUGCM4ilb7N1fy+W955a9x6qWVmvrElWl/tftOsRm1M9DKHtCAE4Gx4sHfR
-   * hUZLphK3dehKyVZs15KrnfVJONJPU+NVkBHbmJbGSfI+9J8b4PeI3CVimUTYc78/
-   * MPMMNz7UwiiAc7EBt51alhQBS6kRnSlqLtBdgcDPsiBDxwPgN05dCtxZICU=
-   * -----END CERTIFICATE-----
-   */
-  webpki::TrustAnchor {
-    subject: b"1\x0b0\t\x06\x03U\x04\x06\x13\x02HU1\x110\x0f\x06\x03U\x04\x07\x13\x08Budapest1\x160\x14\x06\x03U\x04\n\x13\rMicrosec Ltd.1\x140\x12\x06\x03U\x04\x0b\x13\x0be-Szigno CA1\"0 \x06\x03U\x04\x03\x13\x19Microsec e-Szigno Root CA",
-    spki: b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\n\x02\x82\x01\x01\x00\xed\xc8\x00\xd5\x81{\xcd8\x00G\xcc\xdb\x84\xc1!i,t\x90\x0c!\xd9S\x87\xed>CDS\xaf\xab\xf8\x80\x9b<x\x8d\xd4\x8d\xae\xb8\xef\xd3\x11\xdc\x81\xe6\xcf;\x96\x8c\xd6o\x15\xc6w~\xa1/\xe0_\x92\xb6\'\xd7v\x9a\x1dC<\xea\xd9\xec/\xee9\xf3jgK\x8b\x82\xcf\"\xf8eU\xfe,\xcb/}Hz=u\xf9\xaa\xa0\'\xbbx\xc2\x06\xcaQ\xc2~fK\xaf\xcd\xa2\xa7M\x02\x82?\x82\xac\x85\xc6\xe1\x0f\x90G\x99\x94\nqr\x93*\xc9\xa6\xc0\xbe<VLs\x92\'\xf1k\xb5\xf5\xfd\xfc0\x05`\x92\xc6\xeb\x96~\x01\x91\xc2i\xb1\x1e\x1d{SE\xb8\xdcA\x1f\xc9\x8bq\xd6T\x14\xe3\x8bTx?\xbe\xf4b;[\xf5\xa3\xec\xd5\x92t\xe2t0\xef\x01\xdb\xe1\xd4\xab\x99\x9b*k\xf8\xbd\xa6\x1c\x86#B_\xecI\xde\x9a\x8b[\xf4r:@\xc5I>\xa5\xbe\x8e\xaaq\xebl\xfa\xf5\x1a\xe4j\xfd{}U@\xefXn\xe6\xd9\xd5\xbc$\xab\xc1\xef\xb7\x02\x03\x01\x00\x01",
     name_constraints: None
   },
 
@@ -1832,6 +1737,47 @@ pub static ROOTS: [webpki::TrustAnchor<'static>; 145] = [
   webpki::TrustAnchor {
     subject: b"1\x0b0\t\x06\x03U\x04\x06\x13\x02US1\x100\x0e\x06\x03U\x04\x08\x13\x07Arizona1\x130\x11\x06\x03U\x04\x07\x13\nScottsdale1\x1a0\x18\x06\x03U\x04\n\x13\x11GoDaddy.com, Inc.110/\x06\x03U\x04\x03\x13(Go Daddy Root Certificate Authority - G2",
     spki: b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\n\x02\x82\x01\x01\x00\xbfqb\x08\xf1\xfaY4\xf7\x1b\xc9\x18\xa3\xf7\x80IX\xe9\"\x83\x13\xa6\xc5 C\x01;\x84\xf1\xe6\x85I\x9f\'\xea\xf6\x84\x1bN\xa0\xb4\xdbp\x98\xc72\x01\xb1\x05>\x07N\xee\xf4\xfaO/Y0\"\xe7\xab\x19Vk\xe2\x80\x07\xfc\xf3\x16u\x809Q{\xe5\xf95\xb6tN\xa9\x8d\x82\x13\xe4\xb6?\xa9\x03\x83\xfa\xa2\xbe\x8a\x15j\x7f\xde\x0b\xc3\xb6\x19\x14\x05\xca\xea\xc3\xa8\x04\x94;F|2\r\xf3\x00f\"\xc8\x8dim6\x8c\x11\x18\xb7\xd3\xb2\x1c`\xb48\xfa\x02\x8c\xce\xd3\xddF\x07\xde\n>\xeb]|\xc8|\xfb\xb0+S\xa4\x92biQ%\x05a\x1aD\x81\x8c,\xa9C\x96#\xdf\xac:\x81\x9a\x0e)\xc5\x1c\xa9\xe9]\x1e\xb6\x9e\x9e0\n9\xce\xf1\x88\x80\xfbK]\xcc2\xec\x85bC%4\x02V\'\x01\x91\xb4;p*?n\xb1\xe8\x9c\x88\x01}\x9f\xd4\xf9\xdbSm`\x9d\xbf,\xe7X\xab\xb8_F\xfc\xce\xc4\x1b\x03<\t\xebI1\\iF\xb3\xe0G\x02\x03\x01\x00\x01",
+    name_constraints: None
+  },
+
+  /*
+   * Issuer: CN=TUBITAK Kamu SM SSL Kok Sertifikasi - Surum 1 O=Turkiye Bilimsel ve Teknolojik Arastirma Kurumu - TUBITAK OU=Kamu Sertifikasyon Merkezi - Kamu SM
+   * Subject: CN=TUBITAK Kamu SM SSL Kok Sertifikasi - Surum 1 O=Turkiye Bilimsel ve Teknolojik Arastirma Kurumu - TUBITAK OU=Kamu Sertifikasyon Merkezi - Kamu SM
+   * Label: "TUBITAK Kamu SM SSL Kok Sertifikasi - Surum 1"
+   * Serial: 1
+   * MD5 Fingerprint: dc:00:81:dc:69:2f:3e:2f:b0:3b:f6:3d:5a:91:8e:49
+   * SHA1 Fingerprint: 31:43:64:9b:ec:ce:27:ec:ed:3a:3f:0b:8f:0d:e4:e8:91:dd:ee:ca
+   * SHA256 Fingerprint: 46:ed:c3:68:90:46:d5:3a:45:3f:b3:10:4a:b8:0d:ca:ec:65:8b:26:60:ea:16:29:dd:7e:86:79:90:64:87:16
+   * -----BEGIN CERTIFICATE-----
+   * MIIEYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCB0jELMAkGA1UEBhMCVFIx
+   * GDAWBgNVBAcTD0dlYnplIC0gS29jYWVsaTFCMEAGA1UEChM5VHVya2l5ZSBCaWxp
+   * bXNlbCB2ZSBUZWtub2xvamlrIEFyYXN0aXJtYSBLdXJ1bXUgLSBUVUJJVEFLMS0w
+   * KwYDVQQLEyRLYW11IFNlcnRpZmlrYXN5b24gTWVya2V6aSAtIEthbXUgU00xNjA0
+   * BgNVBAMTLVRVQklUQUsgS2FtdSBTTSBTU0wgS29rIFNlcnRpZmlrYXNpIC0gU3Vy
+   * dW0gMTAeFw0xMzExMjUwODI1NTVaFw00MzEwMjUwODI1NTVaMIHSMQswCQYDVQQG
+   * EwJUUjEYMBYGA1UEBxMPR2ViemUgLSBLb2NhZWxpMUIwQAYDVQQKEzlUdXJraXll
+   * IEJpbGltc2VsIHZlIFRla25vbG9qaWsgQXJhc3Rpcm1hIEt1cnVtdSAtIFRVQklU
+   * QUsxLTArBgNVBAsTJEthbXUgU2VydGlmaWthc3lvbiBNZXJrZXppIC0gS2FtdSBT
+   * TTE2MDQGA1UEAxMtVFVCSVRBSyBLYW11IFNNIFNTTCBLb2sgU2VydGlmaWthc2kg
+   * LSBTdXJ1bSAxMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr3UwM6q7
+   * a9OZLBI3hNmNe5eA027n/5tQlT6QlVZC1xl8JoSNkvoBHToP4mQ4t4y86Ij5iySr
+   * LqP1N+RAjhgleYN1Hzv/bKjFxlb4tO2KRKOrbEz8HdDc72i9z+SqzvBV96I01INr
+   * N3wcwv61A+xXzry0tcXtAA9TNypN9E8Mg/uGz8v+jE69h/mniyFXnHrfA2eJLJ2X
+   * YacQuFWQfw4tJzh03+f92k4S400VIgLI4OD8D62K18lUUMw7D8oWgITQUVbDjlZ/
+   * iSIzL+aFCr2lqBs23tPcLG07xxO9WSMs5uWk99gL7eqQQESolbuT1dCANLZGeA4f
+   * AJNG4e7p+exPFwIDAQABo0IwQDAdBgNVHQ4EFgQUZT/HiobGPN08VFw1+DrtUgxH
+   * V8gwDgYDVR0PAQH/BAQDAgEGMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQEL
+   * BQADggEBACo/4fEyjq7hmFxLXs9rHmoJ0iKpEsdeV31zVmSAhHqT5Am5EM2fKifh
+   * AHe+SMg1qIGf5LgsyX8OsNJLN13qudULXjS99HMpw+0mFZx+CFOKWI3QSyjfwbPf
+   * IPP54+M638yclNhOT8NrF7f3cuitZjO1JVOr4PhMqZ398g26rrnZqsZr+ZO7rqu4
+   * lzwDGrpDxpa5RXI4s6ehlj2Re37AIVNMh+3yC1SVUZPVIqUNivGTDj5UDrDYyU7c
+   * 8jEyVupk+eq1nRZmQnLzf9OxMUP8pI4X8W0jq5Rm+K37DwhuJi1/FwcJsoz7UMCf
+   * lo3Ptv0AnVoUmr8CRPXBwp8iXqIPoeM=
+   * -----END CERTIFICATE-----
+   */
+  webpki::TrustAnchor {
+    subject: b"1\x0b0\t\x06\x03U\x04\x06\x13\x02TR1\x180\x16\x06\x03U\x04\x07\x13\x0fGebze - Kocaeli1B0@\x06\x03U\x04\n\x139Turkiye Bilimsel ve Teknolojik Arastirma Kurumu - TUBITAK1-0+\x06\x03U\x04\x0b\x13$Kamu Sertifikasyon Merkezi - Kamu SM1604\x06\x03U\x04\x03\x13-TUBITAK Kamu SM SSL Kok Sertifikasi - Surum 1",
+    spki: b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\n\x02\x82\x01\x01\x00\xafu03\xaa\xbbk\xd3\x99,\x127\x84\xd9\x8d{\x97\x80\xd3n\xe7\xff\x9bP\x95>\x90\x95VB\xd7\x19|&\x84\x8d\x92\xfa\x01\x1d:\x0f\xe2d8\xb7\x8c\xbc\xe8\x88\xf9\x8b$\xab.\xa3\xf57\xe4@\x8e\x18%y\x83u\x1f;\xffl\xa8\xc5\xc6V\xf8\xb4\xed\x8aD\xa3\xablL\xfc\x1d\xd0\xdc\xefh\xbd\xcf\xe4\xaa\xce\xf0U\xf7\xa24\xd4\x83k7|\x1c\xc2\xfe\xb5\x03\xecW\xce\xbc\xb4\xb5\xc5\xed\x00\x0fS7*M\xf4O\x0c\x83\xfb\x86\xcf\xcb\xfe\x8cN\xbd\x87\xf9\xa7\x8b!W\x9cz\xdf\x03g\x89,\x9d\x97a\xa7\x10\xb8U\x90\x7f\x0e-\'8t\xdf\xe7\xfd\xdaN\x12\xe3M\x15\"\x02\xc8\xe0\xe0\xfc\x0f\xad\x8a\xd7\xc9TP\xcc;\x0f\xca\x16\x80\x84\xd0QV\xc3\x8eV\x7f\x89\"3/\xe6\x85\n\xbd\xa5\xa8\x1b6\xde\xd3\xdc,m;\xc7\x13\xbdY#,\xe6\xe5\xa4\xf7\xd8\x0b\xed\xea\x90@D\xa8\x95\xbb\x93\xd5\xd0\x804\xb6Fx\x0e\x1f\x00\x93F\xe1\xee\xe9\xf9\xecO\x17\x02\x03\x01\x00\x01",
     name_constraints: None
   },
 
@@ -4123,49 +4069,6 @@ pub static ROOTS: [webpki::TrustAnchor<'static>; 145] = [
   webpki::TrustAnchor {
     subject: b"1\x0b0\t\x06\x03U\x04\x06\x13\x02BM1\x190\x17\x06\x03U\x04\n\x13\x10QuoVadis Limited1%0#\x06\x03U\x04\x0b\x13\x1cRoot Certification Authority1.0,\x06\x03U\x04\x03\x13%QuoVadis Root Certification Authority",
     spki: b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\n\x02\x82\x01\x01\x00\xbfa\xb5\x95S\xbaW\xfc\xfa\xf2g\x0b:\x1a\xdf\x11\x80d\x95\xb4\xd1\xbc\xcdz\xcf\xf6)\x96.$T@$8\xf7\x1a\x85\xdcXL\xcb\xa4\'B\x97\xd0\x9f\x83\x8a\xc3\xe4\x06\x03[\x00\xa5Q\x1ep\x04t\xe2\xc1\xd4:\xab\xd7\xad;\x07\x18\x05\x8e\xfd\x83\xac\xeaf\xd9\x18\x1bh\x8a\xf5W\x1a\x98\xba\xf5\xedv=|\xd9\xde\x94j;K\x17\xc1\xd5\x8f\xbde8:\x95\xd0=U6N\xdfyW1*\x1e\xd8YeIX \x98~\xab_~\x9f\xe9\xd6M\xec\x83t\xa9\xc7l\xd8\xee)J\x85*\x06\x14\xf9T\xe6\xd3\xdae\x07\x8bc7\x12\xd7\xd0\xec\xc3{ AD\xa3\xed\xcb\xa0\x17\xe1qe\xce\x1df1\xf7v\x01\x19\xc8}\x03X\xb6\x95I\x1d\xa6\x12&\xe8\xc6\x0cv\xe0\xe3f\xcb\xea]\xa6&\xee\xe5\xcc_\xbdg\xa7\x01\'\x0e\xa2\xcaT\xc5\xb1z\x95\x1dq\x1eJ)\x8a\x03\xdcjE\xc1\xa4\x19^o6\xcd\xc3\xa2\xb0\xb7\xfe\\8\xe2R\xbc\xf8DC\xe6\x90\xbb\x02\x03\x01\x00\x01",
-    name_constraints: None
-  },
-
-  /*
-   * Issuer: CN=WellsSecure Public Root Certificate Authority O=Wells Fargo WellsSecure OU=Wells Fargo Bank NA
-   * Subject: CN=WellsSecure Public Root Certificate Authority O=Wells Fargo WellsSecure OU=Wells Fargo Bank NA
-   * Label: "WellsSecure Public Root Certificate Authority"
-   * Serial: 1
-   * MD5 Fingerprint: 15:ac:a5:c2:92:2d:79:bc:e8:7f:cb:67:ed:02:cf:36
-   * SHA1 Fingerprint: e7:b4:f6:9d:61:ec:90:69:db:7e:90:a7:40:1a:3c:f4:7d:4f:e8:ee
-   * SHA256 Fingerprint: a7:12:72:ae:aa:a3:cf:e8:72:7f:7f:b3:9f:0f:b3:d1:e5:42:6e:90:60:b0:6e:e6:f1:3e:9a:3c:58:33:cd:43
-   * -----BEGIN CERTIFICATE-----
-   * MIIEvTCCA6WgAwIBAgIBATANBgkqhkiG9w0BAQUFADCBhTELMAkGA1UEBhMCVVMx
-   * IDAeBgNVBAoMF1dlbGxzIEZhcmdvIFdlbGxzU2VjdXJlMRwwGgYDVQQLDBNXZWxs
-   * cyBGYXJnbyBCYW5rIE5BMTYwNAYDVQQDDC1XZWxsc1NlY3VyZSBQdWJsaWMgUm9v
-   * dCBDZXJ0aWZpY2F0ZSBBdXRob3JpdHkwHhcNMDcxMjEzMTcwNzU0WhcNMjIxMjE0
-   * MDAwNzU0WjCBhTELMAkGA1UEBhMCVVMxIDAeBgNVBAoMF1dlbGxzIEZhcmdvIFdl
-   * bGxzU2VjdXJlMRwwGgYDVQQLDBNXZWxscyBGYXJnbyBCYW5rIE5BMTYwNAYDVQQD
-   * DC1XZWxsc1NlY3VyZSBQdWJsaWMgUm9vdCBDZXJ0aWZpY2F0ZSBBdXRob3JpdHkw
-   * ggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDub7S9eeKPCCGeOARBJe+r
-   * WxxTkqxtnt3CxC5FlAM1iGd0V+PfjLindo8796jE2yljDpFoNoqXjopxaAkH5OjU
-   * Dk/41itMpBb570OYj7OeUt9tkTmPOL13i0Nj67eT/DBMHAGTthP796EfvyXhdDcs
-   * HqRePGj4S78NuR4uNuip5Kf4D8uCdXw1LSLWwr8L87T8bJVhHlfXBIEyg1J55oNj
-   * z7fLY4sR4r1e6/aN7ZVyKLSsEmLpSjPmgzKuBXWVvYSV2ypcm44uDLiBK0HmOFaf
-   * SZtsdvqKXfcBeYF8wYNABf5x/Qw/zE5gCQ5lRxAvAcAFP4/4s0HvWkJ+We/Slwxl
-   * AgMBAAGjggE0MIIBMDAPBgNVHRMBAf8EBTADAQH/MDkGA1UdHwQyMDAwLqAsoCqG
-   * KGh0dHA6Ly9jcmwucGtpLndlbGxzZmFyZ28uY29tL3dzcHJjYS5jcmwwDgYDVR0P
-   * AQH/BAQDAgHGMB0GA1UdDgQWBBQmlRkQ2eihl5H/3BnZtQQ+0nMKajCBsgYDVR0j
-   * BIGqMIGngBQmlRkQ2eihl5H/3BnZtQQ+0nMKaqGBi6SBiDCBhTELMAkGA1UEBhMC
-   * VVMxIDAeBgNVBAoMF1dlbGxzIEZhcmdvIFdlbGxzU2VjdXJlMRwwGgYDVQQLDBNX
-   * ZWxscyBGYXJnbyBCYW5rIE5BMTYwNAYDVQQDDC1XZWxsc1NlY3VyZSBQdWJsaWMg
-   * Um9vdCBDZXJ0aWZpY2F0ZSBBdXRob3JpdHmCAQEwDQYJKoZIhvcNAQEFBQADggEB
-   * ALkVsUSRzCPIK0134/iaeycNzXK7mQDKfGYZUMbVmO2rvwNa5U3lHshPcZeG1eMd
-   * /ZDJPHV3V3p9+N701NX3leZ0bh08rnyd2wIDBSxxSyU+B+NemvVmFymIGjifz6pB
-   * A4SXa5M4esowRBskRDPQ5NHcKDj0E0M1NSljqHyita04pO2t/caaH/+Xc/77szWn
-   * k4bGdpEA5qxRFsQnMlzbc9qlk1eOPm01JghZ1edE13YgY+esE2fDbbFwRnzVlhE9
-   * iW9dqKHrjQrawx0zbKPqZxmamX9LPYNRKh3KL4YMon4QLSvUFpULB6ouFJJJtylv
-   * 2G0xffX8oRAHh84vWdw+WNs=
-   * -----END CERTIFICATE-----
-   */
-  webpki::TrustAnchor {
-    subject: b"1\x0b0\t\x06\x03U\x04\x06\x13\x02US1 0\x1e\x06\x03U\x04\n\x0c\x17Wells Fargo WellsSecure1\x1c0\x1a\x06\x03U\x04\x0b\x0c\x13Wells Fargo Bank NA1604\x06\x03U\x04\x03\x0c-WellsSecure Public Root Certificate Authority",
-    spki: b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\n\x02\x82\x01\x01\x00\xeeo\xb4\xbdy\xe2\x8f\x08!\x9e8\x04A%\xef\xab[\x1cS\x92\xacm\x9e\xdd\xc2\xc4.E\x94\x035\x88gtW\xe3\xdf\x8c\xb8\xa7v\x8f;\xf7\xa8\xc4\xdb)c\x0e\x91h6\x8a\x97\x8e\x8aqh\t\x07\xe4\xe8\xd4\x0eO\xf8\xd6+L\xa4\x16\xf9\xefC\x98\x8f\xb3\x9eR\xdfm\x919\x8f8\xbdw\x8bCc\xeb\xb7\x93\xfc0L\x1c\x01\x93\xb6\x13\xfb\xf7\xa1\x1f\xbf%\xe1t7,\x1e\xa4^<h\xf8K\xbf\r\xb9\x1e.6\xe8\xa9\xe4\xa7\xf8\x0f\xcb\x82u|5-\"\xd6\xc2\xbf\x0b\xf3\xb4\xfcl\x95a\x1eW\xd7\x04\x812\x83Ry\xe6\x83c\xcf\xb7\xcbc\x8b\x11\xe2\xbd^\xeb\xf6\x8d\xed\x95r(\xb4\xac\x12b\xe9J3\xe6\x832\xae\x05u\x95\xbd\x84\x95\xdb*\\\x9b\x8e.\x0c\xb8\x81+A\xe68V\x9fI\x9blv\xfa\x8a]\xf7\x01y\x81|\xc1\x83@\x05\xfeq\xfd\x0c?\xccN`\t\x0eeG\x10/\x01\xc0\x05?\x8f\xf8\xb3A\xefZB~Y\xef\xd2\x97\x0ce\x02\x03\x01\x00\x01",
     name_constraints: None
   },
 
