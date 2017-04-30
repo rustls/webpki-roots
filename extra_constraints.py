@@ -13,6 +13,7 @@ ANSSI_SUBJECT_DN = (
     )
 
 ANSSI_NAME_CONSTRAINTS = (
+    "\xa0\x5f"
     "\x30\x5D\xA0\x5B"
     "\x30\x05\x82\x03" ".fr"
     "\x30\x05\x82\x03" ".gp"
@@ -39,6 +40,7 @@ TUBITAK1_SUBJECT_DN = (
     )
 
 TUBITAK1_NAME_CONSTRAINTS = (
+    "\xa0\x67"
     "\x30\x65\xa0\x63"
     "\x30\x09\x82\x07" ".gov.tr"
     "\x30\x09\x82\x07" ".k12.tr"
