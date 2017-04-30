@@ -3,6 +3,8 @@ import subprocess
 import sys
 import urllib
 
+import extra_constraints
+
 HEADER = """//!
 //! This library is automatically generated from the Mozilla certificate
 //! store via mkcert.org.  Don't edit it.
@@ -148,11 +150,14 @@ if __name__ == '__main__':
         cert_der = unwrap_pem(cert)
         data = convert_cert(cert_der)
 
+        imposed_nc = extra_constraints.get_imposed_name_constraints(data['subject'])
+        if imposed_nc:
+            data['name_constraints'] = imposed_nc.encode('hex')
+
         assert our_hash not in certs, 'duplicate cert'
         certs[our_hash] = (cert, data)
 
     print HEADER
-    
     print """pub static ROOTS: [webpki::TrustAnchor<'static>; %d] = [""" % len(certs)
 
     # emit in sorted hash order for deterministic builds
