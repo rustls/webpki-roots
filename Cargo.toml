@@ -9,5 +9,5 @@ homepage = "https://github.com/ctz/webpki-roots"
 repository = "https://github.com/ctz/webpki-roots"
 
 [dependencies]
-untrusted = "0.5"
-webpki = "0.16"
+untrusted = "0.5.1"
+webpki = "0.17"
