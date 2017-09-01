@@ -10,4 +10,4 @@ repository = "https://github.com/ctz/webpki-roots"
 
 [dependencies]
 untrusted = "0.5.1"
-webpki = "0.17"
+webpki = { git = "https://github.com/briansmith/webpki" }
