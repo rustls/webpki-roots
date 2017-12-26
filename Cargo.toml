@@ -1,6 +1,6 @@
 [package]
 name = "webpki-roots"
-version = "0.13.0"
+version = "0.14.0"
 authors = ["Joseph Birr-Pixton <jpixton@gmail.com>"]
 readme = "README.md"
 license = "MPL-2.0"
@@ -9,5 +9,5 @@ homepage = "https://github.com/ctz/webpki-roots"
 repository = "https://github.com/ctz/webpki-roots"
 
 [dependencies]
-untrusted = "0.5.1"
-webpki = "0.17"
+untrusted = "0.6.1"
+webpki = "0.18.0-alpha"
