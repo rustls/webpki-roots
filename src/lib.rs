@@ -306,49 +306,6 @@ pub static TLS_SERVER_ROOTS: webpki::TLSServerTrustAnchors = webpki::TLSServerTr
   },
 
   /*
-   * Issuer: CN=Chambers of Commerce Root O=AC Camerfirma SA CIF A82743287 OU=http://www.chambersign.org
-   * Subject: CN=Chambers of Commerce Root O=AC Camerfirma SA CIF A82743287 OU=http://www.chambersign.org
-   * Label: "Camerfirma Chambers of Commerce Root"
-   * Serial: 0
-   * MD5 Fingerprint: b0:01:ee:14:d9:af:29:18:94:76:8e:f1:69:33:2a:84
-   * SHA1 Fingerprint: 6e:3a:55:a4:19:0c:19:5c:93:84:3c:c0:db:72:2e:31:30:61:f0:b1
-   * SHA256 Fingerprint: 0c:25:8a:12:a5:67:4a:ef:25:f2:8b:a7:dc:fa:ec:ee:a3:48:e5:41:e6:f5:cc:4e:e6:3b:71:b3:61:60:6a:c3
-   * -----BEGIN CERTIFICATE-----
-   * MIIEvTCCA6WgAwIBAgIBADANBgkqhkiG9w0BAQUFADB/MQswCQYDVQQGEwJFVTEn
-   * MCUGA1UEChMeQUMgQ2FtZXJmaXJtYSBTQSBDSUYgQTgyNzQzMjg3MSMwIQYDVQQL
-   * ExpodHRwOi8vd3d3LmNoYW1iZXJzaWduLm9yZzEiMCAGA1UEAxMZQ2hhbWJlcnMg
-   * b2YgQ29tbWVyY2UgUm9vdDAeFw0wMzA5MzAxNjEzNDNaFw0zNzA5MzAxNjEzNDRa
-   * MH8xCzAJBgNVBAYTAkVVMScwJQYDVQQKEx5BQyBDYW1lcmZpcm1hIFNBIENJRiBB
-   * ODI3NDMyODcxIzAhBgNVBAsTGmh0dHA6Ly93d3cuY2hhbWJlcnNpZ24ub3JnMSIw
-   * IAYDVQQDExlDaGFtYmVycyBvZiBDb21tZXJjZSBSb290MIIBIDANBgkqhkiG9w0B
-   * AQEFAAOCAQ0AMIIBCAKCAQEAtzZV5aVdGDDg2olUkfzIx1L4L1DZ77F1c2VHfRtb
-   * unXF/KGIJPov7coISjlUxFF6tdpg6jg8gbLL8bvZkSM/SAFwdakFKq0fcfPJVD0d
-   * BmpAPrMMhe5cG3nCYsS4No41XQEMIwRHNaqbYE6gZj3LJgqcQKH0XZi/caulAGgq
-   * 7YN6D6IUtdQis4CwPAxaUWktWBiP7Zme8a7ileb2R6jWDA+wWFjbw2Y3npuRVDM3
-   * 0pQcakjJyfKl2qUMI/cjDpwyVV5xnIQFUZot/eZOKjRa3spAN2cMVCFVd9oKDMyX
-   * roDclDZK9D7ONhMeU+SsTjoF7Nuucpw4i9A5O4kKPnf+dQIBA6OCAUQwggFAMBIG
-   * A1UdEwEB/wQIMAYBAf8CAQwwPAYDVR0fBDUwMzAxoC+gLYYraHR0cDovL2NybC5j
-   * aGFtYmVyc2lnbi5vcmcvY2hhbWJlcnNyb290LmNybDAdBgNVHQ4EFgQU45T1sU3p
-   * 26EpW1eLTXYGduHRooowDgYDVR0PAQH/BAQDAgEGMBEGCWCGSAGG+EIBAQQEAwIA
-   * BzAnBgNVHREEIDAegRxjaGFtYmVyc3Jvb3RAY2hhbWJlcnNpZ24ub3JnMCcGA1Ud
-   * EgQgMB6BHGNoYW1iZXJzcm9vdEBjaGFtYmVyc2lnbi5vcmcwWAYDVR0gBFEwTzBN
-   * BgsrBgEEAYGHLgoDATA+MDwGCCsGAQUFBwIBFjBodHRwOi8vY3BzLmNoYW1iZXJz
-   * aWduLm9yZy9jcHMvY2hhbWJlcnNyb290Lmh0bWwwDQYJKoZIhvcNAQEFBQADggEB
-   * AAxBl8IahsAifJ/7kPMa0QOx7xP5IV8EnNrJpY0nbJaHkb5BkAFyk+cefV/2icZd
-   * p0AJPaxJRUXcLo0waLIJuvvDL8y6C98/d3tGfToSJI6WjzwFCm/SlCgdbQzALogi
-   * 1djPHRPH8EjX1wWnz8dHnjs8NMiAT9QUu/wNUPf6s+xCX6ndbcj0dc97wXImsQEc
-   * XCz9ek60AcUFV7nnPKoF2YjpB0ZBzu9Bga5Y34OirsrXdx/nADydb47kMgkdTXg0
-   * eDQ8lJsm7U9xxhl6vSAiSFr+S30Dt+dYvsYyTnQeaN2oaFuzPu5ifdmA6Ap1erfu
-   * tGWaIZDgqtCYvDi1czyL+Nw=
-   * -----END CERTIFICATE-----
-   */
-  webpki::TrustAnchor {
-    subject: b"1\x0b0\t\x06\x03U\x04\x06\x13\x02EU1\'0%\x06\x03U\x04\n\x13\x1eAC Camerfirma SA CIF A827432871#0!\x06\x03U\x04\x0b\x13\x1ahttp://www.chambersign.org1\"0 \x06\x03U\x04\x03\x13\x19Chambers of Commerce Root",
-    spki: b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\r\x000\x82\x01\x08\x02\x82\x01\x01\x00\xb76U\xe5\xa5]\x180\xe0\xda\x89T\x91\xfc\xc8\xc7R\xf8/P\xd9\xef\xb1useG}\x1b[\xbau\xc5\xfc\xa1\x88$\xfa/\xed\xca\x08J9T\xc4Qz\xb5\xda`\xea8<\x81\xb2\xcb\xf1\xbb\xd9\x91#?H\x01pu\xa9\x05*\xad\x1fq\xf3\xc9T=\x1d\x06j@>\xb3\x0c\x85\xee\\\x1by\xc2b\xc4\xb86\x8e5]\x01\x0c#\x04G5\xaa\x9b`N\xa0f=\xcb&\n\x9c@\xa1\xf4]\x98\xbfq\xab\xa5\x00h*\xed\x83z\x0f\xa2\x14\xb5\xd4\"\xb3\x80\xb0<\x0cZQi-X\x18\x8f\xed\x99\x9e\xf1\xae\xe2\x95\xe6\xf6G\xa8\xd6\x0c\x0f\xb0XX\xdb\xc3f7\x9e\x9b\x91T37\xd2\x94\x1cjH\xc9\xc9\xf2\xa5\xda\xa5\x0c#\xf7#\x0e\x9c2U^q\x9c\x84\x05Q\x9a-\xfd\xe6N*4Z\xde\xca@7g\x0cT!Uw\xda\n\x0c\xcc\x97\xae\x80\xdc\x946J\xf4>\xce6\x13\x1eS\xe4\xacN:\x05\xec\xdb\xaer\x9c8\x8b\xd09;\x89\n>w\xfeu\x02\x01\x03",
-    name_constraints: None
-  },
-
-  /*
    * Issuer: CN=COMODO Certification Authority O=COMODO CA Limited
    * Subject: CN=COMODO Certification Authority O=COMODO CA Limited
    * Label: "COMODO Certification Authority"
@@ -2947,45 +2904,6 @@ pub static TLS_SERVER_ROOTS: webpki::TLSServerTrustAnchors = webpki::TLSServerTr
   },
 
   /*
-   * Issuer: CN=DST ACES CA X6 O=Digital Signature Trust OU=DST ACES
-   * Subject: CN=DST ACES CA X6 O=Digital Signature Trust OU=DST ACES
-   * Label: "DST ACES CA X6"
-   * Serial: 17771143917277623872238992636097467865
-   * MD5 Fingerprint: 21:d8:4c:82:2b:99:09:33:a2:eb:14:24:8d:8e:5f:e8
-   * SHA1 Fingerprint: 40:54:da:6f:1c:3f:40:74:ac:ed:0f:ec:cd:db:79:d1:53:fb:90:1d
-   * SHA256 Fingerprint: 76:7c:95:5a:76:41:2c:89:af:68:8e:90:a1:c7:0f:55:6c:fd:6b:60:25:db:ea:10:41:6d:7e:b6:83:1f:8c:40
-   * -----BEGIN CERTIFICATE-----
-   * MIIECTCCAvGgAwIBAgIQDV6ZCtadt3js2AdWO4YV2TANBgkqhkiG9w0BAQUFADBb
-   * MQswCQYDVQQGEwJVUzEgMB4GA1UEChMXRGlnaXRhbCBTaWduYXR1cmUgVHJ1c3Qx
-   * ETAPBgNVBAsTCERTVCBBQ0VTMRcwFQYDVQQDEw5EU1QgQUNFUyBDQSBYNjAeFw0w
-   * MzExMjAyMTE5NThaFw0xNzExMjAyMTE5NThaMFsxCzAJBgNVBAYTAlVTMSAwHgYD
-   * VQQKExdEaWdpdGFsIFNpZ25hdHVyZSBUcnVzdDERMA8GA1UECxMIRFNUIEFDRVMx
-   * FzAVBgNVBAMTDkRTVCBBQ0VTIENBIFg2MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A
-   * MIIBCgKCAQEAuT31LMmU3HWKlV1j6IR3dma5WZFcRt2SPp/5DgO0PWGSvSMmtWPu
-   * ktKe1jzIDZBfZIGxqAgNTNj50wUoUrQBJcWVHAx+PhCEdc/BGZFjz+iokYi5Q1K7
-   * gLFViYsx+tC3dr5BPTCapCIlF3PoHuLTrCq9Wzgh1SpL11V94zpVvddtawJXa+ZH
-   * fAjIgrrep4c9oW24MFbCswKBXy314powGCi4ZtPLAZZv6opFVdbgnf9nKxcCpk4a
-   * ahELfrd755jWjHZvwTvbUJN+5dCOHze4vbrGn2zpfDPyMjwmR/onJALJfh1biEIT
-   * ajV8fTXpLmaRcpPVMibEdPVTo7NdmvYJywIDAQABo4HIMIHFMA8GA1UdEwEB/wQF
-   * MAMBAf8wDgYDVR0PAQH/BAQDAgHGMB8GA1UdEQQYMBaBFHBraS1vcHNAdHJ1c3Rk
-   * c3QuY29tMGIGA1UdIARbMFkwVwYKYIZIAWUDAgEBATBJMEcGCCsGAQUFBwIBFjto
-   * dHRwOi8vd3d3LnRydXN0ZHN0LmNvbS9jZXJ0aWZpY2F0ZXMvcG9saWN5L0FDRVMt
-   * aW5kZXguaHRtbDAdBgNVHQ4EFgQUCXIGThhDD+XWzMNqizF7eI+og7gwDQYJKoZI
-   * hvcNAQEFBQADggEBAKPYjtay284F5zLNAdMEA+V25FYrnJmQ6AgwbN99Pe7lv7Uk
-   * QIRJ4dEorsTCOlMwiPH1d25Ryvr/ma8kXxug/fKshMrfqfBfBC6tFr8hlxCBPeP/
-   * h40y3JTlR4peahPJlJU90u7INJXQgNStMgiAVDzgvVJT11J8smk/f3rPanTK+gQq
-   * nExaBqXpIK1FZg9p8d2/6eMyi/rgwYZNcjwu2JN4Cir42NInPRmJX1p7ijvMDNpR
-   * rscL9yuwNwXsvFcj4jjSm2jzVhKIT0J8uDHEtdvkyCE06UgRNe76x5JXxZ805Mf2
-   * 9w4LTJxoeHtxMcfrHuBnQfO3oKfN5XozNmr6mis=
-   * -----END CERTIFICATE-----
-   */
-  webpki::TrustAnchor {
-    subject: b"1\x0b0\t\x06\x03U\x04\x06\x13\x02US1 0\x1e\x06\x03U\x04\n\x13\x17Digital Signature Trust1\x110\x0f\x06\x03U\x04\x0b\x13\x08DST ACES1\x170\x15\x06\x03U\x04\x03\x13\x0eDST ACES CA X6",
-    spki: b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\n\x02\x82\x01\x01\x00\xb9=\xf5,\xc9\x94\xdcu\x8a\x95]c\xe8\x84wvf\xb9Y\x91\\F\xdd\x92>\x9f\xf9\x0e\x03\xb4=a\x92\xbd#&\xb5c\xee\x92\xd2\x9e\xd6<\xc8\r\x90_d\x81\xb1\xa8\x08\rL\xd8\xf9\xd3\x05(R\xb4\x01%\xc5\x95\x1c\x0c~>\x10\x84u\xcf\xc1\x19\x91c\xcf\xe8\xa8\x91\x88\xb9CR\xbb\x80\xb1U\x89\x8b1\xfa\xd0\xb7v\xbeA=0\x9a\xa4\"%\x17s\xe8\x1e\xe2\xd3\xac*\xbd[8!\xd5*K\xd7U}\xe3:U\xbd\xd7mk\x02Wk\xe6G|\x08\xc8\x82\xba\xde\xa7\x87=\xa1m\xb80V\xc2\xb3\x02\x81_-\xf5\xe2\x9a0\x18(\xb8f\xd3\xcb\x01\x96o\xea\x8aEU\xd6\xe0\x9d\xffg+\x17\x02\xa6N\x1aj\x11\x0b~\xb7{\xe7\x98\xd6\x8cvo\xc1;\xdbP\x93~\xe5\xd0\x8e\x1f7\xb8\xbd\xba\xc6\x9fl\xe9|3\xf22<&G\xfa\'$\x02\xc9~\x1d[\x88B\x13j5|}5\xe9.f\x91r\x93\xd52&\xc4t\xf5S\xa3\xb3]\x9a\xf6\t\xcb\x02\x03\x01\x00\x01",
-    name_constraints: None
-  },
-
-  /*
    * Issuer: CN=Sonera Class2 CA O=Sonera
    * Subject: CN=Sonera Class2 CA O=Sonera
    * Label: "Sonera Class 2 Root CA"
@@ -3840,42 +3758,6 @@ pub static TLS_SERVER_ROOTS: webpki::TLSServerTrustAnchors = webpki::TLSServerTr
   webpki::TrustAnchor {
     subject: b"1\x0b0\t\x06\x03U\x04\x06\x13\x02PL1(0&\x06\x03U\x04\n\x0c\x1fKrajowa Izba Rozliczeniowa S.A.1\x180\x16\x06\x03U\x04\x03\x0c\x0fSZAFIR ROOT CA2",
     spki: b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\n\x02\x82\x01\x01\x00\xb7\xbc>P\xa8K\xcd@\xb5\xcea\xe7\x96\xca\xb4\xa1\xda\x0c\"\xb0\xfa\xb5{v\x00w\x8c\x0b\xcf}\xa8\x86\xcc&Q\xe4 =\x85\x0c\xd6X\xe3\xe7\xf4*\x18\x9d\xda\xd1\xae&\xee\xebS\xdc\xf4\x90\xd6\x13J\x0c\x90<\xc3\xf4\xda\xd2\x8e\r\x92:\xdc\xb1\xb1\xff8\xde\xc3\xba-_\x80\xb9\x02\xbdJ\x9d\x1b\x0f\xb4\xc3\xc2\xc1g\x03\xdd\xdc\x1b\x9c=\xb3\xb0\xde\x00\x1e\xa84G\xbb\x9a\xeb\xfe\x0b\x14\xbd6\x84\xda\r \xbf\xfa[\xcb\xa9\x16 \xad9`\xee/u\xb6\xe7\x97\x9c\xf9>\xfd~MoM/\xef\x88\rj\xfa\xdd\xf1=n \xa5\xa0\x12\xb4Mp\xb9\xce\xd7r;\x89\x93\xa7\x80\x84\x1c\'IrI\xb5\xff;\x95\x9e\xc1\xcc\xc8\x01\xec\xe8\x0e\x8a\n\x96\xe7\xb3\xa6\x87\xe5\xd6\xf9\x05+\r\x97@p<\xba\xacuZ\x9c\xd5M\x9d\x02\n\xd2K\x9bfKF\x07\x17e\xad\x9fl\x88\x00\xdc\"\x89\xe0\xe1d\xd4g\xbc1ya<\xbb\xcaA\xcd\\j\x00\xc8<8\x8eX\xaf\x02\x03\x01\x00\x01",
-    name_constraints: None
-  },
-
-  /*
-   * Issuer: O=SECOM Trust Systems CO.,LTD. OU=Security Communication EV RootCA1
-   * Subject: O=SECOM Trust Systems CO.,LTD. OU=Security Communication EV RootCA1
-   * Label: "Security Communication EV RootCA1"
-   * Serial: 0
-   * MD5 Fingerprint: 22:2d:a6:01:ea:7c:0a:f7:f0:6c:56:43:3f:77:76:d3
-   * SHA1 Fingerprint: fe:b8:c4:32:dc:f9:76:9a:ce:ae:3d:d8:90:8f:fd:28:86:65:64:7d
-   * SHA256 Fingerprint: a2:2d:ba:68:1e:97:37:6e:2d:39:7d:72:8a:ae:3a:9b:62:96:b9:fd:ba:60:bc:2e:11:f6:47:f2:c6:75:fb:37
-   * -----BEGIN CERTIFICATE-----
-   * MIIDfTCCAmWgAwIBAgIBADANBgkqhkiG9w0BAQUFADBgMQswCQYDVQQGEwJKUDEl
-   * MCMGA1UEChMcU0VDT00gVHJ1c3QgU3lzdGVtcyBDTy4sTFRELjEqMCgGA1UECxMh
-   * U2VjdXJpdHkgQ29tbXVuaWNhdGlvbiBFViBSb290Q0ExMB4XDTA3MDYwNjAyMTIz
-   * MloXDTM3MDYwNjAyMTIzMlowYDELMAkGA1UEBhMCSlAxJTAjBgNVBAoTHFNFQ09N
-   * IFRydXN0IFN5c3RlbXMgQ08uLExURC4xKjAoBgNVBAsTIVNlY3VyaXR5IENvbW11
-   * bmljYXRpb24gRVYgUm9vdENBMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoC
-   * ggEBALx/7FebJOD+nLpCeamIivqA4PUHKUPqjgo0No0c+qe1OXj/l3X3L+SqawSE
-   * RMqm4miO/VVQYg+kcQ7OBzgtQoVQrTyWb4vVog7P3kmJPdZkLjjlHmy1V4qe70gO
-   * zXppFodEtZDkBp2uoQSXWHnvIEqCa4wiv+wfD+mEce3xDuS4GBPMVjZd0ZoeUWs5
-   * bmB2iDQL87PRsJ3KYeJkHcFGB7hj3R4zZbOOCVVSPbW9/wfrrWFVGCypaZhKqkDF
-   * MxRldAD5kd6vA0jFQFTcD4SQaCDFkpbcLuUCRarAX1T4bepJz11sS6/vmsJWXMY1
-   * VkJqMF/Cq/biPT+zyRGPMUzXn0kCAwEAAaNCMEAwHQYDVR0OBBYEFDVK9U2vP9eC
-   * OKyrcWUXdYydVZPmMA4GA1UdDwEB/wQEAwIBBjAPBgNVHRMBAf8EBTADAQH/MA0G
-   * CSqGSIb3DQEBBQUAA4IBAQCoh+ns+EBnXcPBZsdAS5f8hxOQWsTvoMpfi7ent/HW
-   * tWS3irO4G8za+6xmiEHO6Pzk2x6Ipu0nUBsCMCRGef4Eh3CXQHPRwMFXGZpppSeZ
-   * q51ihPZRwSzJIxXYKLerJRO1RuGGAv8mjMSIkh1W/hln8lXkgKNrnKt34VFxDSDb
-   * EJrbvXZ5B3eZKK2aXtqxT0QsNY6llsf9g/BYxnnWmHyojf6GPgcWkuF75x3sM3Z+
-   * Qi5KhfmRiWiEA4Glm5q+4zfFVKtWOxgtQaQM+ELbmaDgcm+7XeEWT1MKZPlO9L9O
-   * VL14bIjqv5wTJMJwaaJ/D8g8rQjJsJhAoyrniIPtd490
-   * -----END CERTIFICATE-----
-   */
-  webpki::TrustAnchor {
-    subject: b"1\x0b0\t\x06\x03U\x04\x06\x13\x02JP1%0#\x06\x03U\x04\n\x13\x1cSECOM Trust Systems CO.,LTD.1*0(\x06\x03U\x04\x0b\x13!Security Communication EV RootCA1",
-    spki: b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\n\x02\x82\x01\x01\x00\xbc\x7f\xecW\x9b$\xe0\xfe\x9c\xbaBy\xa9\x88\x8a\xfa\x80\xe0\xf5\x07)C\xea\x8e\n46\x8d\x1c\xfa\xa7\xb59x\xff\x97u\xf7/\xe4\xaak\x04\x84D\xca\xa6\xe2h\x8e\xfdUPb\x0f\xa4q\x0e\xce\x078-B\x85P\xad<\x96o\x8b\xd5\xa2\x0e\xcf\xdeI\x89=\xd6d.8\xe5\x1el\xb5W\x8a\x9e\xefH\x0e\xcdzi\x16\x87D\xb5\x90\xe4\x06\x9d\xae\xa1\x04\x97Xy\xef J\x82k\x8c\"\xbf\xec\x1f\x0f\xe9\x84q\xed\xf1\x0e\xe4\xb8\x18\x13\xccV6]\xd1\x9a\x1eQk9n`v\x884\x0b\xf3\xb3\xd1\xb0\x9d\xcaa\xe2d\x1d\xc1F\x07\xb8c\xdd\x1e3e\xb3\x8e\tUR=\xb5\xbd\xff\x07\xeb\xadaU\x18,\xa9i\x98J\xaa@\xc53\x14et\x00\xf9\x91\xde\xaf\x03H\xc5@T\xdc\x0f\x84\x90h \xc5\x92\x96\xdc.\xe5\x02E\xaa\xc0_T\xf8m\xeaI\xcf]lK\xaf\xef\x9a\xc2V\\\xc65VBj0_\xc2\xab\xf6\xe2=?\xb3\xc9\x11\x8f1L\xd7\x9fI\x02\x03\x01\x00\x01",
     name_constraints: None
   },
 
@@ -5264,49 +5146,6 @@ pub static TLS_SERVER_ROOTS: webpki::TLSServerTrustAnchors = webpki::TLSServerTr
   },
 
   /*
-   * Issuer: CN=Global Chambersign Root O=AC Camerfirma SA CIF A82743287 OU=http://www.chambersign.org
-   * Subject: CN=Global Chambersign Root O=AC Camerfirma SA CIF A82743287 OU=http://www.chambersign.org
-   * Label: "Camerfirma Global Chambersign Root"
-   * Serial: 0
-   * MD5 Fingerprint: c5:e6:7b:bf:06:d0:4f:43:ed:c4:7a:65:8a:fb:6b:19
-   * SHA1 Fingerprint: 33:9b:6b:14:50:24:9b:55:7a:01:87:72:84:d9:e0:2f:c3:d2:d8:e9
-   * SHA256 Fingerprint: ef:3c:b4:17:fc:8e:bf:6f:97:87:6c:9e:4e:ce:39:de:1e:a5:fe:64:91:41:d1:02:8b:7d:11:c0:b2:29:8c:ed
-   * -----BEGIN CERTIFICATE-----
-   * MIIExTCCA62gAwIBAgIBADANBgkqhkiG9w0BAQUFADB9MQswCQYDVQQGEwJFVTEn
-   * MCUGA1UEChMeQUMgQ2FtZXJmaXJtYSBTQSBDSUYgQTgyNzQzMjg3MSMwIQYDVQQL
-   * ExpodHRwOi8vd3d3LmNoYW1iZXJzaWduLm9yZzEgMB4GA1UEAxMXR2xvYmFsIENo
-   * YW1iZXJzaWduIFJvb3QwHhcNMDMwOTMwMTYxNDE4WhcNMzcwOTMwMTYxNDE4WjB9
-   * MQswCQYDVQQGEwJFVTEnMCUGA1UEChMeQUMgQ2FtZXJmaXJtYSBTQSBDSUYgQTgy
-   * NzQzMjg3MSMwIQYDVQQLExpodHRwOi8vd3d3LmNoYW1iZXJzaWduLm9yZzEgMB4G
-   * A1UEAxMXR2xvYmFsIENoYW1iZXJzaWduIFJvb3QwggEgMA0GCSqGSIb3DQEBAQUA
-   * A4IBDQAwggEIAoIBAQCicKLQn0KuWxfH2H3PFIP8T8mhtxOviteePgQKkotgVvq0
-   * Mi+ITaFgCPS3CU6gSS9J1tPfnZdan5QEcOw/Wdm3zGaLmFIoCQLfxS+EjXqXd7/s
-   * QJ0lcqu1PzKY+7e3/HKE5TWH+VX6ox8Oby4o3Wmg2UIQxvi1RMLQQ3/bvOSiPGpV
-   * eAp3qdjqGTK3L/5cPxvusZjsyq16aUXjlg9V9ubtdepl6DJWk0aJqCWKZQbua795
-   * B9Dxt6/tLE2Su8CoX6dnfQTyFQhwrJLWfQTSM/tMtgsL+xrJxI0DqX5c8lCrEqWh
-   * z0hQpe/SyBoT+rB/sYIcd2oPX9wLlY/vQ37mRQklAgEDo4IBUDCCAUwwEgYDVR0T
-   * AQH/BAgwBgEB/wIBDDA/BgNVHR8EODA2MDSgMqAwhi5odHRwOi8vY3JsLmNoYW1i
-   * ZXJzaWduLm9yZy9jaGFtYmVyc2lnbnJvb3QuY3JsMB0GA1UdDgQWBBRDnDafsJ4w
-   * TcbOX60Qq+UDpfqpFDAOBgNVHQ8BAf8EBAMCAQYwEQYJYIZIAYb4QgEBBAQDAgAH
-   * MCoGA1UdEQQjMCGBH2NoYW1iZXJzaWducm9vdEBjaGFtYmVyc2lnbi5vcmcwKgYD
-   * VR0SBCMwIYEfY2hhbWJlcnNpZ25yb290QGNoYW1iZXJzaWduLm9yZzBbBgNVHSAE
-   * VDBSMFAGCysGAQQBgYcuCgEBMEEwPwYIKwYBBQUHAgEWM2h0dHA6Ly9jcHMuY2hh
-   * bWJlcnNpZ24ub3JnL2Nwcy9jaGFtYmVyc2lnbnJvb3QuaHRtbDANBgkqhkiG9w0B
-   * AQUFAAOCAQEAPDtwkfkEVCeR4e3t/mh/YV3lQWVPMvEYBZRqHN4fcNs+ezICNLUM
-   * bKGKfKX0j//U2K0X1S0E0T9YgOKBWYi+wONGkyT+kL0mojAt6JcmVzWJdJYY9hXi
-   * ryQZVgICsroPFOrGimbBhkVVi76SvpykBMdJPJ7oKXqJ1/6v/2j1pReQvayZzKWG
-   * VwlnRtvWFsJG8eSpUPWP0ZIV018+xgBJOm5YstHRJw0lyDL4IBHNfTIzSJRUTN3c
-   * ecQwn+uOuFW114hcxWokPbLTBQNRxgfvzBRydD1ucs4YKIxKoHflCStFREest2d/
-   * AYoFWpO+ocH/+OcOZ6RHSXZddZAa9SaP8A==
-   * -----END CERTIFICATE-----
-   */
-  webpki::TrustAnchor {
-    subject: b"1\x0b0\t\x06\x03U\x04\x06\x13\x02EU1\'0%\x06\x03U\x04\n\x13\x1eAC Camerfirma SA CIF A827432871#0!\x06\x03U\x04\x0b\x13\x1ahttp://www.chambersign.org1 0\x1e\x06\x03U\x04\x03\x13\x17Global Chambersign Root",
-    spki: b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\r\x000\x82\x01\x08\x02\x82\x01\x01\x00\xa2p\xa2\xd0\x9fB\xae[\x17\xc7\xd8}\xcf\x14\x83\xfcO\xc9\xa1\xb7\x13\xaf\x8a\xd7\x9e>\x04\n\x92\x8b`V\xfa\xb42/\x88M\xa1`\x08\xf4\xb7\tN\xa0I/I\xd6\xd3\xdf\x9d\x97Z\x9f\x94\x04p\xec?Y\xd9\xb7\xccf\x8b\x98R(\t\x02\xdf\xc5/\x84\x8dz\x97w\xbf\xec@\x9d%r\xab\xb5?2\x98\xfb\xb7\xb7\xfcr\x84\xe55\x87\xf9U\xfa\xa3\x1f\x0eo.(\xddi\xa0\xd9B\x10\xc6\xf8\xb5D\xc2\xd0C\x7f\xdb\xbc\xe4\xa2<jUx\nw\xa9\xd8\xea\x192\xb7/\xfe\\?\x1b\xee\xb1\x98\xec\xca\xadziE\xe3\x96\x0fU\xf6\xe6\xedu\xeae\xe82V\x93F\x89\xa8%\x8ae\x06\xeek\xbfy\x07\xd0\xf1\xb7\xaf\xed,M\x92\xbb\xc0\xa8_\xa7g}\x04\xf2\x15\x08p\xac\x92\xd6}\x04\xd23\xfbL\xb6\x0b\x0b\xfb\x1a\xc9\xc4\x8d\x03\xa9~\\\xf2P\xab\x12\xa5\xa1\xcfHP\xa5\xef\xd2\xc8\x1a\x13\xfa\xb0\x7f\xb1\x82\x1cwj\x0f_\xdc\x0b\x95\x8f\xefC~\xe6E\t%\x02\x01\x03",
-    name_constraints: None
-  },
-
-  /*
    * Issuer: CN=SecureTrust CA O=SecureTrust Corporation
    * Subject: CN=SecureTrust CA O=SecureTrust Corporation
    * Label: "SecureTrust CA"
@@ -5376,52 +5215,6 @@ pub static TLS_SERVER_ROOTS: webpki::TLSServerTrustAnchors = webpki::TLSServerTr
   webpki::TrustAnchor {
     subject: b"1\x1e0\x1c\x06\x03U\x04\x03\x0c\x15Atos TrustedRoot 20111\r0\x0b\x06\x03U\x04\n\x0c\x04Atos1\x0b0\t\x06\x03U\x04\x06\x13\x02DE",
     spki: b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\n\x02\x82\x01\x01\x00\x95\x85;\x97o*;.;\xcf\xa6\xf3)5\xbe\xcf\x18\xac>\xaa\xd9\xf8M\xa0>\x1aG\xb9\xbc\x9a\xdf\xf2\xfe\xcc>G\xe8z\x96\xc2$\x8e5\xf4\xa9\x0c\xfc\x82\xfdm\xc1rb\'\xbd\xeak\xeb\xe7\x8a\xccT>\x90P\xcf\x80\xd4\x95\xfb\xe8\xb5\x82\xd4\x14\xc5\xb6\xa9U%W\xdb\xb1P\xf6\xb0`dYzi\xcf\x03\xb7o\r\xbe\xca>otr\xea\xaa0*sb\xbeI\x91a\xc8\x11\xfe\x0e\x03*\xf7j \xdc\x02\x15\r^\x15j\xfc\xe3\x82\xc1\xb5\xc5\x9dd\tl\xa3Y\x98\x07\'\xc7\x1b\x96+atqlC\xf1\xf75\x89\x10\xe0\x9e\xecU\xa17\"\xa2\x87\x04\x05,G}\xb4\x1c\xb9b)f(\xca\xb7\xe1\x93\xf5\xa4\x94\x03\x99\xb9p\x85\xb5\xe6H\xea\x8dP\xfc\xd9\xde\xcco\x07\x0e\xdd\x0br\x9d\x800\x16\x07\x95?(\x0e\xfd\xc5uOS\xd6t\x9a\xb4$.\x8e\x02\x91\xcfv\xc5\x9b\x1eUt\x9cx!\xb1\xf0-\xf1\x0b\x9f\xc2\xd5\x96\x18\x1f\xf0T\"z\x8c\x07\x02\x03\x01\x00\x01",
-    name_constraints: None
-  },
-
-  /*
-   * Issuer: CN=CA Disig Root R1 O=Disig a.s.
-   * Subject: CN=CA Disig Root R1 O=Disig a.s.
-   * Label: "CA Disig Root R1"
-   * Serial: 14052245610670616104
-   * MD5 Fingerprint: be:ec:11:93:9a:f5:69:21:bc:d7:c1:c0:67:89:cc:2a
-   * SHA1 Fingerprint: 8e:1c:74:f8:a6:20:b9:e5:8a:f4:61:fa:ec:2b:47:56:51:1a:52:c6
-   * SHA256 Fingerprint: f9:6f:23:f4:c3:e7:9c:07:7a:46:98:8d:5a:f5:90:06:76:a0:f0:39:cb:64:5d:d1:75:49:b2:16:c8:24:40:ce
-   * -----BEGIN CERTIFICATE-----
-   * MIIFaTCCA1GgAwIBAgIJAMMDmu5QkG4oMA0GCSqGSIb3DQEBBQUAMFIxCzAJBgNV
-   * BAYTAlNLMRMwEQYDVQQHEwpCcmF0aXNsYXZhMRMwEQYDVQQKEwpEaXNpZyBhLnMu
-   * MRkwFwYDVQQDExBDQSBEaXNpZyBSb290IFIxMB4XDTEyMDcxOTA5MDY1NloXDTQy
-   * MDcxOTA5MDY1NlowUjELMAkGA1UEBhMCU0sxEzARBgNVBAcTCkJyYXRpc2xhdmEx
-   * EzARBgNVBAoTCkRpc2lnIGEucy4xGTAXBgNVBAMTEENBIERpc2lnIFJvb3QgUjEw
-   * ggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQCqw3j33Jijp1pedxiy3QRk
-   * D2P9m5YJgNXoqqXinCaUOuiZc4yd39ffg/N4T0Dhf9Kn0uXKE5Pn7cZ3Xza1lK/o
-   * OI7bm+V8u8yN63Vz4STN5qctGS7Y1oprFOsIYgrY3LMATcMjfF9DCCMyEtztDK3A
-   * fQ+lekLZWnDZv6fXARz2m6uOt0qGeKAeVjGu74IKgEH3G8muqzIm1Cxr7X1r5OJe
-   * IgpFy4QxTaz+29FHuvlglzmxZcfe+5nkCiKxLU3lSCZpq+Kq8/v8kiky6bM+TR8n
-   * oc2OuRf7JT7JbvN32g0S9l3HuzYQ1VTW8+DiR0jm3hTaYVKvJrT1cU/J19IG32PK
-   * /yHoWQbgCNWEFVP3Q+V8xaCJmGtzxmjOZd69fwX3se72V6FglcXM6pM6vpmumwKj
-   * rckWtc7dXpl4fho5frLABaTAgqWjR56M6ly2vGfb5ipN0gTco65F97yLnByn1tUD
-   * 3AjLLhbKXEAz6GfDLuemROoRRRw1ZS0eRWEkG4IupZ0zXWX4Qfkuy5Q/H6MMMSRE
-   * 7cderVC6xkGbrPAXZcD4XW9boAo0PO7X6oifmPmvTiT6l7Jkdtqr9O3jw2Dv1fkC
-   * yC2fg69naQanMVXVz0tv/wQFx1isXxYb5dKj6zHbHzMVTdDypVP1y+E9Tmgt2BLd
-   * qvLmTZtJ5cUoobqwWsagtQIDAQABo0IwQDAPBgNVHRMBAf8EBTADAQH/MA4GA1Ud
-   * DwEB/wQEAwIBBjAdBgNVHQ4EFgQUiQq0OJMa5qvum5EY+fU8PjXQ04IwDQYJKoZI
-   * hvcNAQEFBQADggIBADKL9p1Kyb4U5YysOMo6CdQbzoaz3evUuii+Eq5FLAR0rBNR
-   * xVgYZk2C2tXck8An4b58n1KeElb21Zyp9HWc+jcSjxyT7Ff+Bw+r1RL3D65hXlaA
-   * SfX8MPWbTx9BLxyE04nH4toCdu0Jz2zBuByDHBb6lM19oMgY0sidbvW9adRtPTXo
-   * HqJPYNcHKfyyo6SdbhWSVhlMCrDpfNIZTUJG7L399ldb3Zh+pE3McgODWF3vkzpB
-   * emOqfDqo9ayk0d2iLbYq/J8BjuIQscTK5GfbVSUZP/3oNn6z4eGBrxEWi1CXYBmC
-   * AMBrTXO40RMHPuq2MU/wQppt4hF05ZSsjYSVPCGvxdpHyN85YmLLW1AL14FABZyb
-   * 7bq2ix4Eb5YgOe2kfSnbSM6C3NQCjR0EMVrHS/BsYVLXtFHCgWzN4funodKSds+x
-   * DzdYpPJScWc/DIh4gInByLUfkmO+p3qKViwaqKactV2zY9ATIKHrkWzQjX2v3wvk
-   * F7mGnjixlAxYjOBVqjtjbZqJYLhkKpLGN/R+Q0O3c+gB53+XD9fyexn9GtePyfqF
-   * a3qdnom2piiZk4hA9z7NUaPK6u95RyG1/jLix8NRb76AdPCkwzryT+lf3xkK8jsT
-   * Q6wxpLPn6/wY1gGp8yqPNg7rtLG8t0zJa7+h89n07eLw4+1knj0vllJPgFOL
-   * -----END CERTIFICATE-----
-   */
-  webpki::TrustAnchor {
-    subject: b"1\x0b0\t\x06\x03U\x04\x06\x13\x02SK1\x130\x11\x06\x03U\x04\x07\x13\nBratislava1\x130\x11\x06\x03U\x04\n\x13\nDisig a.s.1\x190\x17\x06\x03U\x04\x03\x13\x10CA Disig Root R1",
-    spki: b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x02\x0f\x000\x82\x02\n\x02\x82\x02\x01\x00\xaa\xc3x\xf7\xdc\x98\xa3\xa7Z^w\x18\xb2\xdd\x04d\x0fc\xfd\x9b\x96\t\x80\xd5\xe8\xaa\xa5\xe2\x9c&\x94:\xe8\x99s\x8c\x9d\xdf\xd7\xdf\x83\xf3xO@\xe1\x7f\xd2\xa7\xd2\xe5\xca\x13\x93\xe7\xed\xc6w_6\xb5\x94\xaf\xe88\x8e\xdb\x9b\xe5|\xbb\xcc\x8d\xebus\xe1$\xcd\xe6\xa7-\x19.\xd8\xd6\x8ak\x14\xeb\x08b\n\xd8\xdc\xb3\x00M\xc3#|_C\x08#2\x12\xdc\xed\x0c\xad\xc0}\x0f\xa5zB\xd9Zp\xd9\xbf\xa7\xd7\x01\x1c\xf6\x9b\xab\x8e\xb7J\x86x\xa0\x1eV1\xae\xef\x82\n\x80A\xf7\x1b\xc9\xae\xab2&\xd4,k\xed}k\xe4\xe2^\"\nE\xcb\x841M\xac\xfe\xdb\xd1G\xba\xf9`\x979\xb1e\xc7\xde\xfb\x99\xe4\n\"\xb1-M\xe5H&i\xab\xe2\xaa\xf3\xfb\xfc\x92)2\xe9\xb3>M\x1f\'\xa1\xcd\x8e\xb9\x17\xfb%>\xc9n\xf3w\xda\r\x12\xf6]\xc7\xbb6\x10\xd5T\xd6\xf3\xe0\xe2GH\xe6\xde\x14\xdaaR\xaf&\xb4\xf5qO\xc9\xd7\xd2\x06\xdfc\xca\xff!\xe8Y\x06\xe0\x08\xd5\x84\x15S\xf7C\xe5|\xc5\xa0\x89\x98ks\xc6h\xcee\xde\xbd\x7f\x05\xf7\xb1\xee\xf6W\xa1`\x95\xc5\xcc\xea\x93:\xbe\x99\xae\x9b\x02\xa3\xad\xc9\x16\xb5\xce\xdd^\x99x~\x1a9~\xb2\xc0\x05\xa4\xc0\x82\xa5\xa3G\x9e\x8c\xea\\\xb6\xbcg\xdb\xe6*M\xd2\x04\xdc\xa3\xaeE\xf7\xbc\x8b\x9c\x1c\xa7\xd6\xd5\x03\xdc\x08\xcb.\x16\xca\\@3\xe8g\xc3.\xe7\xa6D\xea\x11E\x1c5e-\x1eEa$\x1b\x82.\xa5\x9d3]e\xf8A\xf9.\xcb\x94?\x1f\xa3\x0c1$D\xed\xc7^\xadP\xba\xc6A\x9b\xac\xf0\x17e\xc0\xf8]o[\xa0\n4<\xee\xd7\xea\x88\x9f\x98\xf9\xafN$\xfa\x97\xb2dv\xda\xab\xf4\xed\xe3\xc3`\xef\xd5\xf9\x02\xc8-\x9f\x83\xafgi\x06\xa71U\xd5\xcfKo\xff\x04\x05\xc7X\xac_\x16\x1b\xe5\xd2\xa3\xeb1\xdb\x1f3\x15M\xd0\xf2\xa5S\xf5\xcb\xe1=Nh-\xd8\x12\xdd\xaa\xf2\xe6M\x9bI\xe5\xc5(\xa1\xba\xb0Z\xc6\xa0\xb5\x02\x03\x01\x00\x01",
     name_constraints: None
   },
 
