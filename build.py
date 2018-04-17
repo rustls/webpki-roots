@@ -1,7 +1,12 @@
 # -*- coding: utf-8 -*-
+import base64
+import binascii
+import codecs
 import subprocess
 import sys
-import urllib
+import urllib.request
+import urllib.parse
+import urllib.error
 
 import extra_constraints
 
@@ -49,10 +54,10 @@ excluded_cas = [
 def fetch_bundle():
     proc = subprocess.Popen(['curl',
                              'https://mkcert.org/generate/all/except/' +
-                                "+".join([urllib.quote(x) for x in excluded_cas])],
+                                "+".join([urllib.parse.quote(x) for x in excluded_cas])],
             stdout = subprocess.PIPE)
     stdout, _ = proc.communicate()
-    return stdout
+    return stdout.decode('utf-8')
 
 
 def split_bundle(bundle):
@@ -73,7 +78,8 @@ def calc_spki_hash(cert):
             ['openssl', 'x509', '-noout', '-sha256', '-fingerprint'],
             stdin = subprocess.PIPE,
             stdout = subprocess.PIPE)
-    stdout, _ = proc.communicate(cert)
+    stdout, _ = proc.communicate(cert.encode('utf-8'))
+    stdout = stdout.decode('utf-8')
     assert proc.returncode == 0
     assert stdout.startswith('SHA256 Fingerprint=')
     hash = stdout.replace('SHA256 Fingerprint=', '').replace(':', '')
@@ -94,8 +100,8 @@ def extract_header_spki_hash(cert):
 def unwrap_pem(cert):
     start = '-----BEGIN CERTIFICATE-----\n'
     end = '-----END CERTIFICATE-----\n'
-    base64 = cert[cert.index(start)+len(start):cert.rindex(end)]
-    return base64.decode('base64')
+    body = cert[cert.index(start)+len(start):cert.rindex(end)]
+    return base64.b64decode(body)
 
 
 def extract(msg, name):
@@ -110,6 +116,7 @@ def convert_cert(cert_der):
             stdin = subprocess.PIPE,
             stdout = subprocess.PIPE)
     stdout, _ = proc.communicate(cert_der)
+    stdout = stdout.decode('utf-8')
     assert proc.returncode == 0
     return dict(
             subject = extract(stdout, 'Subject'),
@@ -124,23 +131,24 @@ def commentify(cert):
 
 
 def convert_bytes(hex):
-    bb = hex.decode('hex')
-    return bb.encode('string_escape').replace('"', '\\"')
+    bb = binascii.a2b_hex(hex)
+    encoded, _ = codecs.escape_encode(bb)
+    return encoded.decode('utf-8').replace('"', '\\"')
 
 
 def print_root(cert, data):
     subject = convert_bytes(data['subject'])
     spki = convert_bytes(data['spki'])
     nc = data['name_constraints']
-    nc = ('Some(b"%s")' % convert_bytes(nc)) if nc != 'None' else nc
+    nc = ('Some(b"{}")'.format(convert_bytes(nc))) if nc != 'None' else nc
 
-    print """  %s
-  webpki::TrustAnchor {
-    subject: b"%s",
-    spki: b"%s",
-    name_constraints: %s
-  },
-""" % (commentify(cert), subject, spki, nc)
+    print("""  {}
+  webpki::TrustAnchor {{
+    subject: b"{}",
+    spki: b"{}",
+    name_constraints: {}
+  }},
+""".format(commentify(cert), subject, spki, nc))
 
 
 if __name__ == '__main__':
@@ -163,17 +171,17 @@ if __name__ == '__main__':
 
         imposed_nc = extra_constraints.get_imposed_name_constraints(data['subject'])
         if imposed_nc:
-            data['name_constraints'] = imposed_nc.encode('hex')
+            data['name_constraints'] = binascii.b2a_hex(imposed_nc)
 
         assert our_hash not in certs, 'duplicate cert'
         certs[our_hash] = (cert, data)
 
-    print HEADER
-    print """pub static TLS_SERVER_ROOTS: webpki::TLSServerTrustAnchors = webpki::TLSServerTrustAnchors(&["""
+    print(HEADER)
+    print("""pub static TLS_SERVER_ROOTS: webpki::TLSServerTrustAnchors = webpki::TLSServerTrustAnchors(&[""")
 
     # emit in sorted hash order for deterministic builds
     for hash in sorted(certs):
         cert, data = certs[hash]
         print_root(cert, data)
 
-    print ']);'
+    print(']);')
