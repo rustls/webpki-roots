@@ -1,4 +1,4 @@
- # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 import subprocess
 import sys
 import urllib
@@ -45,6 +45,7 @@ excluded_cas = [
     "TURKTRUST",
 ]
 
+
 def fetch_bundle():
     proc = subprocess.Popen(['curl',
                              'https://mkcert.org/generate/all/except/' +
@@ -52,6 +53,7 @@ def fetch_bundle():
             stdout = subprocess.PIPE)
     stdout, _ = proc.communicate()
     return stdout
+
 
 def split_bundle(bundle):
     cert = ''
@@ -61,6 +63,7 @@ def split_bundle(bundle):
         if '-----END CERTIFICATE-----' in line:
             yield cert
             cert = ''
+
 
 def calc_spki_hash(cert):
     """
@@ -78,6 +81,7 @@ def calc_spki_hash(cert):
     assert len(hash) == 64
     return hash.lower()
 
+
 def extract_header_spki_hash(cert):
     """
     Extract the sha256 hash of the public key in the header, for
@@ -86,16 +90,19 @@ def extract_header_spki_hash(cert):
     line = [ll for ll in cert.splitlines() if ll.startswith('# SHA256 Fingerprint: ')][0]
     return line.replace('# SHA256 Fingerprint: ', '').replace(':', '').lower()
 
+
 def unwrap_pem(cert):
     start = '-----BEGIN CERTIFICATE-----\n'
     end = '-----END CERTIFICATE-----\n'
     base64 = cert[cert.index(start)+len(start):cert.rindex(end)]
     return base64.decode('base64')
 
+
 def extract(msg, name):
     lines = msg.splitlines()
     value = [ll for ll in lines if ll.startswith(name + ': ')][0]
     return value[len(name) + 2:].strip()
+
 
 def convert_cert(cert_der):
     proc = subprocess.Popen(
@@ -109,14 +116,17 @@ def convert_cert(cert_der):
             spki = extract(stdout, 'SPKI'),
             name_constraints = extract(stdout, 'Name-Constraints'))
 
+
 def commentify(cert):
     lines = cert.splitlines()
     lines = [ll[2:] if ll.startswith('# ') else ll for ll in lines]
     return '/*\n   * ' + ('\n   * '.join(lines)) + '\n   */'
 
+
 def convert_bytes(hex):
     bb = hex.decode('hex')
     return bb.encode('string_escape').replace('"', '\\"')
+
 
 def print_root(cert, data):
     subject = convert_bytes(data['subject'])
@@ -131,6 +141,7 @@ def print_root(cert, data):
     name_constraints: %s
   },
 """ % (commentify(cert), subject, spki, nc)
+
 
 if __name__ == '__main__':
     if sys.platform == "win32":
