@@ -14,7 +14,7 @@ The underlying data is MPL-licensed, and `src/lib.rs`
 is therefore a derived work.
 
 # Regenerating sources
-You will need python2 and curl.
+You will need python3 and curl.
 
 Run `build.py` which will output a new version of `src/lib.rs`.  You can now
 compare and audit.  The code is generated in deterministic order so changes
