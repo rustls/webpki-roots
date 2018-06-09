@@ -5,5 +5,5 @@ rust:
    - nightly
 script:
    - cargo build --verbose
-   - python build.py > newlib.rs
+   - python3 build.py > newlib.rs
    - diff -u src/lib.rs newlib.rs
