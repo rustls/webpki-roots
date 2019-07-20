@@ -1,5 +1,4 @@
 extern crate webpki;
-extern crate untrusted;
 use std::io;
 use std::io::Read;
 
@@ -16,8 +15,7 @@ fn main() {
   io::stdin().read_to_end(&mut der)
     .expect("cannot read stdin");
 
-  let ta = webpki::trust_anchor_util::cert_der_as_trust_anchor(
-    untrusted::Input::from(&der))
+  let ta = webpki::trust_anchor_util::cert_der_as_trust_anchor(&der)
     .expect("cannot parse certificate");
 
   dumphex("Subject", ta.subject);
