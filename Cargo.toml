@@ -11,4 +11,4 @@ repository = "https://github.com/ctz/webpki-roots"
 
 [dependencies]
 untrusted = "0.7.0"
-webpki = "0.20.0-alpha1"
+webpki = "0.21.0"
