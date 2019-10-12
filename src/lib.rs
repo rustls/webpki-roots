@@ -352,43 +352,6 @@ pub static TLS_SERVER_ROOTS: webpki::TLSServerTrustAnchors = webpki::TLSServerTr
   },
 
   /*
-   * Issuer: CN=Class 2 Primary CA O=Certplus
-   * Subject: CN=Class 2 Primary CA O=Certplus
-   * Label: "Certplus Class 2 Primary CA"
-   * Serial: 177770208045934040241468760488327595043
-   * MD5 Fingerprint: 88:2c:8c:52:b8:a2:3c:f3:f7:bb:03:ea:ae:ac:42:0b
-   * SHA1 Fingerprint: 74:20:74:41:72:9c:dd:92:ec:79:31:d8:23:10:8d:c2:81:92:e2:bb
-   * SHA256 Fingerprint: 0f:99:3c:8a:ef:97:ba:af:56:87:14:0e:d5:9a:d1:82:1b:b4:af:ac:f0:aa:9a:58:b5:d5:7a:33:8a:3a:fb:cb
-   * -----BEGIN CERTIFICATE-----
-   * MIIDkjCCAnqgAwIBAgIRAIW9S/PY2uNp9pTXX8OlRCMwDQYJKoZIhvcNAQEFBQAw
-   * PTELMAkGA1UEBhMCRlIxETAPBgNVBAoTCENlcnRwbHVzMRswGQYDVQQDExJDbGFz
-   * cyAyIFByaW1hcnkgQ0EwHhcNOTkwNzA3MTcwNTAwWhcNMTkwNzA2MjM1OTU5WjA9
-   * MQswCQYDVQQGEwJGUjERMA8GA1UEChMIQ2VydHBsdXMxGzAZBgNVBAMTEkNsYXNz
-   * IDIgUHJpbWFyeSBDQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBANxQ
-   * ltAS+DXSCHh6tlJw/W/uz7kRy1134ezpfgSN1sxvc0NXYKwzCkTsA18cgCSR5aiR
-   * VhKC9+Ar9NuuYS6JEI1rbLqzAr3VNsVINyPi8Fo3UjMXEuLRYE2+L0ER4/YXJQyL
-   * kcAbmXuZVg2v7tK8R1fjeUl7NIknJITesezpWE7+Tt9avkGtrAjFGA7v0lPubNCd
-   * EgETjdyAYveVqUSISnFOYFWe2yMZeVYHDD9jC1yw4r5+FfyUM1hBOHTE4Y+L3yas
-   * H7WLO7dDWWuwJKZtkIvEcupdM5i3y95ee++U8Rs+yskhwcWYAqqi9lt3m/V+llU0
-   * HGdpwPFC40es/CgcZlUCAwEAAaOBjDCBiTAPBgNVHRMECDAGAQH/AgEKMAsGA1Ud
-   * DwQEAwIBBjAdBgNVHQ4EFgQU43Mt38sOKAze3bOkynm4jrvoMIkwEQYJYIZIAYb4
-   * QgEBBAQDAgEGMDcGA1UdHwQwMC4wLKAqoCiGJmh0dHA6Ly93d3cuY2VydHBsdXMu
-   * Y29tL0NSTC9jbGFzczIuY3JsMA0GCSqGSIb3DQEBBQUAA4IBAQCnVM+IRBnL39R/
-   * AN9WM2K191EBkOvDP9GIROkkXe/nFL0gt5o8AP5tn9uQ3Nf0YtaLcF3n5QRIqWh8
-   * yfFC82x/xXp8HVGIutIKPidd3i1RTtMTZGnkLuPT55sJmabglZvOGtd/vjzOUrMR
-   * FcEPF80Du5wlFbqidon8BvEY0JNLDnyCt6X09l/+7UCmnYR0ObncHoUW2ikbhiMA
-   * ybuJfm6AiB4vFLQDJKgybwOaRywwvlbGp0ICcBvqQNi6BQNwB6SW//1IMwrh3KWB
-   * kJtN3X3n57LNXMhqlfil9o3EXXgIvnsG1knPGTZQIy4I5p4FTUcY1Rbpsda2ENW7
-   * l7+ijrRU
-   * -----END CERTIFICATE-----
-   */
-  webpki::TrustAnchor {
-    subject: b"1\x0b0\t\x06\x03U\x04\x06\x13\x02FR1\x110\x0f\x06\x03U\x04\n\x13\x08Certplus1\x1b0\x19\x06\x03U\x04\x03\x13\x12Class 2 Primary CA",
-    spki: b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\n\x02\x82\x01\x01\x00\xdcP\x96\xd0\x12\xf85\xd2\x08xz\xb6Rp\xfdo\xee\xcf\xb9\x11\xcb]w\xe1\xec\xe9~\x04\x8d\xd6\xccosCW`\xac3\nD\xec\x03_\x1c\x80$\x91\xe5\xa8\x91V\x12\x82\xf7\xe0+\xf4\xdb\xaea.\x89\x10\x8dkl\xba\xb3\x02\xbd\xd56\xc5H7#\xe2\xf0Z7R3\x17\x12\xe2\xd1`M\xbe/A\x11\xe3\xf6\x17%\x0c\x8b\x91\xc0\x1b\x99{\x99V\r\xaf\xee\xd2\xbcGW\xe3yI{4\x89\'$\x84\xde\xb1\xec\xe9XN\xfeN\xdfZ\xbeA\xad\xac\x08\xc5\x18\x0e\xef\xd2S\xeel\xd0\x9d\x12\x01\x13\x8d\xdc\x80b\xf7\x95\xa9D\x88JqN`U\x9e\xdb#\x19yV\x07\x0c?c\x0b\\\xb0\xe2\xbe~\x15\xfc\x943XA8t\xc4\xe1\x8f\x8b\xdf&\xac\x1f\xb5\x8b;\xb7CYk\xb0$\xa6m\x90\x8b\xc4r\xea]3\x98\xb7\xcb\xde^{\xef\x94\xf1\x1b>\xca\xc9!\xc1\xc5\x98\x02\xaa\xa2\xf6[w\x9b\xf5~\x96U4\x1cgi\xc0\xf1B\xe3G\xac\xfc(\x1cfU\x02\x03\x01\x00\x01",
-    name_constraints: None
-  },
-
-  /*
    * Issuer: CN=emSign Root CA - C1 O=eMudhra Inc OU=emSign PKI
    * Subject: CN=emSign Root CA - C1 O=eMudhra Inc OU=emSign PKI
    * Label: "emSign Root CA - C1"
@@ -4058,43 +4021,6 @@ pub static TLS_SERVER_ROOTS: webpki::TLSServerTrustAnchors = webpki::TLSServerTr
   webpki::TrustAnchor {
     subject: b"1\x0b0\t\x06\x03U\x04\x06\x13\x02US1\x160\x14\x06\x03U\x04\n\x13\rGeoTrust Inc.1907\x06\x03U\x04\x0b\x130(c) 2008 GeoTrust Inc. - For authorized use only1604\x06\x03U\x04\x03\x13-GeoTrust Primary Certification Authority - G3",
     spki: b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\n\x02\x82\x01\x01\x00\xdc\xe2^bX\x1d3W923\xfa\xeb\xcb\x87\x8c\xa7\xd4J\xdd\x06\x88\xead\x8e1\x98\xa58\x90\x1e\x98\xcf.c+\xf0F\xbcD\xb2\x89\xa1\xc0(\x0cIp!\x95\x9fd\xc0\xa6\x93\x12\x02e&\x86\xc6\xa5\x89\xf0\xfa\xd7\x84\xa0p\xafO\x1a\x97?\x06D\xd5\xc9\xebr\x10}\xe41(\xfb\x1ca\xe6(\x07Ds\x92\"i\xa7\x03\x88l\x9dc\xc8R\xda\x98\'\xe7\x08Lp>\xb4\xc9\x12\xc1\xc5g\x83]3\xf3\x03\x11\xecj\xd0S\xe2\xd1\xba6`\x94\x80\xbbacl[\x17~\xdf@\x94\x1e\xab\r\xc2!(p\x88\xff\xd6&ll`\x04%NU~}\xef\xbf\x94H\xde\xb7\x1d\xddp\x8d\x05_\x88\xa5\x9b\xf2\xc2\xee\xea\xd1@Amb8\x1dV\x06\xc5\x03GQ \x19\xfc{\x10\x0b\x0eb\xaevU\xbf_w\xbe>I\x01S=\x98%\x03v$Z\x1d\xb4\xdb\x89\xeay\xe5\xb6\xb3;?\xbaL(A\x7f\x06\xacj\x8e\xc1\xd0\xf6\x05\x1d}\xe6B\x86\xe3\xa5\xd5G\x02\x03\x01\x00\x01",
-    name_constraints: None
-  },
-
-  /*
-   * Issuer: CN=Deutsche Telekom Root CA 2 O=Deutsche Telekom AG OU=T-TeleSec Trust Center
-   * Subject: CN=Deutsche Telekom Root CA 2 O=Deutsche Telekom AG OU=T-TeleSec Trust Center
-   * Label: "Deutsche Telekom Root CA 2"
-   * Serial: 38
-   * MD5 Fingerprint: 74:01:4a:91:b1:08:c4:58:ce:47:cd:f0:dd:11:53:08
-   * SHA1 Fingerprint: 85:a4:08:c0:9c:19:3e:5d:51:58:7d:cd:d6:13:30:fd:8c:de:37:bf
-   * SHA256 Fingerprint: b6:19:1a:50:d0:c3:97:7f:7d:a9:9b:cd:aa:c8:6a:22:7d:ae:b9:67:9e:c7:0b:a3:b0:c9:d9:22:71:c1:70:d3
-   * -----BEGIN CERTIFICATE-----
-   * MIIDnzCCAoegAwIBAgIBJjANBgkqhkiG9w0BAQUFADBxMQswCQYDVQQGEwJERTEc
-   * MBoGA1UEChMTRGV1dHNjaGUgVGVsZWtvbSBBRzEfMB0GA1UECxMWVC1UZWxlU2Vj
-   * IFRydXN0IENlbnRlcjEjMCEGA1UEAxMaRGV1dHNjaGUgVGVsZWtvbSBSb290IENB
-   * IDIwHhcNOTkwNzA5MTIxMTAwWhcNMTkwNzA5MjM1OTAwWjBxMQswCQYDVQQGEwJE
-   * RTEcMBoGA1UEChMTRGV1dHNjaGUgVGVsZWtvbSBBRzEfMB0GA1UECxMWVC1UZWxl
-   * U2VjIFRydXN0IENlbnRlcjEjMCEGA1UEAxMaRGV1dHNjaGUgVGVsZWtvbSBSb290
-   * IENBIDIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCrC6M14IspFLEU
-   * ha88EOQ5bzVdSq7d6mGNlUn0b2SjGmBmpKlAIoTZ1KXleJMOaAGtuU1cOs7TuKhC
-   * QN/Po7qCWWqSG6wcmtoIKyUn+WkjR/Hg6yx6m/UTAtB+NHzCnjwAWav12gz1Mjwr
-   * rFDa1sPeg5TKqAyZMg4ISFZbavva4VhYAUlfckE8FQYBjl2tqriTtM2e66foai1S
-   * NNs671x1Udrb8zH57nGYMsRUFUQM+ZtV7a3fGAigo4aKSe5TBY8ZTNXeWHmb0moc
-   * QqvF1afPaA+W5OFhmHZhyJF81j4A4pFQh+GdCuatl9Idxjp9y7zaAzTVjlsB9WoH
-   * txa2bkp/AgMBAAGjQjBAMB0GA1UdDgQWBBQxw3kbuvVT1xfgiXotF2wKsyudMzAP
-   * BgNVHRMECDAGAQH/AgEFMA4GA1UdDwEB/wQEAwIBBjANBgkqhkiG9w0BAQUFAAOC
-   * AQEAlGRZrTlk5ynrE/5aw4sTV8gEJPB0d8Bg42f76Ymmg7+Wgnxu1MM9756Abrsp
-   * tJh6sTtU6zkXR34ajgv8HzFZMQSyzhfzLMdiNlXiItiJVbSYSKpk+tYcNthEeFpa
-   * IzpXl/V6ME+un2pMSyuOoAPjPuCp1NJ70rOo4nI8rZ7/gFnkm0W09juwzTkZmDLl
-   * 6iFhkOQxIY40sfcvNUqFENrnijchvllj4PKFiDFT1FQUhXB59C4Gdyd1Lx+4ivn+
-   * xbrYNuSD7Odlt79jWvNGr4GUN9RBjNYj1h7P9WgbRGOiWrqnNVmh5XAFmw4jV5mU
-   * Cm26OWMohpLzGITY+9HPBVZkVw==
-   * -----END CERTIFICATE-----
-   */
-  webpki::TrustAnchor {
-    subject: b"1\x0b0\t\x06\x03U\x04\x06\x13\x02DE1\x1c0\x1a\x06\x03U\x04\n\x13\x13Deutsche Telekom AG1\x1f0\x1d\x06\x03U\x04\x0b\x13\x16T-TeleSec Trust Center1#0!\x06\x03U\x04\x03\x13\x1aDeutsche Telekom Root CA 2",
-    spki: b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\n\x02\x82\x01\x01\x00\xab\x0b\xa35\xe0\x8b)\x14\xb1\x14\x85\xaf<\x10\xe49o5]J\xae\xdd\xeaa\x8d\x95I\xf4od\xa3\x1a`f\xa4\xa9@\"\x84\xd9\xd4\xa5\xe5x\x93\x0eh\x01\xad\xb9M\\:\xce\xd3\xb8\xa8B@\xdf\xcf\xa3\xba\x82Yj\x92\x1b\xac\x1c\x9a\xda\x08+%\'\xf9i#G\xf1\xe0\xeb,z\x9b\xf5\x13\x02\xd0~4|\xc2\x9e<\x00Y\xab\xf5\xda\x0c\xf52<+\xacP\xda\xd6\xc3\xde\x83\x94\xca\xa8\x0c\x992\x0e\x08HV[j\xfb\xda\xe1XX\x01I_rA<\x15\x06\x01\x8e]\xad\xaa\xb8\x93\xb4\xcd\x9e\xeb\xa7\xe8j-R4\xdb:\xef\\uQ\xda\xdb\xf31\xf9\xeeq\x982\xc4T\x15D\x0c\xf9\x9bU\xed\xad\xdf\x18\x08\xa0\xa3\x86\x8aI\xeeS\x05\x8f\x19L\xd5\xdeXy\x9b\xd2j\x1cB\xab\xc5\xd5\xa7\xcfh\x0f\x96\xe4\xe1a\x98va\xc8\x91|\xd6>\x00\xe2\x91P\x87\xe1\x9d\n\xe6\xad\x97\xd2\x1d\xc6:}\xcb\xbc\xda\x034\xd5\x8e[\x01\xf5j\x07\xb7\x16\xb6nJ\x7f\x02\x03\x01\x00\x01",
     name_constraints: None
   },
 
