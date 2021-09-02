@@ -6,8 +6,8 @@ authors = ["Joseph Birr-Pixton <jpixton@gmail.com>"]
 readme = "README.md"
 license = "MPL-2.0"
 description = "Mozilla's CA root certificates for use with webpki"
-homepage = "https://github.com/ctz/webpki-roots"
-repository = "https://github.com/ctz/webpki-roots"
+homepage = "https://github.com/rustls/webpki-roots"
+repository = "https://github.com/rustls/webpki-roots"
 
 [dependencies]
 webpki = "0.22.0"
