@@ -1,0 +1,33 @@
+name: webpki-roots
+
+on: 
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 18 * * *'
+
+jobs:
+  build:
+    name: Build+test
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+
+      - name: Install stable toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: cargo build (debug; default features)
+        run: cargo build
+
+      - name: cargo test (debug; default features)
+        run: cargo test
+
+      - name: check upstream
+        run: |
+          python3 build.py > newlib.rs
+          diff -u src/lib.rs newlib.rs
+
