@@ -1,12 +1,12 @@
 # webpki-roots
 This is a crate containing Mozilla's root certificates for use with
 the [webpki](https://github.com/briansmith/webpki) or
-[rustls](https://github.com/ctz/rustls) crates.
+[rustls](https://github.com/rustls/rustls) crates.
 
 This crate is inspired by [certifi.io](https://certifi.io/en/latest/) and
 uses the services provided by [mkcert.org](https://mkcert.org/).
 
-[![Build Status](https://img.shields.io/travis/ctz/webpki-roots.svg)](https://travis-ci.org/ctz/rustls)
+[![webpki-roots](https://github.com/rustls/webpki-roots/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/rustls/webpki-roots/actions/workflows/build.yml)
 [![Crate](https://img.shields.io/crates/v/webpki-roots.svg)](https://crates.io/crates/webpki-roots)
 
 # License
