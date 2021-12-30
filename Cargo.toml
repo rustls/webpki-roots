@@ -1,6 +1,6 @@
 [package]
 name = "webpki-roots"
-version = "0.22.1"
+version = "0.22.2"
 edition = "2018"
 authors = ["Joseph Birr-Pixton <jpixton@gmail.com>"]
 readme = "README.md"
