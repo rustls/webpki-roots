@@ -10,4 +10,4 @@ homepage = "https://github.com/rustls/webpki-roots"
 repository = "https://github.com/rustls/webpki-roots"
 
 [dependencies]
-webpki = "0.22.0"
+webpki = { package = "rustls-webpki", version = "0.100.0" }
