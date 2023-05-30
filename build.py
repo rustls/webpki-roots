@@ -85,10 +85,10 @@ def calc_spki_hash(cert):
             stdin = subprocess.PIPE,
             stdout = subprocess.PIPE)
     stdout, _ = proc.communicate(cert.encode('utf-8'))
-    stdout = stdout.decode('utf-8')
+    stdout = stdout.decode('utf-8').lower()
     assert proc.returncode == 0
-    assert stdout.startswith('SHA256 Fingerprint=')
-    hash = stdout.replace('SHA256 Fingerprint=', '').replace(':', '')
+    assert stdout.startswith('sha256 fingerprint=')
+    hash = stdout.replace('sha256 fingerprint=', '').replace(':', '')
     hash = hash.strip()
     assert len(hash) == 64
     return hash.lower()
