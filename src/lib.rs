@@ -1959,6 +1959,35 @@ pub static TLS_SERVER_ROOTS: webpki::TlsServerTrustAnchors = webpki::TlsServerTr
   },
 
   /*
+   * Issuer: CN=BJCA Global Root CA2 O=BEIJING CERTIFICATE AUTHORITY
+   * Subject: CN=BJCA Global Root CA2 O=BEIJING CERTIFICATE AUTHORITY
+   * Label: "BJCA Global Root CA2"
+   * Serial: 58605626836079930195615843123109055211
+   * MD5 Fingerprint: 5e:0a:f6:47:5f:a6:14:e8:11:01:95:3f:4d:01:eb:3c
+   * SHA1 Fingerprint: f4:27:86:eb:6e:b8:6d:88:31:67:02:fb:ba:66:a4:53:00:aa:7a:a6
+   * SHA256 Fingerprint: 57:4d:f6:93:1e:27:80:39:66:7b:72:0a:fd:c1:60:0f:c2:7e:b6:6d:d3:09:29:79:fb:73:85:64:87:21:28:82
+   * -----BEGIN CERTIFICATE-----
+   * MIICJTCCAaugAwIBAgIQLBcIfWQqwP6FGFkGz7RK6zAKBggqhkjOPQQDAzBUMQsw
+   * CQYDVQQGEwJDTjEmMCQGA1UECgwdQkVJSklORyBDRVJUSUZJQ0FURSBBVVRIT1JJ
+   * VFkxHTAbBgNVBAMMFEJKQ0EgR2xvYmFsIFJvb3QgQ0EyMB4XDTE5MTIxOTAzMTgy
+   * MVoXDTQ0MTIxMjAzMTgyMVowVDELMAkGA1UEBhMCQ04xJjAkBgNVBAoMHUJFSUpJ
+   * TkcgQ0VSVElGSUNBVEUgQVVUSE9SSVRZMR0wGwYDVQQDDBRCSkNBIEdsb2JhbCBS
+   * b290IENBMjB2MBAGByqGSM49AgEGBSuBBAAiA2IABJ3LgJGNU2e1uVCxA/jlSR9B
+   * IgmwUVJY1is0j8USRhTFiy8shP8sbqjV8QnjAyEUxEM9fMEsxEtqSs3ph+B99iK+
+   * +kpRuDCK/eHeGBIK9ke35xe/J4rUQUyWPGCWwf0VHKNCMEAwHQYDVR0OBBYEFNJK
+   * sVF/BvDRgh9Obl+rg/xI1LCRMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQD
+   * AgEGMAoGCCqGSM49BAMDA2gAMGUCMBq8W9f+qdJUDkpd0m2xQNz0Q9XSSpkZElaA
+   * 94M04TVOSG0ED1cxMDAtsaqdAzjbBgIxAMvMh1PLet8gUXOQwKhbYdDFUDn9hf7B
+   * 43j4ptZLvZuHjw/l1lOWqzzIQNph91Oj9w==
+   * -----END CERTIFICATE-----
+   */
+  webpki::TrustAnchor {
+    subject: b"1\x0b0\t\x06\x03U\x04\x06\x13\x02CN1&0$\x06\x03U\x04\n\x0c\x1dBEIJING CERTIFICATE AUTHORITY1\x1d0\x1b\x06\x03U\x04\x03\x0c\x14BJCA Global Root CA2",
+    spki: b"0\x10\x06\x07*\x86H\xce=\x02\x01\x06\x05+\x81\x04\x00\"\x03b\x00\x04\x9d\xcb\x80\x91\x8dSg\xb5\xb9P\xb1\x03\xf8\xe5I\x1fA\"\t\xb0QRX\xd6+4\x8f\xc5\x12F\x14\xc5\x8b/,\x84\xff,n\xa8\xd5\xf1\t\xe3\x03!\x14\xc4C=|\xc1,\xc4KjJ\xcd\xe9\x87\xe0}\xf6\"\xbe\xfaJQ\xb80\x8a\xfd\xe1\xde\x18\x12\n\xf6G\xb7\xe7\x17\xbf\'\x8a\xd4AL\x96<`\x96\xc1\xfd\x15\x1c",
+    name_constraints: None
+  },
+
+  /*
    * Issuer: CN=Autoridad de Certificacion Firmaprofesional CIF A62634068
    * Subject: CN=Autoridad de Certificacion Firmaprofesional CIF A62634068
    * Label: "Autoridad de Certificacion Firmaprofesional CIF A62634068"
@@ -5328,6 +5357,53 @@ pub static TLS_SERVER_ROOTS: webpki::TlsServerTrustAnchors = webpki::TlsServerTr
   webpki::TrustAnchor {
     subject: b"1\x1e0\x1c\x06\x03U\x04\x03\x0c\x15Atos TrustedRoot 20111\r0\x0b\x06\x03U\x04\n\x0c\x04Atos1\x0b0\t\x06\x03U\x04\x06\x13\x02DE",
     spki: b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\n\x02\x82\x01\x01\x00\x95\x85;\x97o*;.;\xcf\xa6\xf3)5\xbe\xcf\x18\xac>\xaa\xd9\xf8M\xa0>\x1aG\xb9\xbc\x9a\xdf\xf2\xfe\xcc>G\xe8z\x96\xc2$\x8e5\xf4\xa9\x0c\xfc\x82\xfdm\xc1rb\'\xbd\xeak\xeb\xe7\x8a\xccT>\x90P\xcf\x80\xd4\x95\xfb\xe8\xb5\x82\xd4\x14\xc5\xb6\xa9U%W\xdb\xb1P\xf6\xb0`dYzi\xcf\x03\xb7o\r\xbe\xca>otr\xea\xaa0*sb\xbeI\x91a\xc8\x11\xfe\x0e\x03*\xf7j \xdc\x02\x15\r^\x15j\xfc\xe3\x82\xc1\xb5\xc5\x9dd\tl\xa3Y\x98\x07\'\xc7\x1b\x96+atqlC\xf1\xf75\x89\x10\xe0\x9e\xecU\xa17\"\xa2\x87\x04\x05,G}\xb4\x1c\xb9b)f(\xca\xb7\xe1\x93\xf5\xa4\x94\x03\x99\xb9p\x85\xb5\xe6H\xea\x8dP\xfc\xd9\xde\xcco\x07\x0e\xdd\x0br\x9d\x800\x16\x07\x95?(\x0e\xfd\xc5uOS\xd6t\x9a\xb4$.\x8e\x02\x91\xcfv\xc5\x9b\x1eUt\x9cx!\xb1\xf0-\xf1\x0b\x9f\xc2\xd5\x96\x18\x1f\xf0T\"z\x8c\x07\x02\x03\x01\x00\x01",
+    name_constraints: None
+  },
+
+  /*
+   * Issuer: CN=BJCA Global Root CA1 O=BEIJING CERTIFICATE AUTHORITY
+   * Subject: CN=BJCA Global Root CA1 O=BEIJING CERTIFICATE AUTHORITY
+   * Label: "BJCA Global Root CA1"
+   * Serial: 113562791157148395269083148143378328608
+   * MD5 Fingerprint: 42:32:99:76:43:33:36:24:35:07:82:9b:28:f9:d0:90
+   * SHA1 Fingerprint: d5:ec:8d:7b:4c:ba:79:f4:e7:e8:cb:9d:6b:ae:77:83:10:03:21:6a
+   * SHA256 Fingerprint: f3:89:6f:88:fe:7c:0a:88:27:66:a7:fa:6a:d2:74:9f:b5:7a:7f:3e:98:fb:76:9c:1f:a7:b0:9c:2c:44:d5:ae
+   * -----BEGIN CERTIFICATE-----
+   * MIIFdDCCA1ygAwIBAgIQVW9l47TZkGobCdFsPsBsIDANBgkqhkiG9w0BAQsFADBU
+   * MQswCQYDVQQGEwJDTjEmMCQGA1UECgwdQkVJSklORyBDRVJUSUZJQ0FURSBBVVRI
+   * T1JJVFkxHTAbBgNVBAMMFEJKQ0EgR2xvYmFsIFJvb3QgQ0ExMB4XDTE5MTIxOTAz
+   * MTYxN1oXDTQ0MTIxMjAzMTYxN1owVDELMAkGA1UEBhMCQ04xJjAkBgNVBAoMHUJF
+   * SUpJTkcgQ0VSVElGSUNBVEUgQVVUSE9SSVRZMR0wGwYDVQQDDBRCSkNBIEdsb2Jh
+   * bCBSb290IENBMTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBAPFmCL3Z
+   * xRVhy4QEQaVpN3cdwbB7+sN3SJATcmTRuHyQNZ0YeYjjlwE8R4HyDqKYDZ4/N+AZ
+   * spDyRhySsTphzvq3Rp4Dhtczbu33RYx2N95ulpH3134rhxfVizXuhJFyV9xgw8O5
+   * 58dnJCNPYwpj9mZ9S1WnP3hkSWkSl+BMDdMJoDIwOvqfwPKcxRIqLhy1BDPapDgR
+   * at7GGPZHOiJBhyL8xIkoVNiMpTAK+BcWyqw3/XmnkRd4OJmtWO2y3syJfQOcs4ll
+   * 5+M7sSKGjwZteAf9kRJ/sGsciQ35uMt0WwfCyPQ10WRjeulumijWML3mG90Vr4Tq
+   * nMfK9Q7q8l0ph49pczm+LiRvRSGsxdRpJQaDrXpIhRMsDQa4bHlW/KNnMoH1V6XK
+   * V0Jp6VwkYe/iMBhORJhVb3rCk9gZtt58R4oRTklH2yiUAguUSiz5EtBP6DF+bHq/
+   * pj+bOT0CFqMYs2esWz8sgytnOYFcuX6U1WTdno9uruh8W7TXakdI136z1C2OVnZO
+   * z2nxbkRs1CTqjSShGL+9V/6pmTW12xB3uD1IutbB5/EjPtffhZ0nPNRAvQoMvfXn
+   * jSXWgXSHRtQpdaJCbPdzied9v3pKH9MiyRVVz99vfFXQpIsHETdfg6YmV6YBW37+
+   * WGgHqel62bno/1Afq8K0wM7o6v0PvY1NuLxxAgMBAAGjQjBAMB0GA1UdDgQWBBTF
+   * 7+3M2I0hxkjk49cULqcWk+WYATAPBgNVHRMBAf8EBTADAQH/MA4GA1UdDwEB/wQE
+   * AwIBBjANBgkqhkiG9w0BAQsFAAOCAgEAUoKsITQfI/Ki2Pm4rzc2IInRNwPWaZ+4
+   * YRC6ojGYWUfo0Q0lHhVBDOAqVdVXUsv45Mdpox1NcQJeXyFFYEhcCY5JEMEE3Kli
+   * awLwQ8hOnThJdMkycFRtwUf8jrQ2ntScvd0g1lPJGKm1Vrl2i5VnZu69mP6u775u
+   * +2D2/VnGKhs/I0qUJDAnyIm860Qkmss9vk/Ves6OF8tiwdneHg56/0OGNFK8YT88
+   * X7vZdrRTvJez/opMEi4r89fO4aL/3Xtw+zuhTaRjAv04l5U/BXCga99igUOLtFkN
+   * SoxUnMW7gZ/NfaXvCyUeOiDbHPwfmGcCCtRzRBPbUYQaVQNW4AB+dAb/OMRyHdOo
+   * P2gxXdMJxy6MW2Pg6Nwe0uxhHvLe5e/2mXZgLR6UcnHGCyoyx5JO1UbXHfmpGQrI
+   * +pXObSOYqgs4rZpWDW+N8TEAiMEXnM0ZNjX+VVOg4DwzX5Ze4jLp3zO7Bkqp2IRz
+   * znfSxqxx4VyjHQy7Ct9f4qNx2No3WqB4K/TUfet27fJhcKVlmtOJNBir+3I+17Q9
+   * eVzYH6Eze9mCUAyTF6ps3MKCuwJXNq+YJyo5UOGwifUll35HaBC07HPKs5fRJNz2
+   * YqAo07WjuGS3iGJCz51TzZm+ZGiPTx4SSPfSKcOYKMryMguTjClPPGAyzQWWYezy
+   * r/6zcCwupvI=
+   * -----END CERTIFICATE-----
+   */
+  webpki::TrustAnchor {
+    subject: b"1\x0b0\t\x06\x03U\x04\x06\x13\x02CN1&0$\x06\x03U\x04\n\x0c\x1dBEIJING CERTIFICATE AUTHORITY1\x1d0\x1b\x06\x03U\x04\x03\x0c\x14BJCA Global Root CA1",
+    spki: b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x02\x0f\x000\x82\x02\n\x02\x82\x02\x01\x00\xf1f\x08\xbd\xd9\xc5\x15a\xcb\x84\x04A\xa5i7w\x1d\xc1\xb0{\xfa\xc3wH\x90\x13rd\xd1\xb8|\x905\x9d\x18y\x88\xe3\x97\x01<G\x81\xf2\x0e\xa2\x98\r\x9e?7\xe0\x19\xb2\x90\xf2F\x1c\x92\xb1:a\xce\xfa\xb7F\x9e\x03\x86\xd73n\xed\xf7E\x8cv7\xden\x96\x91\xf7\xd7~+\x87\x17\xd5\x8b5\xee\x84\x91rW\xdc`\xc3\xc3\xb9\xe7\xc7g$#Oc\nc\xf6f}KU\xa7?xdIi\x12\x97\xe0L\r\xd3\t\xa020:\xfa\x9f\xc0\xf2\x9c\xc5\x12*.\x1c\xb5\x043\xda\xa48\x11j\xde\xc6\x18\xf6G:\"A\x87\"\xfc\xc4\x89(T\xd8\x8c\xa50\n\xf8\x17\x16\xca\xac7\xfdy\xa7\x91\x17x8\x99\xadX\xed\xb2\xde\xcc\x89}\x03\x9c\xb3\x89e\xe7\xe3;\xb1\"\x86\x8f\x06mx\x07\xfd\x91\x12\x7f\xb0k\x1c\x89\r\xf9\xb8\xcbt[\x07\xc2\xc8\xf45\xd1dcz\xe9n\x9a(\xd60\xbd\xe6\x1b\xdd\x15\xaf\x84\xea\x9c\xc7\xca\xf5\x0e\xea\xf2])\x87\x8fis9\xbe.$oE!\xac\xc5\xd4i%\x06\x83\xadzH\x85\x13,\r\x06\xb8lyV\xfc\xa3g2\x81\xf5W\xa5\xcaWBi\xe9\\$a\xef\xe20\x18ND\x98Uoz\xc2\x93\xd8\x19\xb6\xde|G\x8a\x11NIG\xdb(\x94\x02\x0b\x94J,\xf9\x12\xd0O\xe81~lz\xbf\xa6?\x9b9=\x02\x16\xa3\x18\xb3g\xac[?,\x83+g9\x81\\\xb9~\x94\xd5d\xdd\x9e\x8fn\xae\xe8|[\xb4\xd7jGH\xd7~\xb3\xd4-\x8eVvN\xcfi\xf1nDl\xd4$\xea\x8d$\xa1\x18\xbf\xbdW\xfe\xa9\x995\xb5\xdb\x10w\xb8=H\xba\xd6\xc1\xe7\xf1#>\xd7\xdf\x85\x9d\'<\xd4@\xbd\n\x0c\xbd\xf5\xe7\x8d%\xd6\x81t\x87F\xd4)u\xa2Bl\xf7s\x89\xe7}\xbfzJ\x1f\xd3\"\xc9\x15U\xcf\xdfo|U\xd0\xa4\x8b\x07\x117_\x83\xa6&W\xa6\x01[~\xfeXh\x07\xa9\xe9z\xd9\xb9\xe8\xffP\x1f\xab\xc2\xb4\xc0\xce\xe8\xea\xfd\x0f\xbd\x8dM\xb8\xbcq\x02\x03\x01\x00\x01",
     name_constraints: None
   },
 
