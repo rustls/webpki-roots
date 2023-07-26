@@ -1,6 +1,6 @@
 name: webpki-roots
 
-on: 
+on:
   push:
   pull_request:
   schedule:
@@ -18,7 +18,7 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
 
       - name: cargo build (debug; default features)
-        run: cargo build
+        run: cargo build --all-targets
 
       - name: cargo test (debug; default features)
         run: cargo test
@@ -27,4 +27,3 @@ jobs:
         run: |
           python3 build.py > newlib.rs
           diff -u src/lib.rs newlib.rs
-
