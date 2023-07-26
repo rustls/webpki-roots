@@ -111,7 +111,7 @@ async fn generated_code_is_fresh() {
         (String::new(), String::new(), String::new());
     let mut code = String::with_capacity(256 * 1_024);
     code.push_str(HEADER);
-    code.push_str("pub static TLS_SERVER_ROOTS: &[TrustAnchor] = &[\n");
+    code.push_str("pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[\n");
     for (_, (lines, der)) in hashes {
         let ta = webpki::TrustAnchor::try_from_cert_der(&der).unwrap();
         subject.clear();
