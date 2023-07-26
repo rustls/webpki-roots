@@ -6,8 +6,8 @@ use std::io::Cursor;
 
 use ring::digest;
 
-#[tokio::main]
-async fn main() {
+#[tokio::test]
+async fn generated_code_is_fresh() {
     // Fetch the list of certificates as a PEM file from mkcert.org
 
     let mut except = String::with_capacity(128);
@@ -110,6 +110,7 @@ async fn main() {
     let (mut subject, mut spki, mut name_constraints) =
         (String::new(), String::new(), String::new());
     let mut code = String::with_capacity(256 * 1_024);
+    code.push_str(HEADER);
     code.push_str("pub static TLS_SERVER_ROOTS: &[TrustAnchor] = &[\n");
     for (_, (lines, der)) in hashes {
         let ta = webpki::TrustAnchor::try_from_cert_der(&der).unwrap();
@@ -165,8 +166,15 @@ async fn main() {
         code.push_str("  },\n\n");
     }
 
-    code.push_str("];");
-    println!("{HEADER}{code}");
+    code.push_str("];\n");
+
+    // Check that the generated code matches the checked-in code
+
+    let old = fs::read_to_string("src/lib.rs").unwrap();
+    if old != code {
+        fs::write("src/lib.rs", code).unwrap();
+        panic!("generated code changed");
+    }
 }
 
 fn concat(parts: &[&[u8]]) -> Vec<u8> {
