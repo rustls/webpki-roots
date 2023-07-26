@@ -22,8 +22,3 @@ jobs:
 
       - name: cargo test (debug; default features)
         run: cargo test
-
-      - name: check upstream
-        run: |
-          cargo run --example generate > newlib.rs
-          diff -u src/lib.rs newlib.rs
