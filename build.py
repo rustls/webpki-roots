@@ -118,7 +118,7 @@ def extract(msg, name):
 
 def convert_cert(cert_der):
     proc = subprocess.Popen(
-            ['target/debug/process_cert'],
+            ['target/debug/examples/process_cert'],
             stdin = subprocess.PIPE,
             stdout = subprocess.PIPE)
     stdout, _ = proc.communicate(cert_der)
