@@ -18,13 +18,14 @@ HEADER = """//!
 //! yourself by inspecting and re-running the generation process.
 //!
 
-#![forbid(unsafe_code,
-          unstable_features)]
-#![deny(trivial_casts,
-        trivial_numeric_casts,
-        unused_import_braces,
-        unused_extern_crates,
-        unused_qualifications)]
+#![forbid(unsafe_code, unstable_features)]
+#![deny(
+    trivial_casts,
+    trivial_numeric_casts,
+    unused_import_braces,
+    unused_extern_crates,
+    unused_qualifications
+)]
 """
 
 CERT = """
