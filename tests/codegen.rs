@@ -249,28 +249,8 @@ const TUBITAK1_SUBJECT_DN: &[&[u8]] = &[
     b"TUBITAK Kamu SM SSL Kok Sertifikasi - Surum 1",
 ];
 
-const TUBITAK1_NAME_CONSTRAINTS: &[&[u8]] = &[
-    b"\xa0\x67",
-    b"\x30\x65\xa0\x63",
-    b"\x30\x09\x82\x07",
-    b".gov.tr",
-    b"\x30\x09\x82\x07",
-    b".k12.tr",
-    b"\x30\x09\x82\x07",
-    b".pol.tr",
-    b"\x30\x09\x82\x07",
-    b".mil.tr",
-    b"\x30\x09\x82\x07",
-    b".tsk.tr",
-    b"\x30\x09\x82\x07",
-    b".kep.tr",
-    b"\x30\x09\x82\x07",
-    b".bel.tr",
-    b"\x30\x09\x82\x07",
-    b".edu.tr",
-    b"\x30\x09\x82\x07",
-    b".org.tr",
-];
+const TUBITAK1_NAME_CONSTRAINTS: &[&[u8]] =
+    &[b"\xa0\x0b\x30\x09\xa0\x07", b"\x30\x05\x82\x03", b".tr"];
 
 const EXCLUDED_CAS: &[&str] = &[
     // See https://bugzilla.mozilla.org/show_bug.cgi?id=1266574.
