@@ -25,5 +25,5 @@ jobs:
 
       - name: check upstream
         run: |
-          python3 build.py > newlib.rs
+          cargo run --example generate > newlib.rs
           diff -u src/lib.rs newlib.rs
