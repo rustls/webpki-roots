@@ -8,5 +8,5 @@ description = "Mozilla's CA root certificates for use with webpki"
 homepage = "https://github.com/rustls/webpki-roots"
 repository = "https://github.com/rustls/webpki-roots"
 
-[dependencies]
+[dev-dependencies]
 webpki = { package = "rustls-webpki", version = "0.101.0" }
