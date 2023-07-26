@@ -26,6 +26,13 @@ HEADER = """//!
     unused_extern_crates,
     unused_qualifications
 )]
+
+/// A trust anchor (sometimes called a root) for validating X.509 certificates
+pub struct TrustAnchor<'a> {
+    pub subject: &'a [u8],
+    pub spki: &'a [u8],
+    pub name_constraints: Option<&'a [u8]>,
+}
 """
 
 CERT = """
@@ -150,7 +157,7 @@ def print_root(cert, data):
     nc = ('Some(b"{}")'.format(convert_bytes(nc))) if nc != 'None' else nc
 
     print("""  {}
-  webpki::TrustAnchor {{
+  TrustAnchor {{
     subject: b"{}",
     spki: b"{}",
     name_constraints: {}
@@ -184,11 +191,11 @@ if __name__ == '__main__':
         certs[our_hash] = (cert, data)
 
     print(HEADER)
-    print("""pub static TLS_SERVER_ROOTS: webpki::TlsServerTrustAnchors = webpki::TlsServerTrustAnchors(&[""")
+    print("""pub static TLS_SERVER_ROOTS: &[TrustAnchor] = &[""")
 
     # emit in sorted hash order for deterministic builds
     for hash in sorted(certs):
         cert, data = certs[hash]
         print_root(cert, data)
 
-    print(']);')
+    print('];')
