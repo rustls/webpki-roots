@@ -22,7 +22,7 @@ pub struct TrustAnchor<'a> {
     pub name_constraints: Option<&'a [u8]>,
 }
 
-pub static TLS_SERVER_ROOTS: &[TrustAnchor] = &[
+pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   /*
    * Issuer: CN=DigiCert TLS ECC P384 Root G5 O=DigiCert, Inc.
    * Subject: CN=DigiCert TLS ECC P384 Root G5 O=DigiCert, Inc.
