@@ -14,4 +14,4 @@ reqwest = { version = "0.11", features = ["rustls-tls-native-roots"] }
 ring = "0.16.20"
 rustls-pemfile = "1"
 tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
-webpki = { package = "rustls-webpki", version = "0.101.0" }
+webpki = { package = "rustls-webpki", version = "0.101.2" }
