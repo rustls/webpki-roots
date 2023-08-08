@@ -98,7 +98,7 @@ async fn generated_code_is_fresh() {
     let mut imposed_constraints = HashMap::<Vec<u8>, Vec<u8>>::default();
     imposed_constraints.insert(
         concat(TUBITAK1_SUBJECT_DN),
-        concat(TUBITAK1_NAME_CONSTRAINTS),
+        TUBITAK1_NAME_CONSTRAINTS.to_vec(),
     );
 
     // Generate the trust anchors, sorted by fingerprint
@@ -198,8 +198,8 @@ const TUBITAK1_SUBJECT_DN: &[&[u8]] = &[
     b"TUBITAK Kamu SM SSL Kok Sertifikasi - Surum 1",
 ];
 
-const TUBITAK1_NAME_CONSTRAINTS: &[&[u8]] =
-    &[b"\xa0\x0b\x30\x09\xa0\x07", b"\x30\x05\x82\x03", b".tr"];
+const TUBITAK1_NAME_CONSTRAINTS: &[u8] =
+    &[0xA0, 0x07, 0x30, 0x05, 0x82, 0x03, 0x2E, 0x74, 0x72];
 
 const EXCLUDED_CAS: &[&str] = &[
     // See https://bugzilla.mozilla.org/show_bug.cgi?id=1266574.
