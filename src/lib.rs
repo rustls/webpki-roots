@@ -1,6 +1,6 @@
 //!
-//! This library is automatically generated from the Mozilla certificate
-//! store via mkcert.org.  Don't edit it.
+//! This library is automatically generated from the Mozilla 
+//! IncludedCACertificateReportPEMCSV report via ccadb.org. Don't edit it.
 //!
 //! The generation is done deterministically so you can verify it
 //! yourself by inspecting and re-running the generation process.
@@ -401,7 +401,7 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   /*
    * Issuer: CN=GlobalSign O=GlobalSign OU=GlobalSign ECC Root CA - R5
    * Subject: CN=GlobalSign O=GlobalSign OU=GlobalSign ECC Root CA - R5
-   * Label: "GlobalSign ECC Root CA - R5"
+   * Label: "GlobalSign"
    * Serial: 32785792099990507226680698011560947931244
    * SHA256 Fingerprint: 17:9f:bc:14:8a:3d:d0:0f:d2:4e:a1:34:58:cc:43:bf:a7:f5:9c:81:82:d7:83:a5:13:f6:eb:ec:10:0c:89:24
    * -----BEGIN CERTIFICATE-----
@@ -714,7 +714,7 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   /*
    * Issuer: CN=GlobalSign O=GlobalSign OU=GlobalSign Root CA - R6
    * Subject: CN=GlobalSign O=GlobalSign OU=GlobalSign Root CA - R6
-   * Label: "GlobalSign Root CA - R6"
+   * Label: "GlobalSign"
    * Serial: 1417766617973444989252670301619537
    * SHA256 Fingerprint: 2c:ab:ea:fe:37:d0:6c:a2:2a:ba:73:91:c0:03:3d:25:98:29:52:c4:53:64:73:49:76:3a:3a:b5:ad:6c:cf:69
    * -----BEGIN CERTIFICATE-----
@@ -2372,9 +2372,9 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   },
 
   /*
-   * Issuer: CN=Entrust.net Certification Authority (2048) O=Entrust.net OU=www.entrust.net/CPS_2048 incorp. by ref. (limits liab.)/(c) 1999 Entrust.net Limited
-   * Subject: CN=Entrust.net Certification Authority (2048) O=Entrust.net OU=www.entrust.net/CPS_2048 incorp. by ref. (limits liab.)/(c) 1999 Entrust.net Limited
-   * Label: "Entrust.net Premium 2048 Secure Server CA"
+   * Issuer: CN=Entrust.net Certification Authority (2048) O=Entrust.net OU=(c) 1999 Entrust.net Limited
+   * Subject: CN=Entrust.net Certification Authority (2048) O=Entrust.net OU=(c) 1999 Entrust.net Limited
+   * Label: "Entrust.net Certification Authority (2048)"
    * Serial: 946069240
    * SHA256 Fingerprint: 6d:c4:71:72:e0:1c:bc:b0:bf:62:58:0d:89:5f:e2:b8:ac:9a:d4:f8:73:80:1e:0c:10:b9:c8:37:d2:1e:b1:77
    * -----BEGIN CERTIFICATE-----
@@ -3648,7 +3648,7 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   /*
    * Issuer: CN=GlobalSign O=GlobalSign OU=GlobalSign ECC Root CA - R4
    * Subject: CN=GlobalSign O=GlobalSign OU=GlobalSign ECC Root CA - R4
-   * Label: "GlobalSign ECC Root CA - R4"
+   * Label: "GlobalSign"
    * Serial: 159662223612894884239637590694
    * SHA256 Fingerprint: b0:85:d7:0b:96:4f:19:1a:73:e4:af:0d:54:ae:7a:0e:07:aa:fd:af:9b:71:dd:08:62:13:8a:b7:32:5a:24:a2
    * -----BEGIN CERTIFICATE-----
@@ -4013,7 +4013,7 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   /*
    * Issuer: O=Chunghwa Telecom Co., Ltd. OU=ePKI Root Certification Authority
    * Subject: O=Chunghwa Telecom Co., Ltd. OU=ePKI Root Certification Authority
-   * Label: "ePKI Root Certification Authority"
+   * Label: "Chunghwa Telecom Co., Ltd. - ePKI Root Certification Authority"
    * Serial: 28956088682735189655030529057352760477
    * SHA256 Fingerprint: c0:a6:f4:dc:63:a2:4b:fd:cf:54:ef:2a:6a:08:2a:0a:72:de:35:80:3e:2f:f5:ff:52:7a:e5:d8:72:06:df:d5
    * -----BEGIN CERTIFICATE-----
@@ -4231,7 +4231,7 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   /*
    * Issuer: CN=GlobalSign O=GlobalSign OU=GlobalSign Root CA - R3
    * Subject: CN=GlobalSign O=GlobalSign OU=GlobalSign Root CA - R3
-   * Label: "GlobalSign Root CA - R3"
+   * Label: "GlobalSign"
    * Serial: 4835703278459759426209954
    * SHA256 Fingerprint: cb:b5:22:d7:b7:f1:27:ad:6a:01:13:86:5b:df:1c:d4:10:2e:7d:07:59:af:63:5a:7c:f4:72:0d:c9:63:c5:3b
    * -----BEGIN CERTIFICATE-----
@@ -4291,7 +4291,7 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   /*
    * Issuer: CN=XRamp Global Certification Authority O=XRamp Security Services Inc OU=www.xrampsecurity.com
    * Subject: CN=XRamp Global Certification Authority O=XRamp Security Services Inc OU=www.xrampsecurity.com
-   * Label: "XRamp Global CA Root"
+   * Label: "XRamp Global Certification Authority"
    * Serial: 107108908803651509692980124233745014957
    * SHA256 Fingerprint: ce:cd:dc:90:50:99:d8:da:df:c5:b1:d2:09:b7:37:cb:e2:c1:8c:fb:2c:10:c0:ff:0b:cf:0d:32:86:fc:1a:a2
    * -----BEGIN CERTIFICATE-----
@@ -4422,7 +4422,7 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   /*
    * Issuer: CN=AAA Certificate Services O=Comodo CA Limited
    * Subject: CN=AAA Certificate Services O=Comodo CA Limited
-   * Label: "Comodo AAA Services root"
+   * Label: "AAA Certificate Services"
    * Serial: 1
    * SHA256 Fingerprint: d7:a7:a0:fb:5d:7e:27:31:d7:71:e9:48:4e:bc:de:f7:1d:5f:0c:3e:0a:29:48:78:2b:c8:3e:e0:ea:69:9e:f4
    * -----BEGIN CERTIFICATE-----
@@ -4805,7 +4805,7 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   /*
    * Issuer: O=SECOM Trust.net OU=Security Communication RootCA1
    * Subject: O=SECOM Trust.net OU=Security Communication RootCA1
-   * Label: "Security Communication Root CA"
+   * Label: "SECOM Trust.net - Security Communication RootCA1"
    * Serial: 0
    * SHA256 Fingerprint: e7:5e:72:ed:9f:56:0e:ec:6e:b4:80:00:73:a4:3f:c3:ad:19:19:5a:39:22:82:01:78:95:97:4a:99:02:6b:6c
    * -----BEGIN CERTIFICATE-----
@@ -4918,7 +4918,7 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   /*
    * Issuer: O=FNMT-RCM OU=AC RAIZ FNMT-RCM
    * Subject: O=FNMT-RCM OU=AC RAIZ FNMT-RCM
-   * Label: "AC RAIZ FNMT-RCM"
+   * Label: "FNMT-RCM - SHA256"
    * Serial: 485876308206448804701554682760554759
    * SHA256 Fingerprint: eb:c5:57:0c:29:01:8c:4d:67:b1:aa:12:7b:af:12:f7:03:b4:61:1e:bc:17:b7:da:b5:57:38:94:17:9b:93:fa
    * -----BEGIN CERTIFICATE-----
