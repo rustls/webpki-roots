@@ -101,7 +101,7 @@ fn rcgen_ee_for_name(name: String, issuer: &Certificate) -> Vec<u8> {
     ee.is_ca = IsCa::NoCa;
     Certificate::from_params(ee)
         .unwrap()
-        .serialize_der_with_signer(&issuer)
+        .serialize_der_with_signer(issuer)
         .unwrap()
 }
 
@@ -124,7 +124,7 @@ fn rcgen_name_constraints(der: &[u8]) -> rcgen::NameConstraints {
 
     // There should be at least one permitted subtree.
     assert!(
-        !constraints.permitted_subtrees.is_none(),
+        constraints.permitted_subtrees.is_some(),
         "empty permitted subtrees in constraints"
     );
 
