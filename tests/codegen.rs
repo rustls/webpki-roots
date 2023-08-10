@@ -138,6 +138,10 @@ async fn generated_code_is_fresh() {
 
         code.push_str("  /*\n");
         for &ln in lines.iter() {
+            if ln.starts_with("# MD5") || ln.starts_with("# SHA1") {
+                continue;
+            }
+
             code.push_str("   * ");
             match ln.strip_prefix("# ") {
                 Some(ln) => code.push_str(ln),
@@ -198,8 +202,7 @@ const TUBITAK1_SUBJECT_DN: &[&[u8]] = &[
     b"TUBITAK Kamu SM SSL Kok Sertifikasi - Surum 1",
 ];
 
-const TUBITAK1_NAME_CONSTRAINTS: &[u8] =
-    &[0xA0, 0x07, 0x30, 0x05, 0x82, 0x03, 0x2E, 0x74, 0x72];
+const TUBITAK1_NAME_CONSTRAINTS: &[u8] = &[0xA0, 0x07, 0x30, 0x05, 0x82, 0x03, 0x2E, 0x74, 0x72];
 
 const EXCLUDED_CAS: &[&str] = &[
     // See https://bugzilla.mozilla.org/show_bug.cgi?id=1266574.
