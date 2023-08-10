@@ -20,5 +20,8 @@ jobs:
       - name: cargo build (debug; default features)
         run: cargo build --all-targets
 
+      - name: cargo clippy
+        run: cargo clippy --all-targets -- -D warnings
+
       - name: cargo test (debug; default features)
         run: cargo test
