@@ -109,11 +109,11 @@ fn rcgen_ee_for_name(name: String, issuer: &Certificate) -> Vec<u8> {
 fn rcgen_name_constraints(der: &[u8]) -> rcgen::NameConstraints {
     // x509 parser expects the outer SEQUENCE that the webpki trust anchor representation elides
     // so wrap the DER up.
-    //
-    // Note: We take the cheap way out here and assume single byte length - if the following
-    // assert fails we'll need to more intelligently encode the sequence DER length.
-    assert!(der.len() < 0x80, "name constraint too long");
-    let wrapped_der = [&[0x30, der.len() as u8], der].concat();
+    let wrapped_der = yasna::construct_der(|writer| {
+        writer.write_sequence(|writer| {
+            writer.next().write_der(der);
+        })
+    });
 
     // Constraints should parse with no trailing data.
     let (trailing, constraints) = X509ParserNameConstraints::from_der(&wrapped_der).unwrap();
