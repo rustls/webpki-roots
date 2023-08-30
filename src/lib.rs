@@ -1,5 +1,5 @@
 //!
-//! This library is automatically generated from the Mozilla 
+//! This library is automatically generated from the Mozilla
 //! IncludedCACertificateReportPEMCSV report via ccadb.org. Don't edit it.
 //!
 //! The generation is done deterministically so you can verify it

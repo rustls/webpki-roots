@@ -25,7 +25,7 @@ fn name_constraints() {
                     &[],
                     time,
                     KeyUsage::server_auth(),
-                    &[],
+                    None,
                 )
                 .unwrap();
         }
@@ -40,7 +40,7 @@ fn name_constraints() {
                     &[],
                     time,
                     KeyUsage::server_auth(),
-                    &[],
+                    None,
                 );
             assert!(matches!(result, Err(Error::NameConstraintViolation)));
         }
@@ -175,7 +175,7 @@ fn tubitak_name_constraint_works() {
         &[&inter[..], &root[..]],
         now,
         KeyUsage::server_auth(),
-        &[],
+        None,
     )
     .unwrap();
 
@@ -183,16 +183,16 @@ fn tubitak_name_constraint_works() {
     cert.verify_is_valid_for_subject_name(subject).unwrap();
 }
 
-static ALL_ALGORITHMS: &[&webpki::SignatureAlgorithm] = &[
-    &webpki::ECDSA_P256_SHA256,
-    &webpki::ECDSA_P256_SHA384,
-    &webpki::ECDSA_P384_SHA256,
-    &webpki::ECDSA_P384_SHA384,
-    &webpki::RSA_PKCS1_2048_8192_SHA256,
-    &webpki::RSA_PKCS1_2048_8192_SHA384,
-    &webpki::RSA_PKCS1_2048_8192_SHA512,
-    &webpki::RSA_PKCS1_3072_8192_SHA384,
-    &webpki::RSA_PSS_2048_8192_SHA256_LEGACY_KEY,
-    &webpki::RSA_PSS_2048_8192_SHA384_LEGACY_KEY,
-    &webpki::RSA_PSS_2048_8192_SHA512_LEGACY_KEY,
+static ALL_ALGORITHMS: &[&dyn webpki::SignatureVerificationAlgorithm] = &[
+    webpki::ECDSA_P256_SHA256,
+    webpki::ECDSA_P256_SHA384,
+    webpki::ECDSA_P384_SHA256,
+    webpki::ECDSA_P384_SHA384,
+    webpki::RSA_PKCS1_2048_8192_SHA256,
+    webpki::RSA_PKCS1_2048_8192_SHA384,
+    webpki::RSA_PKCS1_2048_8192_SHA512,
+    webpki::RSA_PKCS1_3072_8192_SHA384,
+    webpki::RSA_PSS_2048_8192_SHA256_LEGACY_KEY,
+    webpki::RSA_PSS_2048_8192_SHA384_LEGACY_KEY,
+    webpki::RSA_PSS_2048_8192_SHA512_LEGACY_KEY,
 ];
