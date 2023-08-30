@@ -6,8 +6,10 @@ use std::fs;
 
 use chrono::{NaiveDate, Utc};
 use num_bigint::BigUint;
+use pki_types::CertificateDer;
 use ring::digest;
 use serde::Deserialize;
+use webpki::extract_trust_anchor;
 use x509_parser::prelude::AttributeTypeAndValue;
 use x509_parser::x509::X509Name;
 
@@ -89,14 +91,15 @@ async fn new_generated_code_is_fresh() {
         let metadata_fp = hex::decode(&root.sha256_fingerprint).expect("malformed fingerprint");
         assert_eq!(calculated_fp.as_ref(), metadata_fp.as_slice());
 
-        let ta = webpki::TrustAnchor::try_from_cert_der(&der).expect("malformed trust anchor der");
+        let ta_der = CertificateDer::from(der.as_ref());
+        let ta = extract_trust_anchor(&ta_der).expect("malformed trust anchor der");
         subject.clear();
-        for &b in ta.subject {
+        for &b in ta.subject.as_ref() {
             write!(&mut subject, "{}", escape_default(b)).unwrap();
         }
 
         spki.clear();
-        for &b in ta.spki {
+        for &b in ta.subject_public_key_info.as_ref() {
             write!(&mut spki, "{}", escape_default(b)).unwrap();
         }
 
@@ -131,14 +134,18 @@ async fn new_generated_code_is_fresh() {
 
         // Write the code
         code.push_str("  TrustAnchor {\n");
-        code.write_fmt(format_args!("    subject: b\"{subject}\",\n"))
-            .unwrap();
-        code.write_fmt(format_args!("    spki: b\"{spki}\",\n"))
-            .unwrap();
+        code.write_fmt(format_args!(
+            "    subject: Der::from_slice(b\"{subject}\"),\n"
+        ))
+        .unwrap();
+        code.write_fmt(format_args!(
+            "    subject_public_key_info: Der::from_slice(b\"{spki}\"),\n"
+        ))
+        .unwrap();
         match name_constraints.is_empty() {
             false => code
                 .write_fmt(format_args!(
-                    "    name_constraints: Some(b\"{name_constraints}\")\n"
+                    "    name_constraints: Some(Der::from_slice(b\"{name_constraints}\"))\n"
                 ))
                 .unwrap(),
             true => code.push_str("    name_constraints: None\n"),
@@ -373,7 +380,7 @@ impl From<&str> for TrustBits {
 }
 
 const HEADER: &str = r#"//!
-//! This library is automatically generated from the Mozilla 
+//! This library is automatically generated from the Mozilla
 //! IncludedCACertificateReportPEMCSV report via ccadb.org. Don't edit it.
 //!
 //! The generation is done deterministically so you can verify it
@@ -389,11 +396,6 @@ const HEADER: &str = r#"//!
     unused_qualifications
 )]
 
-/// A trust anchor (sometimes called a root) for validating X.509 certificates
-pub struct TrustAnchor<'a> {
-    pub subject: &'a [u8],
-    pub spki: &'a [u8],
-    pub name_constraints: Option<&'a [u8]>,
-}
+use pki_types::{Der, TrustAnchor};
 
 "#;
