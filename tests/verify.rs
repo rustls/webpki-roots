@@ -1,6 +1,6 @@
 use std::convert::TryFrom;
 
-use pki_types::CertificateDer;
+use pki_types::{CertificateDer, SignatureVerificationAlgorithm};
 use rcgen::{BasicConstraints, Certificate, CertificateParams, DnType, IsCa, KeyUsagePurpose};
 use webpki::{extract_trust_anchor, EndEntityCert, Error, KeyUsage, SubjectNameRef, Time};
 use x509_parser::extensions::{GeneralName, NameConstraints as X509ParserNameConstraints};
@@ -180,7 +180,7 @@ fn tubitak_name_constraint_works() {
     cert.verify_is_valid_for_subject_name(subject).unwrap();
 }
 
-static ALL_ALGORITHMS: &[&dyn webpki::SignatureVerificationAlgorithm] = &[
+static ALL_ALGORITHMS: &[&dyn SignatureVerificationAlgorithm] = &[
     webpki::ECDSA_P256_SHA256,
     webpki::ECDSA_P256_SHA384,
     webpki::ECDSA_P384_SHA256,
