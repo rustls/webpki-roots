@@ -1,8 +1,9 @@
+use core::time::Duration;
 use std::convert::TryFrom;
 
-use pki_types::{CertificateDer, SignatureVerificationAlgorithm};
+use pki_types::{CertificateDer, SignatureVerificationAlgorithm, UnixTime};
 use rcgen::{BasicConstraints, Certificate, CertificateParams, DnType, IsCa, KeyUsagePurpose};
-use webpki::{extract_trust_anchor, EndEntityCert, Error, KeyUsage, SubjectNameRef, Time};
+use webpki::{extract_trust_anchor, EndEntityCert, Error, KeyUsage, SubjectNameRef};
 use x509_parser::extensions::{GeneralName, NameConstraints as X509ParserNameConstraints};
 use x509_parser::prelude::FromDer;
 
@@ -14,7 +15,7 @@ fn name_constraints() {
         .iter()
         .filter_map(|ta| ta.name_constraints.as_ref())
     {
-        let time = Time::from_seconds_since_unix_epoch(0x40000000); // Time matching rcgen default.
+        let time = UnixTime::since_unix_epoch(Duration::from_secs(0x40000000)); // Time matching rcgen default.
         let test_case = ConstraintTest::new(name_constraints.as_ref());
         let trust_anchors = &[extract_trust_anchor(&test_case.trust_anchor).unwrap()];
 
@@ -164,7 +165,7 @@ fn tubitak_name_constraint_works() {
     let subj = CertificateDer::from(&include_bytes!("data/tubitak/subj.der")[..]);
 
     let roots = [extract_trust_anchor(&root).unwrap().to_owned()];
-    let now = Time::from_seconds_since_unix_epoch(1493668479);
+    let now = UnixTime::since_unix_epoch(Duration::from_secs(1493668479));
     let cert = EndEntityCert::try_from(&subj).unwrap();
     cert.verify_for_usage(
         ALL_ALGORITHMS,
