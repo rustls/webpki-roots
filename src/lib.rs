@@ -6,6 +6,7 @@
 //! yourself by inspecting and re-running the generation process.
 //!
 
+#![no_std]
 #![forbid(unsafe_code, unstable_features)]
 #![deny(
     trivial_casts,
