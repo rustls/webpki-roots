@@ -9,7 +9,7 @@ use num_bigint::BigUint;
 use pki_types::CertificateDer;
 use ring::digest;
 use serde::Deserialize;
-use webpki::extract_trust_anchor;
+use webpki::anchor_from_trusted_cert;
 use x509_parser::prelude::AttributeTypeAndValue;
 use x509_parser::x509::X509Name;
 
@@ -92,7 +92,7 @@ async fn new_generated_code_is_fresh() {
         assert_eq!(calculated_fp.as_ref(), metadata_fp.as_slice());
 
         let ta_der = CertificateDer::from(der.as_ref());
-        let ta = extract_trust_anchor(&ta_der).expect("malformed trust anchor der");
+        let ta = anchor_from_trusted_cert(&ta_der).expect("malformed trust anchor der");
         subject.clear();
         for &b in ta.subject.as_ref() {
             write!(&mut subject, "{}", escape_default(b)).unwrap();
