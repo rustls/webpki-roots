@@ -47,6 +47,50 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   },
 
   /*
+   * Issuer: CN=CommScope Public Trust RSA Root-01 O=CommScope
+   * Subject: CN=CommScope Public Trust RSA Root-01 O=CommScope
+   * Label: "CommScope Public Trust RSA Root-01"
+   * Serial: 354030733275608256394402989253558293562031411421
+   * SHA256 Fingerprint: 02:bd:f9:6e:2a:45:dd:9b:f1:8f:c7:e1:db:df:21:a0:37:9b:a3:c9:c2:61:03:44:cf:d8:d6:06:fe:c1:ed:81
+   * -----BEGIN CERTIFICATE-----
+   * MIIFbDCCA1SgAwIBAgIUPgNJgXUWdDGOTKvVxZAplsU5EN0wDQYJKoZIhvcNAQEL
+   * BQAwTjELMAkGA1UEBhMCVVMxEjAQBgNVBAoMCUNvbW1TY29wZTErMCkGA1UEAwwi
+   * Q29tbVNjb3BlIFB1YmxpYyBUcnVzdCBSU0EgUm9vdC0wMTAeFw0yMTA0MjgxNjQ1
+   * NTRaFw00NjA0MjgxNjQ1NTNaME4xCzAJBgNVBAYTAlVTMRIwEAYDVQQKDAlDb21t
+   * U2NvcGUxKzApBgNVBAMMIkNvbW1TY29wZSBQdWJsaWMgVHJ1c3QgUlNBIFJvb3Qt
+   * MDEwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQCwSGWjDR1C45FtnYSk
+   * YZYSwu3D2iM0GXb26v1VWvZVAVMP8syMl0+5UMuzAURWlv2bKOx7dAvnQmtVzslh
+   * suitQDy6uUEKBU8bJoWPQ7VAtYXR1HHcg0Hz9kXHgKKEUJdGzqAMxGBWBB0HW0al
+   * DrJLpA6lfO741GIDuZNqihS4cPgugkY4Iw50x2tBt9Apo52AsH53k2NC+zSDO3Oj
+   * WiE260f6GBfZumbCk6SP/F2krfxQapWsvCQz0b2If4b19bJzKo98rwjyGpg/qYFl
+   * P8GMicWWMJoKz/TUyDTtnS+8jTiGU+6Xn6myY5QXjQ/cZip8UlF1y5mO6D1cv547
+   * KI2DAg+pn3LiLCuz3GaXAEDQpFSOm117RTYm1nJD68/A6g3czhLmfTifBSeolz7p
+   * UcZsBSjBAg/pGG3svZwG1KdJ9FQFa2ww8esD1eo9anbCyxooSU1/ZOD6K9pzg4H/
+   * kQO9lLvkuI6cMmPNn7togbGEW682v3fuHX/3SZtS7NJ3Wn2RnU3COS3kuoL4b/JO
+   * Hg9O5j9ZpSPcPYeoKFgo0fEbNttPxP/hjFtyjMcmAyejOQoBqsCyMWCDIqFPEgkB
+   * Ea801M/XrmLTBQe0MXXgDW1XT2mH+VepuhX2yFJtocucH+X8eKg1mp9BFM6ltM6U
+   * CBwJrVbl2rZJmkrqYxhTnCwuwwIDAQABo0IwQDAPBgNVHRMBAf8EBTADAQH/MA4G
+   * A1UdDwEB/wQEAwIBBjAdBgNVHQ4EFgQUN12mmnQywsL5x6YVEFm45P3luG0wDQYJ
+   * KoZIhvcNAQELBQADggIBAK+nz97/4L1CjU3lIpbfaOp9TSp90K09FlxD533Ahuh6
+   * NWPxzIHIxgvoLlI1pKZJkGNRrDSsBTtXAOnTYtPZKdVUvhwQkZyybf5Z/Xn36lbQ
+   * nmhUQo8mUuJM3y+Xpi/SB5io82BdS5pYV4jvguX6r2yBS5KPQJqTRlnLX3gWsWc+
+   * QgvfKNmwrZggvkN80V4aCRckjXtdlemrwWCrWxhkgPut4AZ9HcpZuPN4KWfGVh2v
+   * trV0KnahP/t1MJ+UXjulYPPLXAziDslg+MkfFoom3ecnf+slpoq9uC02EJqxWE2a
+   * aE9gVOX2RhOOiKy8IUISrcZKiX2bwdgt6ZYD9KJ0DLwAHb/WNyVntHKLr4W96ioD
+   * j8z7PEQkguIBpQtZtjSNMgsSDesnwv1B10A8ckYpwIzqug/xBpMu95yo9GA+o/E4
+   * Xo4TwbM6l4c/ksp4qRyv0LAbJh6+cOx69TOY6lz/KwsETkPdY34Op054A5U+1C0w
+   * lREQKC6/oAI+/15Z0wUOlV9TRe9rh9VIzRamloPh37MG88EU26fsHItdkJANclHn
+   * YfkUyq+Dj7+vsQpZXdxc1+SWrVtgHdqul7I52Qb1dgAT+GhMIbA1xNxVssnBQVoc
+   * icCMb3SgazNNtQEo/a2tiRc7ppqEvOuM6sRxJKi6KfkIsidWNTJf6jn7MZrVGczw
+   * -----END CERTIFICATE-----
+   */
+  TrustAnchor {
+    subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02US1\x120\x10\x06\x03U\x04\n\x0c\tCommScope1+0)\x06\x03U\x04\x03\x0c\"CommScope Public Trust RSA Root-01"),
+    subject_public_key_info: Der::from_slice(b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x02\x0f\x000\x82\x02\n\x02\x82\x02\x01\x00\xb0He\xa3\r\x1dB\xe3\x91m\x9d\x84\xa4a\x96\x12\xc2\xed\xc3\xda#4\x19v\xf6\xea\xfdUZ\xf6U\x01S\x0f\xf2\xcc\x8c\x97O\xb9P\xcb\xb3\x01DV\x96\xfd\x9b(\xec{t\x0b\xe7BkU\xce\xc9a\xb2\xe8\xad@<\xba\xb9A\n\x05O\x1b&\x85\x8fC\xb5@\xb5\x85\xd1\xd4q\xdc\x83A\xf3\xf6E\xc7\x80\xa2\x84P\x97F\xce\xa0\x0c\xc4`V\x04\x1d\x07[F\xa5\x0e\xb2K\xa4\x0e\xa5|\xee\xf8\xd4b\x03\xb9\x93j\x8a\x14\xb8p\xf8.\x82F8#\x0et\xc7kA\xb7\xd0)\xa3\x9d\x80\xb0~w\x93cB\xfb4\x83;s\xa3Z!6\xebG\xfa\x18\x17\xd9\xbaf\xc2\x93\xa4\x8f\xfc]\xa4\xad\xfcPj\x95\xac\xbc$3\xd1\xbd\x88\x7f\x86\xf5\xf5\xb2s*\x8f|\xaf\x08\xf2\x1a\x98?\xa9\x81e?\xc1\x8c\x89\xc5\x960\x9a\n\xcf\xf4\xd4\xc84\xed\x9d/\xbc\x8d8\x86S\xee\x97\x9f\xa9\xb2c\x94\x17\x8d\x0f\xdcf*|RQu\xcb\x99\x8e\xe8=\\\xbf\x9e;(\x8d\x83\x02\x0f\xa9\x9fr\xe2,+\xb3\xdcf\x97\x00@\xd0\xa4T\x8e\x9b]{E6&\xd6rC\xeb\xcf\xc0\xea\r\xdc\xce\x12\xe6}8\x9f\x05\'\xa8\x97>\xe9Q\xc6l\x05(\xc1\x02\x0f\xe9\x18m\xec\xbd\x9c\x06\xd4\xa7I\xf4T\x05kl0\xf1\xeb\x03\xd5\xea=jv\xc2\xcb\x1a(IM\x7fd\xe0\xfa+\xdas\x83\x81\xff\x91\x03\xbd\x94\xbb\xe4\xb8\x8e\x9c2c\xcd\x9f\xbbh\x81\xb1\x84[\xaf6\xbfw\xee\x1d\x7f\xf7I\x9bR\xec\xd2wZ}\x91\x9dM\xc29-\xe4\xba\x82\xf8o\xf2N\x1e\x0fN\xe6?Y\xa5#\xdc=\x87\xa8(X(\xd1\xf1\x1b6\xdbO\xc4\xff\xe1\x8c[r\x8c\xc7&\x03\'\xa39\n\x01\xaa\xc0\xb21`\x83\"\xa1O\x12\t\x01\x11\xaf4\xd4\xcf\xd7\xaeb\xd3\x05\x07\xb41u\xe0\rmWOi\x87\xf9W\xa9\xba\x15\xf6\xc8Rm\xa1\xcb\x9c\x1f\xe5\xfcx\xa85\x9a\x9fA\x14\xce\xa5\xb4\xce\x94\x08\x1c\t\xadV\xe5\xda\xb6I\x9aJ\xeac\x18S\x9c,.\xc3\x02\x03\x01\x00\x01"),
+    name_constraints: None
+  },
+
+  /*
    * Issuer: CN=Entrust Root Certification Authority - EC1 O=Entrust, Inc. OU=See www.entrust.net/legal-terms/(c) 2012 Entrust, Inc. - for authorized use only
    * Subject: CN=Entrust Root Certification Authority - EC1 O=Entrust, Inc. OU=See www.entrust.net/legal-terms/(c) 2012 Entrust, Inc. - for authorized use only
    * Label: "Entrust Root Certification Authority - EC1"
@@ -107,54 +151,6 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   TrustAnchor {
     subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02US1\x140\x12\x06\x03U\x04\n\x0c\x0bAffirmTrust1\x1f0\x1d\x06\x03U\x04\x03\x0c\x16AffirmTrust Commercial"),
     subject_public_key_info: Der::from_slice(b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\n\x02\x82\x01\x01\x00\xf6\x1bOg\x07+\xa1\x15\xf5\x06\"\xcb\x1f\x01\xb2\xe3sE\x06DI,\xbbI%\x14\xd6\xce\xc3\xb7\xab,O\xc6A2\x94W\xfa\x12\xa7[\x0e\xe2\x8f\x1f\x1e\x86\x19\xa7\xaa\xb5-\xb9_\r\x8a\xc2\xaf\x855y2-\xbb\x1cb7\xf2\xb1[J=\xca\xcdq_\xe9B\xbe\x94\xe8\xc8\xde\xf9\"Hd\xc6\xe5\xab\xc6+m\xad\x05\xf0\xfa\xd5\x0b\xcf\x9a\xe5\xf0P\xa4\x8b;G\xa5#[zz\xf83?\xb8\xef\x99\x97\xe3 \xc1\xd6(\x89\xcf\x94\xfb\xb9E\xed\xe3@\x17\x11\xd4t\xf0\x0b1\xe2+&j\x9bLW\xae\xac >\xbaEz\x05\xf3\xbd\x9bi\x15\xae}N c\xc45v:\x07\x02\xc97\xfd\xc7G\xee\xe8\xf1v\x1ds\x15\xf2\x97\xa4\xb5\xc8zy\xd9B\xaa+\x7f\\\xfe\xce&O\xa3f\x815\xafD\xbaT\x1e\x1c02e\x9d\xe6<\x93^PNz\xe3:\xd4n\xcc\x1a\xfb\xf9\xd27\xae$*\xabW\x03\"(\rIu\x7f\xb7(\xdau\xbf\x8e\xe3\xdc\x0ey1\x02\x03\x01\x00\x01"),
-    name_constraints: None
-  },
-
-  /*
-   * Issuer: CN=Autoridad de Certificacion Firmaprofesional CIF A62634068
-   * Subject: CN=Autoridad de Certificacion Firmaprofesional CIF A62634068
-   * Label: "Autoridad de Certificacion Firmaprofesional CIF A62634068"
-   * Serial: 6047274297262753887
-   * SHA256 Fingerprint: 04:04:80:28:bf:1f:28:64:d4:8f:9a:d4:d8:32:94:36:6a:82:88:56:55:3f:3b:14:30:3f:90:14:7f:5d:40:ef
-   * -----BEGIN CERTIFICATE-----
-   * MIIGFDCCA/ygAwIBAgIIU+w77vuySF8wDQYJKoZIhvcNAQEFBQAwUTELMAkGA1UE
-   * BhMCRVMxQjBABgNVBAMMOUF1dG9yaWRhZCBkZSBDZXJ0aWZpY2FjaW9uIEZpcm1h
-   * cHJvZmVzaW9uYWwgQ0lGIEE2MjYzNDA2ODAeFw0wOTA1MjAwODM4MTVaFw0zMDEy
-   * MzEwODM4MTVaMFExCzAJBgNVBAYTAkVTMUIwQAYDVQQDDDlBdXRvcmlkYWQgZGUg
-   * Q2VydGlmaWNhY2lvbiBGaXJtYXByb2Zlc2lvbmFsIENJRiBBNjI2MzQwNjgwggIi
-   * MA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQDKlmuO6vj78aI14H9M2uDDUtd9
-   * thDIAl6zQyrET2qyyhxdKJp4ERppWVevtSBC5IsP5t9bpgOSL/UR5GLXMnE42QQM
-   * cas9UX4PB99jBVzpv5RvwSmCwLTaUbDBPLutN0pcyvFLNg4kq7/DhHf9qFD0sefG
-   * L9ItWY16Ck6WaVICqjaY7Pz6FIMMNx/Jkjd/14Et5cS54D40/mf0PmbR0/RAz15i
-   * NA9wBj4gGFrO93IbJWyTdBSTo3OxDqqHECNZXyAFGUftaI6SEspd/NYrspI8IM/h
-   * X68gvqB2f3bl7BqGYTM+53u0P6APjqK5am+5hyZvQWyIplD9amML9ZMWGxmPsu2b
-   * m8mQ9QEM3xk9Dz44I8kvjwzRAv4bVdZO0I08r0+k8/6vKtMFnXkIoctXMbScyJCy
-   * Z/QYFpM6/EfY0XiWMR+6KwxfXZmtY4laJCB22N/9q06mIqqdXuYnin1oKaPnirja
-   * EbsXLZmdEyRG98Xi2J+Of8ePdG1asuhy9azuJBCtLxTa/y2aRnFHvkLfuwHb9H/T
-   * KI8xWVvTyQKmtFLKbpf7Q8UIJm+K9Lv9nyiqDdVF8xM6HdjAeI9BZzwelGSuewvF
-   * 6NkBiDkal4ZkQdU7hwxu+g/GvUgUvzlN1J5Bto+WHWOWk9mVBngxaJ43BjuAiUVh
-   * OSPHG0SjFeUc+JIwuwIDAQABo4HvMIHsMBIGA1UdEwEB/wQIMAYBAf8CAQEwDgYD
-   * VR0PAQH/BAQDAgEGMB0GA1UdDgQWBBRlzeurNR4APn7VdMActHNHDhpkLzCBpgYD
-   * VR0gBIGeMIGbMIGYBgRVHSAAMIGPMC8GCCsGAQUFBwIBFiNodHRwOi8vd3d3LmZp
-   * cm1hcHJvZmVzaW9uYWwuY29tL2NwczBcBggrBgEFBQcCAjBQHk4AUABhAHMAZQBv
-   * ACAAZABlACAAbABhACAAQgBvAG4AYQBuAG8AdgBhACAANAA3ACAAQgBhAHIAYwBl
-   * AGwAbwBuAGEAIAAwADgAMAAxADcwDQYJKoZIhvcNAQEFBQADggIBABd9oPm03cXF
-   * 661LJLWhAqvdpYhKsg9VSytXjDvlMd3+xDLx51tkljYyGOylMnfX40S2wBEqgLk9
-   * am58m9Ot/MPWo+ZkKXzR4Tgegiv/J2Wv+xYVxC5xhOW1//qkR71kMrv2JYSiJ0L1
-   * ILDCExARzRAVukKQKtJE4ZYm6zFIEv0q2skGz3QeqUvVhyj5eTSSPi5E6PaPT481
-   * PyWzOdxjKpBrIF/EUhJOlywqrJ2X3kjyo2bbwtKDlaZmp54lD+kLM5FlClrD2VQS
-   * 3a/DTg4fJl4N3LON7NWBcN7STyQF82xO9UxJZo3R/9ILJUFI/lGExkKvgATP0H5k
-   * SeTy36LssUzAKh3ntLFlosS88Zj0qnAHY7S42jtM+kAiMFsRpvAFDsYCA0irhpuF
-   * 3dvd6qJ2gHN99ZwExEWN57kci57q13XRcrHedUTnQn3iV2t93Jm8PYMo6oCTjcVM
-   * ZcFwgbg4/EMxsvYDNEeyrPsiBsse3RdHHF9mudMaotoRsaS8I8nkvof/uZS2+F0g
-   * StRf571oe2XyFR7SOqkt6dhrJKyXWERHrVkY8SFlcN7ONGCoQPHzPKTDKCOM/icz
-   * Q0CgFzzr6juwcqajuUpLXhZI9LK8yIySxZ2frHI2vDSANGupi5LAuBft7HZT9SQB
-   * jLMi6Et8Vcad+qMUu2WFbm5PEn4KPJ2V
-   * -----END CERTIFICATE-----
-   */
-  TrustAnchor {
-    subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02ES1B0@\x06\x03U\x04\x03\x0c9Autoridad de Certificacion Firmaprofesional CIF A62634068"),
-    subject_public_key_info: Der::from_slice(b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x02\x0f\x000\x82\x02\n\x02\x82\x02\x01\x00\xca\x96k\x8e\xea\xf8\xfb\xf1\xa25\xe0\x7fL\xda\xe0\xc3R\xd7}\xb6\x10\xc8\x02^\xb3C*\xc4Oj\xb2\xca\x1c](\x9ax\x11\x1aiYW\xaf\xb5 B\xe4\x8b\x0f\xe6\xdf[\xa6\x03\x92/\xf5\x11\xe4b\xd72q8\xd9\x04\x0cq\xab=Q~\x0f\x07\xdfc\x05\\\xe9\xbf\x94o\xc1)\x82\xc0\xb4\xdaQ\xb0\xc1<\xbb\xad7J\\\xca\xf1K6\x0e$\xab\xbf\xc3\x84w\xfd\xa8P\xf4\xb1\xe7\xc6/\xd2-Y\x8dz\nN\x96iR\x02\xaa6\x98\xec\xfc\xfa\x14\x83\x0c7\x1f\xc9\x927\x7f\xd7\x81-\xe5\xc4\xb9\xe0>4\xfeg\xf4>f\xd1\xd3\xf4@\xcf^b4\x0fp\x06> \x18Z\xce\xf7r\x1b%l\x93t\x14\x93\xa3s\xb1\x0e\xaa\x87\x10#Y_ \x05\x19G\xedh\x8e\x92\x12\xca]\xfc\xd6+\xb2\x92< \xcf\xe1_\xaf \xbe\xa0v\x7fv\xe5\xec\x1a\x86a3>\xe7{\xb4?\xa0\x0f\x8e\xa2\xb9jo\xb9\x87&oAl\x88\xa6P\xfdjc\x0b\xf5\x93\x16\x1b\x19\x8f\xb2\xed\x9b\x9b\xc9\x90\xf5\x01\x0c\xdf\x19=\x0f>8#\xc9/\x8f\x0c\xd1\x02\xfe\x1bU\xd6N\xd0\x8d<\xafO\xa4\xf3\xfe\xaf*\xd3\x05\x9dy\x08\xa1\xcbW1\xb4\x9c\xc8\x90\xb2g\xf4\x18\x16\x93:\xfcG\xd8\xd1x\x961\x1f\xba+\x0c_]\x99\xadc\x89Z$ v\xd8\xdf\xfd\xabN\xa6\"\xaa\x9d^\xe6\'\x8a}h)\xa3\xe7\x8a\xb8\xda\x11\xbb\x17-\x99\x9d\x13$F\xf7\xc5\xe2\xd8\x9f\x8e\x7f\xc7\x8ftmZ\xb2\xe8r\xf5\xac\xee$\x10\xad/\x14\xda\xff-\x9aFqG\xbeB\xdf\xbb\x01\xdb\xf4\x7f\xd3(\x8f1Y[\xd3\xc9\x02\xa6\xb4R\xcan\x97\xfbC\xc5\x08&o\x8a\xf4\xbb\xfd\x9f(\xaa\r\xd5E\xf3\x13:\x1d\xd8\xc0x\x8fAg<\x1e\x94d\xae{\x0b\xc5\xe8\xd9\x01\x889\x1a\x97\x86dA\xd5;\x87\x0cn\xfa\x0f\xc6\xbdH\x14\xbf9M\xd4\x9eA\xb6\x8f\x96\x1dc\x96\x93\xd9\x95\x06x1h\x9e7\x06;\x80\x89Ea9#\xc7\x1bD\xa3\x15\xe5\x1c\xf8\x920\xbb\x02\x03\x01\x00\x01"),
     name_constraints: None
   },
 
@@ -257,6 +253,33 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   TrustAnchor {
     subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02GB1\x1b0\x19\x06\x03U\x04\x08\x13\x12Greater Manchester1\x100\x0e\x06\x03U\x04\x07\x13\x07Salford1\x1a0\x18\x06\x03U\x04\n\x13\x11COMODO CA Limited1\'0%\x06\x03U\x04\x03\x13\x1eCOMODO Certification Authority"),
     subject_public_key_info: Der::from_slice(b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\n\x02\x82\x01\x01\x00\xd0@\x8b\x8br\xe3\x91\x1b\xf7Q\xc1\x1bT\x04\x98\xd3\xa9\xbf\xc1\xe6\x8a];\x87\xfb\xbb\x88\xce\r\xe3/?\x06\x96\xf0\xa2)P\x99\xae\xdb;\xa1W\xb0tQq\xcd\xedB\x91MA\xfe\xa9\xc8\xd8j\x86wD\xbbYf\x97P^\xb4\xd4,pD\xcf\xda7\x95Bi<0\xc4q\xb3R\xf0!M\xa1\xd8\xba9|\x1c\x9e\xa3$\x9d\xf2\x83\x16\x98\xaa\x16|C\x9b\x15[\xb7\xae4\x91\xfe\xd4b&\x18F\x9a?\xeb\xc1\xf9\xf1\x90W\xeb\xacz\r\x8b\xdbr0jf\xd5\xe0F\xa3p\xdch\xd9\xff\x04H\x89w\xde\xb5\xe9\xfbgmA\xe9\xbc9\xbd2\xd9b\x02\xf1\xb1\xa8=n7\x9c\xe2/\xe2\xd3\xa2&\x8b\xc6\xb8UC\x88\xe1#>\xa5\xd2$9jG\xab\x00\xd4\xa1\xb3\xa9%\xfe\r?\xa7\x1d\xba\xd3Q\xc1\x0b\xa4\xda\xac8\xefUP$\x05eF\x934O-\x8d\xad\xc6\xd4!\x19\xd2\x8e\xca\x05aq\x07sG\xe5\x8a\x19\x12\xbd\x04M\xceN\x9c\xa5H\xac\xbb&\xf7\x02\x03\x01\x00\x01"),
+    name_constraints: None
+  },
+
+  /*
+   * Issuer: CN=CommScope Public Trust ECC Root-01 O=CommScope
+   * Subject: CN=CommScope Public Trust ECC Root-01 O=CommScope
+   * Label: "CommScope Public Trust ECC Root-01"
+   * Serial: 385011430473757362783587124273108818652468453534
+   * SHA256 Fingerprint: 11:43:7c:da:7b:b4:5e:41:36:5f:45:b3:9a:38:98:6b:0d:e0:0d:ef:34:8e:0c:7b:b0:87:36:33:80:0b:c3:8b
+   * -----BEGIN CERTIFICATE-----
+   * MIICHTCCAaOgAwIBAgIUQ3CCd89NXTTxyq4yLzf39H91oJ4wCgYIKoZIzj0EAwMw
+   * TjELMAkGA1UEBhMCVVMxEjAQBgNVBAoMCUNvbW1TY29wZTErMCkGA1UEAwwiQ29t
+   * bVNjb3BlIFB1YmxpYyBUcnVzdCBFQ0MgUm9vdC0wMTAeFw0yMTA0MjgxNzM1NDNa
+   * Fw00NjA0MjgxNzM1NDJaME4xCzAJBgNVBAYTAlVTMRIwEAYDVQQKDAlDb21tU2Nv
+   * cGUxKzApBgNVBAMMIkNvbW1TY29wZSBQdWJsaWMgVHJ1c3QgRUNDIFJvb3QtMDEw
+   * djAQBgcqhkjOPQIBBgUrgQQAIgNiAARLNumuV16ocNfQj3Rid8NeeqrltqLxeP0C
+   * flfdkXmcbLlSiFS8LwS+uM32ENEp7LXQoMPwiXAZu1FlxUOcw5tjnSCDPgYLpkJE
+   * hRGnSjot6dZoL0hOUysHP029uax3OVejQjBAMA8GA1UdEwEB/wQFMAMBAf8wDgYD
+   * VR0PAQH/BAQDAgEGMB0GA1UdDgQWBBSOB2LAUN3GGQYARnQE9/OufXVNMDAKBggq
+   * hkjOPQQDAwNoADBlAjEAnDPfQeMjqEI2Jpc1XHvr20v4qotzVRVcrHgpD7oh2MSg
+   * 2NED3W3ROT3Ek2DS43KyAjB8xX6I01D1HiXo+k515liWpDVfG2XqYZpwI7UNo5uS
+   * Um9poIyNStDuiw7LR47QjRE=
+   * -----END CERTIFICATE-----
+   */
+  TrustAnchor {
+    subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02US1\x120\x10\x06\x03U\x04\n\x0c\tCommScope1+0)\x06\x03U\x04\x03\x0c\"CommScope Public Trust ECC Root-01"),
+    subject_public_key_info: Der::from_slice(b"0\x10\x06\x07*\x86H\xce=\x02\x01\x06\x05+\x81\x04\x00\"\x03b\x00\x04K6\xe9\xaeW^\xa8p\xd7\xd0\x8ftbw\xc3^z\xaa\xe5\xb6\xa2\xf1x\xfd\x02~W\xdd\x91y\x9cl\xb9R\x88T\xbc/\x04\xbe\xb8\xcd\xf6\x10\xd1)\xec\xb5\xd0\xa0\xc3\xf0\x89p\x19\xbbQe\xc5C\x9c\xc3\x9bc\x9d \x83>\x06\x0b\xa6BD\x85\x11\xa7J:-\xe9\xd6h/HNS+\x07?M\xbd\xb9\xacw9W"),
     name_constraints: None
   },
 
@@ -878,6 +901,33 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   TrustAnchor {
     subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02US1\x0e0\x0c\x06\x03U\x04\x08\x0c\x05Texas1\x100\x0e\x06\x03U\x04\x07\x0c\x07Houston1\x180\x16\x06\x03U\x04\n\x0c\x0fSSL Corporation1705\x06\x03U\x04\x03\x0c.SSL.com EV Root Certification Authority RSA R2"),
     subject_public_key_info: Der::from_slice(b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x02\x0f\x000\x82\x02\n\x02\x82\x02\x01\x00\x8f6e@\xe1\xd6M\xc0\xd7\xb4\xe9F\xdak\xea3G\xcdL\xf9}}\xbe\xbd-=\xf0\xdbx\xe1\x86\xa5\xd9\xba\tWh\xedW>\xa0\xd0\x08A\x83\xe7(A$\x1f\xe3r\x15\xd0\x01\x1a\xfb^p#\xb2\xcb\x9f9\xe3\xcf\xc5N\xc6\x92m&\xc6{\xbb\xb3\xda\'\x9d\n\x86\xe9\x817\x05\xfe\xf0qq\xec\xc3\x1c\xe9c\xa2\x17\x14\x9d\xef\x1bg\xd3\x85U\x02\x02\xd6I\xc9\xccZ\xe1\xb1\xf7o2\x9f\xc9\xd4;\x88A\xa8\x9c\xbd\xcb\xab\xdbm{\t\x1f\xa2Lr\x90\xda+\x08\xfc\xcf<T\xceg\x0f\xa8\xcf]\x96\x19\x0b\xc4\xe3r\xeb\xad\xd1}\x1d\'\xef\x92\xeb\x10\xbf[\xeb;\xaf\xcf\x80\xdd\xc1\xd2\x96\x04[z~\xa4\xa9<8v\xa4b\x8e\xa09^\xeaw\xcf]\x00Y\x8ff,>\x07\xa2\xa3\x05&\x11i\x97\xea\x85\xb7\x0f\x96\x0bK\xc8@\xe1P\xba.\x8a\xcb\xf7\x0f\x9a\"\xe7\x7f\x9a7\x13\xcd\xf2M\x13k!\xd1\xc0\xcc\"\xf2\xa1F\xf6Di\x9c\xcaa5\x07\x00o\xd6a\x08\x11\xea\xba\xb8\xf6\xe9\xb3`\xe5M\xb9\xec\x9f\x14f\xc9WX\xdb\xcd\x87i\xf8\x8a\x86\x12\x03G\xbff\x13v\xacw}4$\x85\x83\xcd\xd7\xaa\x9c\x90\x1a\x9f!,\x7fx\xb7d\xb8\xd8\xe8\xa6\xf4x\xb3U\xcb\x84\xd22\xc4x\xae\xa3\x8fa\xdd\xce\x08S\xad\xec\x88\xfc\x15\xe4\x9a\r\xe6\x9f\x1aw\xceL\x8f\xb8\x14\x15=b\x9c\x868\x06\x00f\x12\xe4YvZS\xc0\x02\x98\xa2\x10+hD{\x8ey\xce3Jv\xaa[\x81\x16\x1b\xb5\x8a\xd8\xd0\x00{^b\xb4\t\xd6\x86c\x0e\xa6\x05\x95I\xba(\x8b\x88\x93\xb24\x1c\xd8\xa4Un\xb7\x1c\xd0\xde\x99U;#\xf4\"\xe0\xf9)f&\xec Pw\xdbJ\x0b\x8f\xbe\xe5\x02`pA^\xd4\xaeP9\"\x14&\xcb\xb2;stUG\x07y\x819\xa80\x13D\xe5\x04\x8a\xae\x96\x13%B\x0f\xb9S\xc4\x9b\xfc\xcd\xe4\x1c\xde<\xfa\xab\xd6\x06J\x1fg\xa6\x980\x1c\xdd,\xdb\xdc\x18\x95Wf\xc6\xff\\\x8bV\xf5w\x02\x03\x01\x00\x01"),
+    name_constraints: None
+  },
+
+  /*
+   * Issuer: CN=CommScope Public Trust ECC Root-02 O=CommScope
+   * Subject: CN=CommScope Public Trust ECC Root-02 O=CommScope
+   * Label: "CommScope Public Trust ECC Root-02"
+   * Serial: 234015080301808452132356021271193974922492992893
+   * SHA256 Fingerprint: 2f:fb:7f:81:3b:bb:b3:c8:9a:b4:e8:16:2d:0f:16:d7:15:09:a8:30:cc:9d:73:c2:62:e5:14:08:75:d1:ad:4a
+   * -----BEGIN CERTIFICATE-----
+   * MIICHDCCAaOgAwIBAgIUKP2ZYEFHpgE6yhR7H+/5aAiDXX0wCgYIKoZIzj0EAwMw
+   * TjELMAkGA1UEBhMCVVMxEjAQBgNVBAoMCUNvbW1TY29wZTErMCkGA1UEAwwiQ29t
+   * bVNjb3BlIFB1YmxpYyBUcnVzdCBFQ0MgUm9vdC0wMjAeFw0yMTA0MjgxNzQ0NTRa
+   * Fw00NjA0MjgxNzQ0NTNaME4xCzAJBgNVBAYTAlVTMRIwEAYDVQQKDAlDb21tU2Nv
+   * cGUxKzApBgNVBAMMIkNvbW1TY29wZSBQdWJsaWMgVHJ1c3QgRUNDIFJvb3QtMDIw
+   * djAQBgcqhkjOPQIBBgUrgQQAIgNiAAR4MIHoYx7l63FRD/cHB8o5mXxO1Q/MMDAL
+   * j2aTPs+9xYa9+bG3tD60B8jzljHz7aRP+KNOjSkVWLjVb3/ubCK1sK9IRQq9qEmU
+   * v4RDsNuESgMjGWdqb8FuvAY5N9GIIvejQjBAMA8GA1UdEwEB/wQFMAMBAf8wDgYD
+   * VR0PAQH/BAQDAgEGMB0GA1UdDgQWBBTmGHX/72DehKT1RsfeSlXjMjZ59TAKBggq
+   * hkjOPQQDAwNnADBkAjAmc0l6tqvmSfR9Uj/UQQSugEODZXW5hYA4O9Zv5JOGq4/n
+   * ich/m35rChJVYaoR4HkCMHfoMXGsPHED1oQmHhS48zs73u1Z/GtMMH9ZzkXpc2AV
+   * mkzw5l4lIhVtwodZ0LKOag==
+   * -----END CERTIFICATE-----
+   */
+  TrustAnchor {
+    subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02US1\x120\x10\x06\x03U\x04\n\x0c\tCommScope1+0)\x06\x03U\x04\x03\x0c\"CommScope Public Trust ECC Root-02"),
+    subject_public_key_info: Der::from_slice(b"0\x10\x06\x07*\x86H\xce=\x02\x01\x06\x05+\x81\x04\x00\"\x03b\x00\x04x0\x81\xe8c\x1e\xe5\xebqQ\x0f\xf7\x07\x07\xca9\x99|N\xd5\x0f\xcc00\x0b\x8ff\x93>\xcf\xbd\xc5\x86\xbd\xf9\xb1\xb7\xb4>\xb4\x07\xc8\xf3\x961\xf3\xed\xa4O\xf8\xa3N\x8d)\x15X\xb8\xd5o\x7f\xeel\"\xb5\xb0\xafHE\n\xbd\xa8I\x94\xbf\x84C\xb0\xdb\x84J\x03#\x19gjo\xc1n\xbc\x0697\xd1\x88\"\xf7"),
     name_constraints: None
   },
 
@@ -3820,6 +3870,34 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   },
 
   /*
+   * Issuer: CN=TrustAsia Global Root CA G4 O=TrustAsia Technologies, Inc.
+   * Subject: CN=TrustAsia Global Root CA G4 O=TrustAsia Technologies, Inc.
+   * Label: "TrustAsia Global Root CA G4"
+   * Serial: 451799571007117016466790293371524403291602933463
+   * SHA256 Fingerprint: be:4b:56:cb:50:56:c0:13:6a:52:6d:f4:44:50:8d:aa:36:a0:b5:4f:42:e4:ac:38:f7:2a:f4:70:e4:79:65:4c
+   * -----BEGIN CERTIFICATE-----
+   * MIICVTCCAdygAwIBAgIUTyNkuI6XY57GU4HBdk7LKnQV1tcwCgYIKoZIzj0EAwMw
+   * WjELMAkGA1UEBhMCQ04xJTAjBgNVBAoMHFRydXN0QXNpYSBUZWNobm9sb2dpZXMs
+   * IEluYy4xJDAiBgNVBAMMG1RydXN0QXNpYSBHbG9iYWwgUm9vdCBDQSBHNDAeFw0y
+   * MTA1MjAwMjEwMjJaFw00NjA1MTkwMjEwMjJaMFoxCzAJBgNVBAYTAkNOMSUwIwYD
+   * VQQKDBxUcnVzdEFzaWEgVGVjaG5vbG9naWVzLCBJbmMuMSQwIgYDVQQDDBtUcnVz
+   * dEFzaWEgR2xvYmFsIFJvb3QgQ0EgRzQwdjAQBgcqhkjOPQIBBgUrgQQAIgNiAATx
+   * s8045CVD5d4ZCbuBeaIVXxVjAd7Cq92zphtnS4CDr5nLrBfbK5bKfFJV4hrhPVbw
+   * LxYI+hW8m7tH5j/uqOFMjPXTNvk4XatwmkcN4oFBButJ+bAp3TPsUKV/eSm4IJij
+   * YzBhMA8GA1UdEwEB/wQFMAMBAf8wHwYDVR0jBBgwFoAUpbtKl86zK3+kMd6Xg1mD
+   * pm9xy94wHQYDVR0OBBYEFKW7SpfOsyt/pDHel4NZg6ZvccveMA4GA1UdDwEB/wQE
+   * AwIBBjAKBggqhkjOPQQDAwNnADBkAjBe8usGzEkxn0AAbbd+NvBNEU/zy4k6LHiR
+   * UKNbwMp1JvK/kF0LgoxgKJ/GcJpo5PECMFxYDlZ2z1jD1xCMuo6u47xkdUfFVZDj
+   * /bpV6wfEU6s3qe4hsiFbYI89MvHVI5TWWA==
+   * -----END CERTIFICATE-----
+   */
+  TrustAnchor {
+    subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02CN1%0#\x06\x03U\x04\n\x0c\x1cTrustAsia Technologies, Inc.1$0\"\x06\x03U\x04\x03\x0c\x1bTrustAsia Global Root CA G4"),
+    subject_public_key_info: Der::from_slice(b"0\x10\x06\x07*\x86H\xce=\x02\x01\x06\x05+\x81\x04\x00\"\x03b\x00\x04\xf1\xb3\xcd8\xe4%C\xe5\xde\x19\t\xbb\x81y\xa2\x15_\x15c\x01\xde\xc2\xab\xdd\xb3\xa6\x1bgK\x80\x83\xaf\x99\xcb\xac\x17\xdb+\x96\xca|RU\xe2\x1a\xe1=V\xf0/\x16\x08\xfa\x15\xbc\x9b\xbbG\xe6?\xee\xa8\xe1L\x8c\xf5\xd36\xf98]\xabp\x9aG\r\xe2\x81A\x06\xebI\xf9\xb0)\xdd3\xecP\xa5\x7fy)\xb8 \x98"),
+    name_constraints: None
+  },
+
+  /*
    * Issuer: CN=SwissSign Silver CA - G2 O=SwissSign AG
    * Subject: CN=SwissSign Silver CA - G2 O=SwissSign AG
    * Label: "SwissSign Silver CA - G2"
@@ -4636,6 +4714,52 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   },
 
   /*
+   * Issuer: CN=TrustAsia Global Root CA G3 O=TrustAsia Technologies, Inc.
+   * Subject: CN=TrustAsia Global Root CA G3 O=TrustAsia Technologies, Inc.
+   * Label: "TrustAsia Global Root CA G3"
+   * Serial: 576386314500428537169965010905813481816650257167
+   * SHA256 Fingerprint: e0:d3:22:6a:eb:11:63:c2:e4:8f:f9:be:3b:50:b4:c6:43:1b:e7:bb:1e:ac:c5:c3:6b:5d:5e:c5:09:03:9a:08
+   * -----BEGIN CERTIFICATE-----
+   * MIIFpTCCA42gAwIBAgIUZPYOZXdhaqs7tOqFhLuxibhxkw8wDQYJKoZIhvcNAQEM
+   * BQAwWjELMAkGA1UEBhMCQ04xJTAjBgNVBAoMHFRydXN0QXNpYSBUZWNobm9sb2dp
+   * ZXMsIEluYy4xJDAiBgNVBAMMG1RydXN0QXNpYSBHbG9iYWwgUm9vdCBDQSBHMzAe
+   * Fw0yMTA1MjAwMjEwMTlaFw00NjA1MTkwMjEwMTlaMFoxCzAJBgNVBAYTAkNOMSUw
+   * IwYDVQQKDBxUcnVzdEFzaWEgVGVjaG5vbG9naWVzLCBJbmMuMSQwIgYDVQQDDBtU
+   * cnVzdEFzaWEgR2xvYmFsIFJvb3QgQ0EgRzMwggIiMA0GCSqGSIb3DQEBAQUAA4IC
+   * DwAwggIKAoICAQDAMYJhkuSUGwoqZdC+BqmHO1ES6nBBruL7dOoKjbmzTNyPtxNS
+   * T1QY4SxzlZHFZjtqz6xjbYdT8PfxObegQ2OwxANdV6nnRM7EoYNl9lA+sX4WuDqK
+   * AtCWHwDNBSHvBm3dIZwZQ0WhxeiAysKtQGIXBsaqvPPW5vxQfmZCHzyLpnl5hkA1
+   * nyDvP+uLRx+PjsXUjrYsyUQE49RDdT/VP68czH5GX6zfZBCK70bwkPAPLfSIC7Ep
+   * qq+FqklYqL9joDiR5rPmd2jE+SoZhLsO4fWvieylL1AgdB4SQXMeJNnKziyhWTXA
+   * yB1GJ2Faj/lN03J5Zh6fFZAhLf3ti1ZwA0pJPn9pMRJpxx5cynoTi+jm9WAPzJMs
+   * hH/x/Gr8m0ed262IPfN2dTPXS6TIi/n1Q1hPy8gDVI+lhXgEGvNz8teHHUGf59gX
+   * zhqcD0r83ERoVGjiQTz+LISGNzzNPy+i2+f3VANfWdP3kXjHi3dqFuVJhZBFcnAv
+   * kV34PmVACxmZySYgWmjBNb9Pp1Hx2BErW+Canig7CjoKH8GB5S7wprlppYiU5msT
+   * f9FkPz2ccEblooV7WIQn3MSAPmeamseaMQ4w7OYXQJXZRe0Blqq/DPNL0WP3E1jA
+   * uPP6Z92bfW1K/zJMtSU7/xxnD4UiWQWRkUF3gdCFTIcQcf+eQxuulXUtgQIDAQAB
+   * o2MwYTAPBgNVHRMBAf8EBTADAQH/MB8GA1UdIwQYMBaAFEDk5PIj7zjKsK5Xf/Ih
+   * MBY027ySMB0GA1UdDgQWBBRA5OTyI+84yrCuV3/yITAWNNu8kjAOBgNVHQ8BAf8E
+   * BAMCAQYwDQYJKoZIhvcNAQEMBQADggIBACY7UeFNOPMyGLS0XuFlXsSUT9SnYaP4
+   * wM8zAQLpw6o1D/GUE3d3NZ4tVlFEbuHGLige/9rsR82XRBf34EzC4Xx8MnpmyFq2
+   * XFNFV1pF1AWZLy4jVe5jaN/TG3inEpQGAHUNcoTpLrxaatXeL1nHo+zSh2bbt1S1
+   * JKv0Q3jbSwTEb93mPmY+KfJLaHEih6D4sTNjduMNhXJEIlU/HHzp/LgV6FL6qj6j
+   * ITk1dImmasI5+njPtqzn59ZW/yOSLlALqbUHM/Q4X6RJpstlcHboCoWASzY9M/eV
+   * VHUl2qzEc4Jl6VL1XP04lQJqaTDFHApXB64ipCz5xUG3uOyfT0gA+QEEVcys+TIx
+   * xHWVBqB/0Y0n3bOppHKH/lmLmnp0Ft0WpWIp6zqW3IunaFnT63eROfjXy9mPX1on
+   * AX1daBli2MjN9LdyR75bl87yraKZk62Uy5P2EgmVtqvXO9A/EcswFi55gORngS1d
+   * 7XB4tmBZrOFdRWOPyN9yaFvqHbgB8X7754qz41SgOAngPN5C8sLtLpvzHzW2Ntjj
+   * gKGLzZlkD8Kqq7HK9W+eQ42EVJmzbsASZthwEPEGNTNDqJwuuhQxzhB/HIbjj9LV
+   * +Hfsm6vxL2PZQl/gZ4FkkfGXL/xuJvYz+NO1+MRiqzFRJQJ6+N1rZdVtTTDIZbpo
+   * FGWsJwt0ivKH
+   * -----END CERTIFICATE-----
+   */
+  TrustAnchor {
+    subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02CN1%0#\x06\x03U\x04\n\x0c\x1cTrustAsia Technologies, Inc.1$0\"\x06\x03U\x04\x03\x0c\x1bTrustAsia Global Root CA G3"),
+    subject_public_key_info: Der::from_slice(b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x02\x0f\x000\x82\x02\n\x02\x82\x02\x01\x00\xc01\x82a\x92\xe4\x94\x1b\n*e\xd0\xbe\x06\xa9\x87;Q\x12\xeapA\xae\xe2\xfbt\xea\n\x8d\xb9\xb3L\xdc\x8f\xb7\x13ROT\x18\xe1,s\x95\x91\xc5f;j\xcf\xaccm\x87S\xf0\xf7\xf19\xb7\xa0Cc\xb0\xc4\x03]W\xa9\xe7D\xce\xc4\xa1\x83e\xf6P>\xb1~\x16\xb8:\x8a\x02\xd0\x96\x1f\x00\xcd\x05!\xef\x06m\xdd!\x9c\x19CE\xa1\xc5\xe8\x80\xca\xc2\xad@b\x17\x06\xc6\xaa\xbc\xf3\xd6\xe6\xfcP~fB\x1f<\x8b\xa6yy\x86@5\x9f \xef?\xeb\x8bG\x1f\x8f\x8e\xc5\xd4\x8e\xb6,\xc9D\x04\xe3\xd4Cu?\xd5?\xaf\x1c\xcc~F_\xac\xdfd\x10\x8a\xefF\xf0\x90\xf0\x0f-\xf4\x88\x0b\xb1)\xaa\xaf\x85\xaaIX\xa8\xbfc\xa08\x91\xe6\xb3\xe6wh\xc4\xf9*\x19\x84\xbb\x0e\xe1\xf5\xaf\x89\xec\xa5/P t\x1e\x12As\x1e$\xd9\xca\xce,\xa1Y5\xc0\xc8\x1dF\'aZ\x8f\xf9M\xd3ryf\x1e\x9f\x15\x90!-\xfd\xed\x8bVp\x03JI>\x7fi1\x12i\xc7\x1e\\\xcaz\x13\x8b\xe8\xe6\xf5`\x0f\xcc\x93,\x84\x7f\xf1\xfcj\xfc\x9bG\x9d\xdb\xad\x88=\xf3vu3\xd7K\xa4\xc8\x8b\xf9\xf5CXO\xcb\xc8\x03T\x8f\xa5\x85x\x04\x1a\xf3s\xf2\xd7\x87\x1dA\x9f\xe7\xd8\x17\xce\x1a\x9c\x0fJ\xfc\xdcDhTh\xe2A<\xfe,\x84\x867<\xcd?/\xa2\xdb\xe7\xf7T\x03_Y\xd3\xf7\x91x\xc7\x8bwj\x16\xe5I\x85\x90Erp/\x91]\xf8>e@\x0b\x19\x99\xc9& Zh\xc15\xbfO\xa7Q\xf1\xd8\x11+[\xe0\x9a\x9e(;\n:\n\x1f\xc1\x81\xe5.\xf0\xa6\xb9i\xa5\x88\x94\xe6k\x13\x7f\xd1d?=\x9cpF\xe5\xa2\x85{X\x84\'\xdc\xc4\x80>g\x9a\x9a\xc7\x9a1\x0e0\xec\xe6\x17@\x95\xd9E\xed\x01\x96\xaa\xbf\x0c\xf3K\xd1c\xf7\x13X\xc0\xb8\xf3\xfag\xdd\x9b}mJ\xff2L\xb5%;\xff\x1cg\x0f\x85\"Y\x05\x91\x91Aw\x81\xd0\x85L\x87\x10q\xff\x9eC\x1b\xae\x95u-\x81\x02\x03\x01\x00\x01"),
+    name_constraints: None
+  },
+
+  /*
    * Issuer: CN=CA Disig Root R2 O=Disig a.s.
    * Subject: CN=CA Disig Root R2 O=Disig a.s.
    * Label: "CA Disig Root R2"
@@ -5356,6 +5480,50 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   TrustAnchor {
     subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02PL1!0\x1f\x06\x03U\x04\n\x13\x18Asseco Data Systems S.A.1\'0%\x06\x03U\x04\x0b\x13\x1eCertum Certification Authority1\x1f0\x1d\x06\x03U\x04\x03\x13\x16Certum Trusted Root CA"),
     subject_public_key_info: Der::from_slice(b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x02\x0f\x000\x82\x02\n\x02\x82\x02\x01\x00\xd1-\x8e\xbb\xb76\xeam7\x91\x9fN\x93\xa7\x05\xe4)\x03%\xce\x1c\x82\xf7|\x99\x9fA\x06\xcd\xed\xa3\xba\xc0\xdb\t,\xc1|\xdf)~Ke/\x93\xa7\xd4\x01k\x03(\x18\xa3\xd8\x9d\x05\xc1*\xd8E\xf1\x91\xde\xdf;\xd0\x80\x02\x8c\xcf8\x0f\xea\xa7\\x\x11\xa4\xc1\xc8\x85\\%\xd3\xd3\xb2\xe7%\xcf\x11T\x97\xab5\xc0\x1ev\x1c\xef\x00S\x9f9\xdc\x14\xa5,\"%\xb3rr\xfc\x8d\xb3\xe5>\x08\x1e\x14*7\x0b\x88<\xca\xb0\xf4\xc8\xc2\xa1\xae\xbc\xc1\xbe)gU\xe2\xfc\xadY\\\xfe\xbdW,\xb0\x90\x8d\xc2\xed7\xb6|\x99\x88\xb5\xd5\x03\x9a=\x15\r=:\xa8\xa8E\xf0\x95N%Y\x1d\xcd\x98i\xbb\xd3\xcc2\xc9\x8d\xef\x81\xfe\xad}\x89\xbb\xba`\x13\xcae\x95g\xa0\xf3\x19\xf6\x03V\xd4j\xd3\'\xe2\xa1\xad\x83\xf0J\x12\"w\x1c\x05s\xe2\x19qB\xc0\xecuF\x9a\x90X\xe0j\x8e+\xa5F0\x04\x8e\x19\xb2\x17\xe3\xbe\xa9\xba\x7fV\xf1$\x03\xd7\xb2!(v\x0e60Ly\xd5A\x9a\x9a\xa8\xb85\xba\x0c:\xf2D\x1b \x88\xf7\xc5%\xd7=\xc6\xe3>C\xdd\x87\xfe\xc4\xea\xf5S>Le\xff;J\xcbxZk\x17_\r\xc7\xc3ON\x9a*\xa2\xedWM\"\xe2F\x9a?\x0f\x914$}U\xe3\x8c\x957\xd3\x1a\xf0\t+,\xd2\xc9\x8d\xb4\r\x00\xabg)(\xd8\x01\xf5\x19\x04\xb6\x1d\xbev\xfer\\\xc4\x85\xca\xd2\x80A\xdf\x05\xa8\xa3\xd5\x84\x90O\x0b\xf3\xe0?\x9b\x19\xd27\x89?\xf2{R\x1c\x8c\xf6\xe1\xf7<\x07\x97\x8c\x0e\xa2Y\x81\x0c\xb2\x90=\xd3\xe3YF\xed\x0f\xa9\xa7\xde\x80kZ\xaa\x07\xb6\x19\xcb\xbcW\xf3\x97!z\x0c\xb1+t>\xeb\xda\xa7g-L\xc4\x98\x9e6\tvff\xfc\x1a?\xeaHT\x1c\xbe0\xbd\x80P\xbf|\xb5\xce\x00\xf6\x0ca\xd9\xe7$\x03\xe0\xe3\x01\x81\x0e\xbd\xd8\x854\x88\xbd\xb26\xa8{\\\x08\xe5D\x80\x8co\xf8/\xd5!\xca\x1d\x1c\xd0\xfb\xc4\xb5\x87\xd1:N\xc7v\xb55H\xb5\x02\x03\x01\x00\x01"),
+    name_constraints: None
+  },
+
+  /*
+   * Issuer: CN=CommScope Public Trust RSA Root-02 O=CommScope
+   * Subject: CN=CommScope Public Trust RSA Root-02 O=CommScope
+   * Label: "CommScope Public Trust RSA Root-02"
+   * Serial: 480062499834624527752716769107743131258796508494
+   * SHA256 Fingerprint: ff:e9:43:d7:93:42:4b:4f:7c:44:0c:1c:3d:64:8d:53:63:f3:4b:82:dc:87:aa:7a:9f:11:8f:c5:de:e1:01:f1
+   * -----BEGIN CERTIFICATE-----
+   * MIIFbDCCA1SgAwIBAgIUVBa/O345lXGN0aoApYYNK496BU4wDQYJKoZIhvcNAQEL
+   * BQAwTjELMAkGA1UEBhMCVVMxEjAQBgNVBAoMCUNvbW1TY29wZTErMCkGA1UEAwwi
+   * Q29tbVNjb3BlIFB1YmxpYyBUcnVzdCBSU0EgUm9vdC0wMjAeFw0yMTA0MjgxNzE2
+   * NDNaFw00NjA0MjgxNzE2NDJaME4xCzAJBgNVBAYTAlVTMRIwEAYDVQQKDAlDb21t
+   * U2NvcGUxKzApBgNVBAMMIkNvbW1TY29wZSBQdWJsaWMgVHJ1c3QgUlNBIFJvb3Qt
+   * MDIwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQDh+g77aAASyE3VrCLE
+   * NQE7xVTlWXZjpX/rwcRqmL0yjReA61260WI9JSMZNRTpf4mnG2I81lDnNJUDMrG0
+   * kyI9p+Kx7eZ7Ti6Hmw0zdQreqjXnfuU2mKKuJZ6VszKWpCtYHu8//mI0SFHRtI1C
+   * rWDaSWqVcN3SAOLMV2MCe5bdSZdbkk6V0/nLKR8YSvgBKtJjCW4k6YnS5cciTNxz
+   * hkcAqg2Ijq6FfUrpuzNPDlJwnZXjfG2WWy09X6GDRl224yW4fKcZgBzqZUPckXk2
+   * LHR88mcGyYnJ27/aaL8j7dxrrSiDeS/sOKUNNwFnJ5rpM9kzXzehxfCrPfp4sOcs
+   * n/Y+n2Dg70jpkEUeBVF4GiwSLFworA2iI540jwXmojPOEXcT1A6kHkIfhs1w/tku
+   * FT0du7jyU1fbzMZ0KZwYszZ1OC4PVKH4kh+Jlk+71O6d6Ts2QrUKOyrUZHk2EOH5
+   * kQMreyBUzQ0ZGshBMjTRsJnhkB4BQDa1t/qp5Xd1pCKBXbCL5CcSD1SIxtuFdOa3
+   * wNemKfrb3vOTlycEVS8KbzfFPROvCgCpLIscgSjX74Yxqa7ybrjKaixUR9gqiC6v
+   * wQcQeKwRoi9C8DfF8rhW3Q5iLc4tVn5V8qdE9isy9COoR+jUKgF4z2rDN6ieZdIs
+   * 5fq6M8EGRPbmz6UNp2YINIos8wIDAQABo0IwQDAPBgNVHRMBAf8EBTADAQH/MA4G
+   * A1UdDwEB/wQEAwIBBjAdBgNVHQ4EFgQUR9DnsSL/nSz12Vdgs7GxcJXvYXowDQYJ
+   * KoZIhvcNAQELBQADggIBAIZpsU0v6Z9PIpNojuQhmaPORVMbc0RTAIFhzTHjCLqB
+   * KCh6krm2qMhDnscTJk3C2OVVnJJdUNjCK9v+5qiXz1I6JMNlZFxHMaNlNRPDk7n3
+   * +VGXu6TwYofF1gbTl4MgqX67tiHCpQ2EAOHyJxCDut0DgdXdaMNmEMjRdrSzbyme
+   * APnCKfWxkxlSaRosTKCL4BWaMS/TiJVZbuXEs1DIFAhKm4sTg7GkcrI7djNB3Nyq
+   * pgdvHSQSn8h2vS/ZjvQs7rfSOBAkNlEv41xdgSGn2rtO/+YHqP65DSdsu3BaVXoT
+   * 6fEqSWnHX4dXTEN5bTpl6TBcQe7rd6VzEojov32u5cSoHw2OHG1QAk8mGEPej1WF
+   * sQs3BWDJVTkSBKEqz3EWnzZRSb9wO55nnPt7eck5HHisd5FUmrh1CoFSl+NmYWvt
+   * PjgelmFV4ZFUjO2MJB+ByRCac5krFk5yAD9UG/iNuovnFNa2RU9g7Jauwy8CTl2d
+   * lklyALKrdVwPaFsdZcJfMw8eD/A7hvWwTruc9+olBdytoptLFwG+Qt81IR2tq670
+   * v64fG9PiO/yzcnMcmyiQiRM9HcEARwmWmjgb3bHPDcK0RPOWlc4yOo80nOAXx17O
+   * rg3bhzjlP1v9mxnhMUF6cKojawHhRUzNlM47ni3niAIi9G7oyOzWPPO5std3eqx7
+   * -----END CERTIFICATE-----
+   */
+  TrustAnchor {
+    subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02US1\x120\x10\x06\x03U\x04\n\x0c\tCommScope1+0)\x06\x03U\x04\x03\x0c\"CommScope Public Trust RSA Root-02"),
+    subject_public_key_info: Der::from_slice(b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x02\x0f\x000\x82\x02\n\x02\x82\x02\x01\x00\xe1\xfa\x0e\xfbh\x00\x12\xc8M\xd5\xac\"\xc45\x01;\xc5T\xe5Yvc\xa5\x7f\xeb\xc1\xc4j\x98\xbd2\x8d\x17\x80\xeb]\xba\xd1b=%#\x195\x14\xe9\x7f\x89\xa7\x1bb<\xd6P\xe74\x95\x032\xb1\xb4\x93\"=\xa7\xe2\xb1\xed\xe6{N.\x87\x9b\r3u\n\xde\xaa5\xe7~\xe56\x98\xa2\xae%\x9e\x95\xb32\x96\xa4+X\x1e\xef?\xfeb4HQ\xd1\xb4\x8dB\xad`\xdaIj\x95p\xdd\xd2\x00\xe2\xccWc\x02{\x96\xddI\x97[\x92N\x95\xd3\xf9\xcb)\x1f\x18J\xf8\x01*\xd2c\tn$\xe9\x89\xd2\xe5\xc7\"L\xdcs\x86G\x00\xaa\r\x88\x8e\xae\x85}J\xe9\xbb3O\x0eRp\x9d\x95\xe3|m\x96[-=_\xa1\x83F]\xb6\xe3%\xb8|\xa7\x19\x80\x1c\xeaeC\xdc\x91y6,t|\xf2g\x06\xc9\x89\xc9\xdb\xbf\xdah\xbf#\xed\xdck\xad(\x83y/\xec8\xa5\r7\x01g\'\x9a\xe93\xd93_7\xa1\xc5\xf0\xab=\xfax\xb0\xe7,\x9f\xf6>\x9f`\xe0\xefH\xe9\x90E\x1e\x05Qx\x1a,\x12,\\(\xac\r\xa2#\x9e4\x8f\x05\xe6\xa23\xce\x11w\x13\xd4\x0e\xa4\x1eB\x1f\x86\xcdp\xfe\xd9.\x15=\x1d\xbb\xb8\xf2SW\xdb\xcc\xc6t)\x9c\x18\xb36u8.\x0fT\xa1\xf8\x92\x1f\x89\x96O\xbb\xd4\xee\x9d\xe9;6B\xb5\n;*\xd4dy6\x10\xe1\xf9\x91\x03+{ T\xcd\r\x19\x1a\xc8A24\xd1\xb0\x99\xe1\x90\x1e\x01@6\xb5\xb7\xfa\xa9\xe5wu\xa4\"\x81]\xb0\x8b\xe4\'\x12\x0fT\x88\xc6\xdb\x85t\xe6\xb7\xc0\xd7\xa6)\xfa\xdb\xde\xf3\x93\x97\'\x04U/\no7\xc5=\x13\xaf\n\x00\xa9,\x8b\x1c\x81(\xd7\xef\x861\xa9\xae\xf2n\xb8\xcaj,TG\xd8*\x88.\xaf\xc1\x07\x10x\xac\x11\xa2/B\xf07\xc5\xf2\xb8V\xdd\x0eb-\xce-V~U\xf2\xa7D\xf6+2\xf4#\xa8G\xe8\xd4*\x01x\xcfj\xc37\xa8\x9ee\xd2,\xe5\xfa\xba3\xc1\x06D\xf6\xe6\xcf\xa5\r\xa7f\x084\x8a,\xf3\x02\x03\x01\x00\x01"),
     name_constraints: None
   },
 
