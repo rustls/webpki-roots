@@ -308,15 +308,11 @@ impl CertificateMetadata {
 
     /// Returns the DER encoding of the certificate contained in the metadata PEM. Panics if
     /// there is an error, or no certificate in the PEM content.
-    fn der(&self) -> Vec<u8> {
-        let certs = rustls_pemfile::certs(&mut self.pem().as_bytes()).expect("invalid PEM");
-        if certs.len() > 1 {
-            panic!("more than one certificate in metadata PEM");
-        }
-        certs
-            .first()
-            .expect("missing certificate in metadata PEM")
-            .clone()
+    fn der(&self) -> CertificateDer<'static> {
+        rustls_pemfile::certs(&mut self.pem().as_bytes())
+            .next()
+            .unwrap()
+            .expect("invalid PEM")
     }
 
     /// Returns the serial number for the certificate. Panics if the certificate serial number
