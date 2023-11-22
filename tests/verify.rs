@@ -30,22 +30,23 @@ fn name_constraints() {
                     time,
                     KeyUsage::server_auth(),
                     None,
+                    None,
                 )
                 .unwrap();
         }
 
         // Each forbidden EE should fail to verify with the expected name constraint error.
         for forbidden_ee in test_case.forbidden_certs {
-            let result = webpki::EndEntityCert::try_from(&forbidden_ee)
-                .unwrap()
-                .verify_for_usage(
-                    ALL_ALGORITHMS,
-                    trust_anchors,
-                    &[],
-                    time,
-                    KeyUsage::server_auth(),
-                    None,
-                );
+            let ee = EndEntityCert::try_from(&forbidden_ee).unwrap();
+            let result = ee.verify_for_usage(
+                ALL_ALGORITHMS,
+                trust_anchors,
+                &[],
+                time,
+                KeyUsage::server_auth(),
+                None,
+                None,
+            );
             assert!(matches!(result, Err(Error::NameConstraintViolation)));
         }
     }
@@ -174,6 +175,7 @@ fn tubitak_name_constraint_works() {
         now,
         KeyUsage::server_auth(),
         None,
+        None,
     )
     .unwrap();
 
@@ -182,15 +184,15 @@ fn tubitak_name_constraint_works() {
 }
 
 static ALL_ALGORITHMS: &[&dyn SignatureVerificationAlgorithm] = &[
-    webpki::ECDSA_P256_SHA256,
-    webpki::ECDSA_P256_SHA384,
-    webpki::ECDSA_P384_SHA256,
-    webpki::ECDSA_P384_SHA384,
-    webpki::RSA_PKCS1_2048_8192_SHA256,
-    webpki::RSA_PKCS1_2048_8192_SHA384,
-    webpki::RSA_PKCS1_2048_8192_SHA512,
-    webpki::RSA_PKCS1_3072_8192_SHA384,
-    webpki::RSA_PSS_2048_8192_SHA256_LEGACY_KEY,
-    webpki::RSA_PSS_2048_8192_SHA384_LEGACY_KEY,
-    webpki::RSA_PSS_2048_8192_SHA512_LEGACY_KEY,
+    webpki::ring::ECDSA_P256_SHA256,
+    webpki::ring::ECDSA_P256_SHA384,
+    webpki::ring::ECDSA_P384_SHA256,
+    webpki::ring::ECDSA_P384_SHA384,
+    webpki::ring::RSA_PKCS1_2048_8192_SHA256,
+    webpki::ring::RSA_PKCS1_2048_8192_SHA384,
+    webpki::ring::RSA_PKCS1_2048_8192_SHA512,
+    webpki::ring::RSA_PKCS1_3072_8192_SHA384,
+    webpki::ring::RSA_PSS_2048_8192_SHA256_LEGACY_KEY,
+    webpki::ring::RSA_PSS_2048_8192_SHA384_LEGACY_KEY,
+    webpki::ring::RSA_PSS_2048_8192_SHA512_LEGACY_KEY,
 ];
