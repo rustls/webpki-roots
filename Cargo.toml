@@ -20,7 +20,7 @@ percent-encoding = "2.3"
 rcgen = "0.11.1"
 reqwest = { version = "0.11", features = ["rustls-tls-manual-roots"] }
 ring = "0.17.0"
-rustls-pemfile = "2.0.0-alpha.1"
+rustls-pemfile = "=2.0.0-alpha.1"
 serde = { version = "1.0.183", features = ["derive"] }
 tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
 webpki = { package = "rustls-webpki", version = "=0.102.0-alpha.6" }
