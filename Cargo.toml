@@ -9,7 +9,7 @@ homepage = "https://github.com/rustls/webpki-roots"
 repository = "https://github.com/rustls/webpki-roots"
 
 [dependencies]
-pki-types = { package = "rustls-pki-types", version = "0.2.2", default-features = false }
+pki-types = { package = "rustls-pki-types", version = "1", default-features = false }
 
 [dev-dependencies]
 chrono = { version = "0.4.26", default-features = false, features = ["clock"] }
@@ -20,9 +20,9 @@ percent-encoding = "2.3"
 rcgen = "0.11.1"
 reqwest = { version = "0.11", features = ["rustls-tls-manual-roots"] }
 ring = "0.17.0"
-rustls-pemfile = "=2.0.0-alpha.2"
+rustls-pemfile = "2.0.0"
 serde = { version = "1.0.183", features = ["derive"] }
 tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
-webpki = { package = "rustls-webpki", version = "=0.102.0-alpha.7", features = ["alloc"] }
+webpki = { package = "rustls-webpki", version = "0.102", features = ["alloc"] }
 x509-parser = "0.15.1"
 yasna = "0.5.2"
