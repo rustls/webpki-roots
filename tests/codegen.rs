@@ -375,13 +375,26 @@ impl From<&str> for TrustBits {
     }
 }
 
-const HEADER: &str = r#"//!
-//! This library is automatically generated from the Mozilla
-//! IncludedCACertificateReportPEMCSV report via ccadb.org. Don't edit it.
+const HEADER: &str = r#"//! A compiled-in copy of the root certificates trusted by Mozilla.
 //!
-//! The generation is done deterministically so you can verify it
-//! yourself by inspecting and re-running the generation process.
+//! To use this library with rustls 0.22:
 //!
+//! ```rust
+//! let root_store = rustls::RootCertStore {
+//!   roots: webpki_roots::TLS_SERVER_ROOTS.iter().cloned().collect(),
+//! };
+//! ```
+//!
+//! This library is suitable for use in applications that can always be recompiled and instantly deployed.
+//! For applications that are deployed to end-users and cannot be recompiled, or which need certification
+//! before deployment, consider a library that loads certificates at runtime, like
+//! [rustls-native-certs](https://docs.rs/rustls-native-certs).
+//
+// This library is automatically generated from the Mozilla
+// IncludedCACertificateReportPEMCSV report via ccadb.org. Don't edit it.
+//
+// The generation is done deterministically so you can verify it
+// yourself by inspecting and re-running the generation process.
 
 #![no_std]
 #![forbid(unsafe_code, unstable_features)]
