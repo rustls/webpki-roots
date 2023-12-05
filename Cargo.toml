@@ -1,2 +1,14 @@
 [workspace]
-members = ["webpki-roots"]
+members = ["webpki-ccadb", "webpki-roots"]
+
+[workspace.package]
+edition = "2018"
+homepage = "https://github.com/rustls/webpki-roots"
+repository = "https://github.com/rustls/webpki-roots"
+
+[workspace.dependencies]
+hex = "0.4.3"
+pki-types = { package = "rustls-pki-types", version = "1", default-features = false }
+webpki = { package = "rustls-webpki", version = "0.102", features = ["alloc"] }
+x509-parser = "0.15.1"
+yasna = "0.5.2"
