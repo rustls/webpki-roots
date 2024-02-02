@@ -10,8 +10,11 @@
 //!
 //! This library is suitable for use in applications that can always be recompiled and instantly deployed.
 //! For applications that are deployed to end-users and cannot be recompiled, or which need certification
-//! before deployment, consider a library that loads certificates at runtime, like
-//! [rustls-native-certs](https://docs.rs/rustls-native-certs).
+//! before deployment, consider a library that uses the platform native certificate verifier such as
+//! [rustls-platform-verifier]. This has the additional benefit of supporting OS provided CA constraints
+//! and revocation data.
+//!
+//! [rustls-platform-verifier]: https://docs.rs/rustls-platform-verifier
 //
 // This library is automatically generated from the Mozilla
 // IncludedCACertificateReportPEMCSV report via ccadb.org. Don't edit it.
