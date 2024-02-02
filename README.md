@@ -8,9 +8,6 @@ The webpki-ccadb crate populates the root certificates for the webpki-roots crat
 using the data provided by the [Common CA Database (CCADB)](https://www.ccadb.org/).
 Inspired by [certifi.io](https://certifi.io/en/latest/).
 
-The webpki-roots crate is inspired by [certifi.io](https://certifi.io/en/latest/) and
-uses the data provided by the [Common CA Database (CCADB)](https://www.ccadb.org/).
-
 [![webpki-roots](https://github.com/rustls/webpki-roots/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/rustls/webpki-roots/actions/workflows/build.yml)
 [![Crate](https://img.shields.io/crates/v/webpki-roots.svg)](https://crates.io/crates/webpki-roots)
 
