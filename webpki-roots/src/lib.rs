@@ -336,7 +336,7 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   /*
    * Issuer: O=Starfield Technologies, Inc. OU=Starfield Class 2 Certification Authority
    * Subject: O=Starfield Technologies, Inc. OU=Starfield Class 2 Certification Authority
-   * Label: "Starfield Class 2 CA"
+   * Label: "Starfield Class 2 Certification Authority"
    * Serial: 0
    * SHA256 Fingerprint: 14:65:fa:20:53:97:b8:76:fa:a6:f0:a9:95:8e:55:90:e4:0f:cc:7f:aa:4f:b7:c2:c8:67:75:21:fb:5f:b6:58
    * -----BEGIN CERTIFICATE-----
@@ -2293,7 +2293,7 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   /*
    * Issuer: O=CERTSIGN SA OU=certSIGN ROOT CA G2
    * Subject: O=CERTSIGN SA OU=certSIGN ROOT CA G2
-   * Label: "certSIGN Root CA G2"
+   * Label: "certSIGN ROOT CA G2"
    * Serial: 313609486401300475190
    * SHA256 Fingerprint: 65:7c:fe:2f:a7:3f:aa:38:46:25:71:f3:32:a2:36:3a:46:fc:e7:02:09:51:71:07:02:cd:fb:b6:ee:da:33:05
    * -----BEGIN CERTIFICATE-----
@@ -4131,7 +4131,7 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   /*
    * Issuer: O=Chunghwa Telecom Co., Ltd. OU=ePKI Root Certification Authority
    * Subject: O=Chunghwa Telecom Co., Ltd. OU=ePKI Root Certification Authority
-   * Label: "Chunghwa Telecom Co., Ltd. - ePKI Root Certification Authority"
+   * Label: "ePKI Root Certification Authority"
    * Serial: 28956088682735189655030529057352760477
    * SHA256 Fingerprint: c0:a6:f4:dc:63:a2:4b:fd:cf:54:ef:2a:6a:08:2a:0a:72:de:35:80:3e:2f:f5:ff:52:7a:e5:d8:72:06:df:d5
    * -----BEGIN CERTIFICATE-----
@@ -4204,7 +4204,7 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   /*
    * Issuer: O=The Go Daddy Group, Inc. OU=Go Daddy Class 2 Certification Authority
    * Subject: O=The Go Daddy Group, Inc. OU=Go Daddy Class 2 Certification Authority
-   * Label: "Go Daddy Class 2 CA"
+   * Label: "Go Daddy Class 2 Certification Authority"
    * Serial: 0
    * SHA256 Fingerprint: c3:84:6b:f2:4b:9e:93:ca:64:27:4c:0e:c6:7c:1e:cc:5e:02:4f:fc:ac:d2:d7:40:19:35:0e:81:fe:54:6a:e4
    * -----BEGIN CERTIFICATE-----
@@ -5049,7 +5049,7 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   /*
    * Issuer: O=FNMT-RCM OU=AC RAIZ FNMT-RCM
    * Subject: O=FNMT-RCM OU=AC RAIZ FNMT-RCM
-   * Label: "FNMT-RCM - SHA256"
+   * Label: "AC RAIZ FNMT-RCM"
    * Serial: 485876308206448804701554682760554759
    * SHA256 Fingerprint: eb:c5:57:0c:29:01:8c:4d:67:b1:aa:12:7b:af:12:f7:03:b4:61:1e:bc:17:b7:da:b5:57:38:94:17:9b:93:fa
    * -----BEGIN CERTIFICATE-----
