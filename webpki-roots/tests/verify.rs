@@ -1,8 +1,10 @@
 use core::time::Duration;
 use std::convert::TryFrom;
 
-use pki_types::{CertificateDer, SignatureVerificationAlgorithm, UnixTime, ServerName};
-use rcgen::{BasicConstraints, Certificate, CertificateParams, DnType, IsCa, KeyUsagePurpose};
+use pki_types::{CertificateDer, ServerName, SignatureVerificationAlgorithm, UnixTime};
+use rcgen::{
+    BasicConstraints, Certificate, CertificateParams, DnType, IsCa, KeyPair, KeyUsagePurpose,
+};
 use webpki::{anchor_from_trusted_cert, EndEntityCert, Error, KeyUsage};
 use x509_parser::extensions::{GeneralName, NameConstraints as X509ParserNameConstraints};
 use x509_parser::prelude::FromDer;
@@ -61,7 +63,7 @@ struct ConstraintTest {
 impl ConstraintTest {
     fn new(webpki_name_constraints: &[u8]) -> Self {
         // Create a trust anchor CA certificate that has the name constraints we want to test.
-        let mut trust_anchor = CertificateParams::new([]);
+        let mut trust_anchor = CertificateParams::new([]).unwrap();
         trust_anchor
             .distinguished_name
             .push(DnType::CommonName, "Name Constraint Test CA");
@@ -72,7 +74,8 @@ impl ConstraintTest {
         ];
         let name_constraints = rcgen_name_constraints(webpki_name_constraints);
         trust_anchor.name_constraints = Some(name_constraints.clone());
-        let trust_anchor = Certificate::from_params(trust_anchor).unwrap();
+        let key_pair = KeyPair::generate().unwrap();
+        let trust_anchor = trust_anchor.self_signed(&key_pair).unwrap();
 
         let certs_for_subtrees = |suffix| {
             name_constraints
@@ -82,6 +85,7 @@ impl ConstraintTest {
                     rcgen::GeneralSubtree::DnsName(dns_name) => Some(rcgen_ee_for_name(
                         format!("valid{}{}", dns_name, suffix),
                         &trust_anchor,
+                        &key_pair,
                     )),
                     _ => None,
                 })
@@ -89,27 +93,27 @@ impl ConstraintTest {
         };
 
         Self {
-            trust_anchor: CertificateDer::from(trust_anchor.serialize_der().unwrap()),
             // For each permitted subtree in the name constraints, issue an end entity certificate
             // that contains a DNS name matching the permitted subtree base.
             permitted_certs: certs_for_subtrees(""),
             // For each permitted subtree in the name constraints, issue an end entity certificate
             // that contains a DNS name that will **not** match the permitted subtree base.
             forbidden_certs: certs_for_subtrees(".invalid"),
+            trust_anchor: trust_anchor.into(),
         }
     }
 }
 
-fn rcgen_ee_for_name(name: String, issuer: &Certificate) -> CertificateDer<'static> {
-    let mut ee = CertificateParams::new(vec![name.clone()]);
+fn rcgen_ee_for_name(
+    name: String,
+    issuer: &Certificate,
+    issuer_key: &KeyPair,
+) -> CertificateDer<'static> {
+    let mut ee = CertificateParams::new(vec![name.clone()]).unwrap();
     ee.distinguished_name.push(DnType::CommonName, name);
     ee.is_ca = IsCa::NoCa;
-    CertificateDer::from(
-        Certificate::from_params(ee)
-            .unwrap()
-            .serialize_der_with_signer(issuer)
-            .unwrap(),
-    )
+    let key_pair = KeyPair::generate().unwrap();
+    ee.signed_by(&key_pair, issuer, issuer_key).unwrap().into()
 }
 
 /// Convert the webpki trust anchor DER encoding of name constraints to rcgen NameConstraints.
