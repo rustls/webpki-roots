@@ -22,3 +22,7 @@ webpki = { workspace = true }
 webpki-ccadb = { path = "../webpki-ccadb" }
 x509-parser = { workspace = true }
 yasna = { workspace = true }
+
+[features]
+default = []
+web = ["pki-types/web"]
