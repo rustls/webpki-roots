@@ -20,7 +20,3 @@ serde = { version = "1.0.183", features = ["derive"] }
 webpki = { workspace = true }
 x509-parser = { workspace = true }
 yasna = { workspace = true }
-
-[features]
-default = []
-web = ["pki-types/web"]
