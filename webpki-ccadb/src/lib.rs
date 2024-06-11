@@ -1,7 +1,7 @@
 use std::cmp::Ordering;
 use std::collections::{BTreeMap, HashSet};
 
-use chrono::{NaiveDate, Utc};
+use chrono::NaiveDate;
 use num_bigint::BigUint;
 use pki_types::CertificateDer;
 use serde::Deserialize;
@@ -58,7 +58,7 @@ pub async fn fetch_ccadb_roots() -> BTreeMap<String, CertificateMetadata> {
     // Filter for just roots with the TLS trust bit that are not distrusted as of today's date.
     let trusted_tls_roots = metadata
         .into_iter()
-        .filter(|root| root.trusted_for_tls(&Utc::now().naive_utc().date()))
+        .filter(CertificateMetadata::trusted_for_tls)
         .collect::<Vec<CertificateMetadata>>();
 
     // Create an ordered BTreeMap of the roots, panicking for any duplicates.
@@ -103,26 +103,22 @@ pub struct CertificateMetadata {
 
 impl CertificateMetadata {
     /// Returns true iff the certificate has valid TrustBits that include TrustBits::Websites,
-    /// and the certificate has no distrust for TLS after date, or has a valid distrust
-    /// for TLS after date that is in the future compared to `now`. In all other cases this function
+    /// and the certificate has no distrust for TLS after date. In all other cases this function
     /// returns false.
-    fn trusted_for_tls(&self, now: &NaiveDate) -> bool {
+    ///
+    /// Notably this means a trust anchor with a distrust after date _in the future_ is treated
+    /// as untrusted irrespective of the distrust after date. An end-to-end distrust after solution
+    /// is NYI: https://github.com/rustls/webpki/issues/259
+    fn trusted_for_tls(&self) -> bool {
         let has_tls_trust_bit = self.trust_bits().contains(&TrustBits::Websites);
 
         match (has_tls_trust_bit, self.tls_distrust_after()) {
             // No website trust bit - not trusted for tls.
             (false, _) => false,
+            // Trust bit, populated distrust after - not trusted for tls.
+            (true, Some(_)) => false,
             // Has website trust bit, no distrust after - trusted for tls.
             (true, None) => true,
-            // Trust bit, populated distrust after - need to check date to decide.
-            (true, Some(tls_distrust_after)) => {
-                match now.cmp(&tls_distrust_after).is_ge() {
-                    // We're past the distrust date - skip.
-                    true => false,
-                    // We haven't yet reached the distrust date - include.
-                    false => true,
-                }
-            }
         }
     }
 
