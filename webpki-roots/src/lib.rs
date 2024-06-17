@@ -3508,51 +3508,6 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
   },
 
   /*
-   * Issuer: CN=GLOBALTRUST 2020 O=e-commerce monitoring GmbH
-   * Subject: CN=GLOBALTRUST 2020 O=e-commerce monitoring GmbH
-   * Label: "GLOBALTRUST 2020"
-   * Serial: 109160994242082918454945253
-   * SHA256 Fingerprint: 9a:29:6a:51:82:d1:d4:51:a2:e3:7f:43:9b:74:da:af:a2:67:52:33:29:f9:0f:9a:0d:20:07:c3:34:e2:3c:9a
-   * -----BEGIN CERTIFICATE-----
-   * MIIFgjCCA2qgAwIBAgILWku9WvtPilv6ZeUwDQYJKoZIhvcNAQELBQAwTTELMAkG
-   * A1UEBhMCQVQxIzAhBgNVBAoTGmUtY29tbWVyY2UgbW9uaXRvcmluZyBHbWJIMRkw
-   * FwYDVQQDExBHTE9CQUxUUlVTVCAyMDIwMB4XDTIwMDIxMDAwMDAwMFoXDTQwMDYx
-   * MDAwMDAwMFowTTELMAkGA1UEBhMCQVQxIzAhBgNVBAoTGmUtY29tbWVyY2UgbW9u
-   * aXRvcmluZyBHbWJIMRkwFwYDVQQDExBHTE9CQUxUUlVTVCAyMDIwMIICIjANBgkq
-   * hkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAri5WrRsc7/aVj6B3GyvTY4+ETUWiD59b
-   * RatZe1E0+eyLinjF3WuvvcTfk0Uev5E4C64OFudBc/jbu9G4UeDLgztzOG53ig9Z
-   * YybNpyrOVPu44sB8R85gfD+yc/LAGbaKkoc1DZAoouQVBGM+uq/ufF7MpotQsjj3
-   * QWPKzv9pj2gOlTblzLmMCcpL3TGQlsjMH/1WljTbjhzqLL6FLmPdqqmV0/0plRPw
-   * yJiT2S0WR5ARg6I6IqIoV6Lr/sCMKKCmfecqQjuCgGOlYx8ZzHyyZqjC0203b+J+
-   * BlHZRYQfEs4kUmSFC0iAToexIiIwquuuvuAC4EDosEKAA1GqtH6qRNdDYfOiaxaJ
-   * SaSjpCuKAsR49GiKweR6NrFvG5Ybd0mN1MkGco/PU+PcF4UgStyYJ9ORJitHHmkH
-   * r96i5OTUawuzXnzUJIBHKWk7buis/UDr2O1xcSvy6Fgd60GXIsUf1DnQJ4+H4xj0
-   * 4KlGDfV0OoIu0G4skaMxXDtG6nsEEFZegB31pWXogvziB4xiRfUg3kZwhqG8k9Me
-   * dKZssCz3AwyIDMvUclOGvGBG85hqwvG/Q/lwIHfKN0F5VVJjjVsSn8VoxIidrPIw
-   * q7ejMZdnrY8XD2zHc+0klGvIg5rQmjdJBKuxFshsSUktq6HQjJLyQUp5ISXbY9e2
-   * nKd+Qmn7OmMCAwEAAaNjMGEwDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMC
-   * AQYwHQYDVR0OBBYEFNwuH9FhN3nkq9XVsxJxaD1qaJwiMB8GA1UdIwQYMBaAFNwu
-   * H9FhN3nkq9XVsxJxaD1qaJwiMA0GCSqGSIb3DQEBCwUAA4ICAQCR8EICaEDuw2jA
-   * VC/f7GLDw56KoDEoqoOOpFaWEhCGVrqXctJUMHytGdUdaG/7FELYjQ7ztdGl4wJC
-   * XtzoRlgHNQIw4Lx0SsFDKv/bGtCwr2zD/cuz9X9tAy5ZVp0tLTWMstZDFyySCstd
-   * 6IwPS3BD0IL/qMy/pJTAvoe9iuOTe8aPmxadJ2W8esVCgmxcB9CpwYhgROmYhRZf
-   * +I/KARDOJcP5YBugxZfD0yyIMaK9MOzQ0MAS8cE54+X1+NZK3TTN+2/BT+MAi1bi
-   * kvcoskJ3ciNnxz8RFbLEAwW+uxF7Cr+obuf/WEPPm2eggAe2HcqtbepBEX4tdJP7
-   * wry+UUTF72glJ4DjyKDUEuzZpTcdN3y0kcra1LGWge9oXHYQSa9+pTeAsRxSvTOB
-   * TI/53WXZFM2KJVj04sWDpQmQ1GwUY7VA3+vA/MRYfg0UFodUJ25W5HCEuGwyEn6C
-   * MUO+1918oa2u1qsgEu8KwxCMSZY13At1XrFP1U80DhEgB3VDRemjEdqso5nCtnkn
-   * 4rnvyOL2NSl6dPrFf4IFYqYK6miyeUcGbvJXqBUzxvd4Sj1Ce2t+/vdG6tHrju+I
-   * aFvowdlxfv1k7/9nR4hYJS8+hge9+6jlgqispdNpQ80xiEmEU5LAsTkbOYMBMMTy
-   * qfrQA71yN2BWHzZ8vTmR9W0Nv3vXkg==
-   * -----END CERTIFICATE-----
-   */
-  TrustAnchor {
-    subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02AT1#0!\x06\x03U\x04\n\x13\x1ae-commerce monitoring GmbH1\x190\x17\x06\x03U\x04\x03\x13\x10GLOBALTRUST 2020"),
-    subject_public_key_info: Der::from_slice(b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x02\x0f\x000\x82\x02\n\x02\x82\x02\x01\x00\xae.V\xad\x1b\x1c\xef\xf6\x95\x8f\xa0w\x1b+\xd3c\x8f\x84ME\xa2\x0f\x9f[E\xabY{Q4\xf9\xec\x8b\x8ax\xc5\xddk\xaf\xbd\xc4\xdf\x93E\x1e\xbf\x918\x0b\xae\x0e\x16\xe7As\xf8\xdb\xbb\xd1\xb8Q\xe0\xcb\x83;s8nw\x8a\x0fYc&\xcd\xa7*\xceT\xfb\xb8\xe2\xc0|G\xce`|?\xb2s\xf2\xc0\x19\xb6\x8a\x92\x875\r\x90(\xa2\xe4\x15\x04c>\xba\xaf\xee|^\xcc\xa6\x8bP\xb28\xf7Ac\xca\xce\xffi\x8fh\x0e\x956\xe5\xcc\xb9\x8c\t\xcaK\xdd1\x90\x96\xc8\xcc\x1f\xfdV\x964\xdb\x8e\x1c\xea,\xbe\x85.c\xdd\xaa\xa9\x95\xd3\xfd)\x95\x13\xf0\xc8\x98\x93\xd9-\x16G\x90\x11\x83\xa2:\"\xa2(W\xa2\xeb\xfe\xc0\x8c(\xa0\xa6}\xe7*B;\x82\x80c\xa5c\x1f\x19\xcc|\xb2f\xa8\xc2\xd3m7o\xe2~\x06Q\xd9E\x84\x1f\x12\xce$Rd\x85\x0bH\x80N\x87\xb1\"\"0\xaa\xeb\xae\xbe\xe0\x02\xe0@\xe8\xb0B\x80\x03Q\xaa\xb4~\xaaD\xd7Ca\xf3\xa2k\x16\x89I\xa4\xa3\xa4+\x8a\x02\xc4x\xf4h\x8a\xc1\xe4z6\xb1o\x1b\x96\x1bwI\x8d\xd4\xc9\x06r\x8f\xcfS\xe3\xdc\x17\x85 J\xdc\x98\'\xd3\x91&+G\x1ei\x07\xaf\xde\xa2\xe4\xe4\xd4k\x0b\xb3^|\xd4$\x80G)i;n\xe8\xac\xfd@\xeb\xd8\xedqq+\xf2\xe8X\x1d\xebA\x97\"\xc5\x1f\xd49\xd0\'\x8f\x87\xe3\x18\xf4\xe0\xa9F\r\xf5t:\x82.\xd0n,\x91\xa31\\;F\xea{\x04\x10V^\x80\x1d\xf5\xa5e\xe8\x82\xfc\xe2\x07\x8cbE\xf5 \xdeFp\x86\xa1\xbc\x93\xd3\x1et\xa6l\xb0,\xf7\x03\x0c\x88\x0c\xcb\xd4rS\x86\xbc`F\xf3\x98j\xc2\xf1\xbfC\xf9p w\xca7AyURc\x8d[\x12\x9f\xc5h\xc4\x88\x9d\xac\xf20\xab\xb7\xa31\x97g\xad\x8f\x17\x0fl\xc7s\xed$\x94k\xc8\x83\x9a\xd0\x9a7I\x04\xab\xb1\x16\xc8lII-\xab\xa1\xd0\x8c\x92\xf2AJy!%\xdbc\xd7\xb6\x9c\xa7~Bi\xfb:c\x02\x03\x01\x00\x01"),
-    name_constraints: None
-  },
-
-  /*
    * Issuer: CN=ACCVRAIZ1 O=ACCV OU=PKIACCV
    * Subject: CN=ACCVRAIZ1 O=ACCV OU=PKIACCV
    * Label: "ACCVRAIZ1"
