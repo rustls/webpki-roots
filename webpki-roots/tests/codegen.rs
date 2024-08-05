@@ -18,7 +18,7 @@ async fn new_generated_code_is_fresh() {
     let (mut subject, mut spki, mut name_constraints) =
         (String::new(), String::new(), String::new());
 
-    for (_, root) in tls_roots_map {
+    for root in tls_roots_map.values() {
         // Verify the DER FP matches the metadata FP.
         let der = root.der();
         let calculated_fp = digest::digest(&digest::SHA256, &der);
