@@ -1,5 +1,5 @@
 [workspace]
-members = ["webpki-ccadb", "webpki-roots"]
+members = ["webpki-ccadb", "webpki-root-certs", "webpki-roots"]
 
 [workspace.package]
 edition = "2018"
