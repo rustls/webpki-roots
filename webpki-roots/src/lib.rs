@@ -25,6 +25,7 @@
 #![no_std]
 #![forbid(unsafe_code, unstable_features)]
 #![deny(
+    elided_lifetimes_in_paths,
     trivial_casts,
     trivial_numeric_casts,
     unused_import_braces,
@@ -34,7 +35,7 @@
 
 use pki_types::{Der, TrustAnchor};
 
-pub const TLS_SERVER_ROOTS: &[TrustAnchor] = &[
+pub const TLS_SERVER_ROOTS: &[TrustAnchor<'static>] = &[
   /*
    * Issuer: CN=DigiCert TLS ECC P384 Root G5 O=DigiCert, Inc.
    * Subject: CN=DigiCert TLS ECC P384 Root G5 O=DigiCert, Inc.
