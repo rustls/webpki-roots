@@ -1273,6 +1273,85 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor<'static>] = &[
   },
 
   /*
+   * Issuer: CN=SecureSign Root CA12 O=Cybertrust Japan Co., Ltd.
+   * Subject: CN=SecureSign Root CA12 O=Cybertrust Japan Co., Ltd.
+   * Label: "SecureSign Root CA12"
+   * Serial: 587887345431707215246142177076162061960426065942
+   * SHA256 Fingerprint: 3f:03:4b:b5:70:4d:44:b2:d0:85:45:a0:20:57:de:93:eb:f3:90:5f:ce:72:1a:cb:c7:30:c0:6d:da:ee:90:4e
+   * -----BEGIN CERTIFICATE-----
+   * MIIDcjCCAlqgAwIBAgIUZvnHwa/swlG07VOX5uaCwysckBYwDQYJKoZIhvcNAQEL
+   * BQAwUTELMAkGA1UEBhMCSlAxIzAhBgNVBAoTGkN5YmVydHJ1c3QgSmFwYW4gQ28u
+   * LCBMdGQuMR0wGwYDVQQDExRTZWN1cmVTaWduIFJvb3QgQ0ExMjAeFw0yMDA0MDgw
+   * NTM2NDZaFw00MDA0MDgwNTM2NDZaMFExCzAJBgNVBAYTAkpQMSMwIQYDVQQKExpD
+   * eWJlcnRydXN0IEphcGFuIENvLiwgTHRkLjEdMBsGA1UEAxMUU2VjdXJlU2lnbiBS
+   * b290IENBMTIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC6OcE3emhF
+   * KxS06+QT61d1I02PJC0W6K6OyX2kVzsqdiUzg2zqMoqUm048luT9Ub+ZyZN+v/mt
+   * p7JIKwccJ/VMvHASd6SFVLX9kHrko+RRWAPNEHl57muTH2SOa2SroxPjcf59q5zd
+   * J1M3s6oYwlkm7Fsf0uZlfO+TvdhYXAvA42VvPMfKWeP+bl+sg779XSVOKik71gur
+   * FzJ4pOE+lEa+Ym6b3kaosRbnhW70CEBFEaCeVESE99g2zvVQR9wsMJvuwPWW0v4J
+   * hscGWa5Pro4RmHvzC1KqYiaqId+OJTN5lxZJjfU+1UefNzFJM3IFTQy2VYzxV4+K
+   * h9GtxRESOaCtAgMBAAGjQjBAMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQD
+   * AgEGMB0GA1UdDgQWBBRXNPN0zwRL1SXm8UC2LEzZLemgrTANBgkqhkiG9w0BAQsF
+   * AAOCAQEAPrvbFxbS8hQBICw4g0utvsqFepq2m2um4fylOqyttCg6r9cBg0krY6Ld
+   * mmQOmFxv3Y67ilQiLUoT865AQ9tPkbeGGuwAtEGBpE/6aouIs3YIcipJQMPTw4WJ
+   * mBClnW8Zt7vPemVV2zfrPIpyMpcemik+rY3moxtt9XUa5rBouVui7mlHJzWhhpmA
+   * 8zNL4WukJsPvdFlseqJkth5Ew1DgDzk9qTPxpfPSvWKErI4cqc1avTc7bgoitPQV
+   * 55FYxTpE05Uo2cBl6XLK0A+9H7MV2anjpEcJnuDLN/v9vZfVvhgaaaI5gdka9at/
+   * yOPiZwud9AzqVN/Ssq+xIvEg37xEHA==
+   * -----END CERTIFICATE-----
+   */
+  TrustAnchor {
+    subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02JP1#0!\x06\x03U\x04\n\x13\x1aCybertrust Japan Co., Ltd.1\x1d0\x1b\x06\x03U\x04\x03\x13\x14SecureSign Root CA12"),
+    subject_public_key_info: Der::from_slice(b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\n\x02\x82\x01\x01\x00\xba9\xc17zhE+\x14\xb4\xeb\xe4\x13\xebWu#M\x8f$-\x16\xe8\xae\x8e\xc9}\xa4W;*v%3\x83l\xea2\x8a\x94\x9bN<\x96\xe4\xfdQ\xbf\x99\xc9\x93~\xbf\xf9\xad\xa7\xb2H+\x07\x1c\'\xf5L\xbcp\x12w\xa4\x85T\xb5\xfd\x90z\xe4\xa3\xe4QX\x03\xcd\x10yy\xeek\x93\x1fd\x8ekd\xab\xa3\x13\xe3q\xfe}\xab\x9c\xdd\'S7\xb3\xaa\x18\xc2Y&\xec[\x1f\xd2\xe6e|\xef\x93\xbd\xd8X\\\x0b\xc0\xe3eo<\xc7\xcaY\xe3\xfen_\xac\x83\xbe\xfd]%N*);\xd6\x0b\xab\x172x\xa4\xe1>\x94F\xbebn\x9b\xdeF\xa8\xb1\x16\xe7\x85n\xf4\x08@E\x11\xa0\x9eTD\x84\xf7\xd86\xce\xf5PG\xdc,0\x9b\xee\xc0\xf5\x96\xd2\xfe\t\x86\xc7\x06Y\xaeO\xae\x8e\x11\x98{\xf3\x0bR\xaab&\xaa!\xdf\x8e%3y\x97\x16I\x8d\xf5>\xd5G\x9f71I3r\x05M\x0c\xb6U\x8c\xf1W\x8f\x8a\x87\xd1\xad\xc5\x11\x129\xa0\xad\x02\x03\x01\x00\x01"),
+    name_constraints: None
+  },
+
+  /*
+   * Issuer: CN=TWCA CYBER Root CA O=TAIWAN-CA OU=Root CA
+   * Subject: CN=TWCA CYBER Root CA O=TAIWAN-CA OU=Root CA
+   * Label: "TWCA CYBER Root CA"
+   * Serial: 85076849864375384482682434040119489222
+   * SHA256 Fingerprint: 3f:63:bb:28:14:be:17:4e:c8:b6:43:9c:f0:8d:6d:56:f0:b7:c4:05:88:3a:56:48:a3:34:42:4d:6b:3e:c5:58
+   * -----BEGIN CERTIFICATE-----
+   * MIIFjTCCA3WgAwIBAgIQQAE0jMIAAAAAAAAAATzyxjANBgkqhkiG9w0BAQwFADBQ
+   * MQswCQYDVQQGEwJUVzESMBAGA1UEChMJVEFJV0FOLUNBMRAwDgYDVQQLEwdSb290
+   * IENBMRswGQYDVQQDExJUV0NBIENZQkVSIFJvb3QgQ0EwHhcNMjIxMTIyMDY1NDI5
+   * WhcNNDcxMTIyMTU1OTU5WjBQMQswCQYDVQQGEwJUVzESMBAGA1UEChMJVEFJV0FO
+   * LUNBMRAwDgYDVQQLEwdSb290IENBMRswGQYDVQQDExJUV0NBIENZQkVSIFJvb3Qg
+   * Q0EwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQDG+Moe2Qkgfh1sTs6P
+   * 40czRJzHyWmqOlt47nDSkvgEs1JSHWdyKKHfi12VCv7qze33Kc7wb3+szT3vsxxF
+   * avcokPFhV8UMxKNQXd7UtcsZyoC5dc4pztKFIuwCY8xEMCDa6pFbVuYdHNWdZsc/
+   * 34bKS1PE2Y2yHer43CdTo0fhYcx9tbD47nORxc5zb87uEB8aBs/pJ2DFTxnk684i
+   * JkXXYJndzk834H/nY62wuFm40AZoNWDTNq5xQwTxaWV4fPMf88oon1oglWa0zbfu
+   * j3ikRRjpJi+NmykosaS3Om251Bw4ckVYsV7r8Cibt4LK/c/WMw+f+5eesRycnupf
+   * Xtuq3VTpMCEobY5583WSjCb+3MX2w7DfRFlDo7YDKPYIMKoNM+HvnKkHIuNZW0CP
+   * 2oi3aQiotyMuRAlZN1vH4xfyIutuOVLF3lSnmMlLIJXcRolftBL5hSmO68gnFSDA
+   * S9TMfAxsNAwmmyYxpjyn9tnQS6Jk/zuZQXLB4HCX8SS7K8R0IrGsayIyJNN4KsDA
+   * oS/xUgXJP+92ZuJF2A09rZXIx4kmyA+upwMu+8Ff+iDhcK2wZSA3M2Cw1a/XDBzC
+   * kHDXShi8fgGwsOsVHkQGzaRP6AzRwyAQ4VRlnrZR0Bp2a0JaWHY06rc3Ga4udfmW
+   * 5cFZ95RXKSWNOkyrTZpB0F8mAwIDAQABo2MwYTAOBgNVHQ8BAf8EBAMCAQYwDwYD
+   * VR0TAQH/BAUwAwEB/zAfBgNVHSMEGDAWgBSdhWEUfMFib5do5E83QOGt4A1WNzAd
+   * BgNVHQ4EFgQUnYVhFHzBYm+XaORPN0DhreANVjcwDQYJKoZIhvcNAQEMBQADggIB
+   * AGSPesRiDrWIzLjHhg6hShbNcAu3p4ULs3a2D6f/CIsLJc+o1IN1KriWiLb73y0t
+   * tGlTITVX1olNc79pj3CjYcya2x6a4CD4bLubIp1dhDGaLIrdaqHXKGnK/nZVekZn
+   * 68xDiBaiA9a5F/gZbG0jAn/xX9AKKSM70aoK7akXJlQKTcKlTfjF/biBzysseKNn
+   * TKkHmvPfXvt89YnNdJdhEGoHK4Fa0o635yDRIG4kqIQnoVesqlVYL9zZyvpoBJ7t
+   * RCT5dEA7IzOrg1oYJkK2bVS1FmAwbLGg+LhBoF1JSdJlBTrq/p1hvIbZv97Tujqx
+   * f36SNI7JAG7cmL3c7IAFrQI932XtCwP39xaEBDG6k5TY8hL4iuO/Qq+n1M0RFxbI
+   * Qh0UqEL20kCGoE8jypZFVmAGzbdVAaYBlGX+bgUJurSkquLvWL69J1bY73NxW0Qz
+   * 8ppy6rBePm6pUlvscG21h483XjyMnM7k8M4MZ0HMzvaAq07MTFb1wWFZk7Q+ptq4
+   * NxKfKjLji7gh7MMrZQzvIt6IKTtM1/r+t+FHvpw+PoP7UV31aPcuIYXcv/Fa4nzX
+   * xeSDwWrruoBa3lwtcHb4yOWHh8qgnaHlIhInD0Q9HWzq1MKLL295q39QpsQZp6F6
+   * t5b5wR9iWqJDB0BeJsas7a5wFsWqynKKTbDPAYsDP27X
+   * -----END CERTIFICATE-----
+   */
+  TrustAnchor {
+    subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02TW1\x120\x10\x06\x03U\x04\n\x13\tTAIWAN-CA1\x100\x0e\x06\x03U\x04\x0b\x13\x07Root CA1\x1b0\x19\x06\x03U\x04\x03\x13\x12TWCA CYBER Root CA"),
+    subject_public_key_info: Der::from_slice(b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x02\x0f\x000\x82\x02\n\x02\x82\x02\x01\x00\xc6\xf8\xca\x1e\xd9\t ~\x1dlN\xce\x8f\xe3G3D\x9c\xc7\xc9i\xaa:[x\xeep\xd2\x92\xf8\x04\xb3RR\x1dgr(\xa1\xdf\x8b]\x95\n\xfe\xea\xcd\xed\xf7)\xce\xf0o\x7f\xac\xcd=\xef\xb3\x1cEj\xf7(\x90\xf1aW\xc5\x0c\xc4\xa3P]\xde\xd4\xb5\xcb\x19\xca\x80\xb9u\xce)\xce\xd2\x85\"\xec\x02c\xccD0 \xda\xea\x91[V\xe6\x1d\x1c\xd5\x9df\xc7?\xdf\x86\xcaKS\xc4\xd9\x8d\xb2\x1d\xea\xf8\xdc\'S\xa3G\xe1a\xcc}\xb5\xb0\xf8\xees\x91\xc5\xceso\xce\xee\x10\x1f\x1a\x06\xcf\xe9\'`\xc5O\x19\xe4\xeb\xce\"&E\xd7`\x99\xdd\xceO7\xe0\x7f\xe7c\xad\xb0\xb8Y\xb8\xd0\x06h5`\xd36\xaeqC\x04\xf1iex|\xf3\x1f\xf3\xca(\x9fZ \x95f\xb4\xcd\xb7\xee\x8fx\xa4E\x18\xe9&/\x8d\x9b)(\xb1\xa4\xb7:m\xb9\xd4\x1c8rEX\xb1^\xeb\xf0(\x9b\xb7\x82\xca\xfd\xcf\xd63\x0f\x9f\xfb\x97\x9e\xb1\x1c\x9c\x9e\xea_^\xdb\xaa\xddT\xe90!(m\x8ey\xf3u\x92\x8c&\xfe\xdc\xc5\xf6\xc3\xb0\xdfDYC\xa3\xb6\x03(\xf6\x080\xaa\r3\xe1\xef\x9c\xa9\x07\"\xe3Y[@\x8f\xda\x88\xb7i\x08\xa8\xb7#.D\tY7[\xc7\xe3\x17\xf2\"\xebn9R\xc5\xdeT\xa7\x98\xc9K \x95\xdcF\x89_\xb4\x12\xf9\x85)\x8e\xeb\xc8\'\x15 \xc0K\xd4\xcc|\x0cl4\x0c&\x9b&1\xa6<\xa7\xf6\xd9\xd0K\xa2d\xff;\x99Ar\xc1\xe0p\x97\xf1$\xbb+\xc4t\"\xb1\xack\"2$\xd3x*\xc0\xc0\xa1/\xf1R\x05\xc9?\xefvf\xe2E\xd8\r=\xad\x95\xc8\xc7\x89&\xc8\x0f\xae\xa7\x03.\xfb\xc1_\xfa \xe1p\xad\xb0e 73`\xb0\xd5\xaf\xd7\x0c\x1c\xc2\x90p\xd7J\x18\xbc~\x01\xb0\xb0\xeb\x15\x1eD\x06\xcd\xa4O\xe8\x0c\xd1\xc3 \x10\xe1Te\x9e\xb6Q\xd0\x1avkBZXv4\xea\xb77\x19\xae.u\xf9\x96\xe5\xc1Y\xf7\x94W)%\x8d:L\xabM\x9aA\xd0_&\x03\x02\x03\x01\x00\x01"),
+    name_constraints: None
+  },
+
+  /*
    * Issuer: CN=HARICA TLS ECC Root CA 2021 O=Hellenic Academic and Research Institutions CA
    * Subject: CN=HARICA TLS ECC Root CA 2021 O=Hellenic Academic and Research Institutions CA
    * Label: "HARICA TLS ECC Root CA 2021"
@@ -1583,6 +1662,51 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor<'static>] = &[
   TrustAnchor {
     subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02DE1\x150\x13\x06\x03U\x04\n\x0c\x0cD-Trust GmbH1\'0%\x06\x03U\x04\x03\x0c\x1eD-TRUST Root Class 3 CA 2 2009"),
     subject_public_key_info: Der::from_slice(b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\n\x02\x82\x01\x01\x00\xd3\xb2J\xcfzG\xefu\x9b#\xfa:/\xd6PE\x895:\xc6k\xdb\xfe\xdb\x00h\xa8\xe0\x03\x11\x1d7P\x08\x9fMJh\x945\xb3S\xd1\x94c\xa7 V\xaf\xdeQx\xec*=\xf3HHP>\n\xdfFU\x8b\'m\xc3\x10M\r\x91RC\xd8\x87\xe0]N6\xb5!\xca_9@\x04_[~\xcc\xa3\xc6+\xa9@\x1e\xd96\x84\xd6H\xf3\x92\x1e4F $\xc1\xa4Q\x8eJ\x1a\xefP?i]\x19\x7fE\xc3\xc7\x01\x8fQ\xc9#\xe8r\xae\xb4\xbcV\t\x7f\x12\xcb\x1c\xb1\xaf)\x90\n\xc9U\xcc\x0f\xd3\xb4\x1a\xedG5ZJ\xed\x9cs\x04!\xd0\xaa\xbd\x0c\x13\xb5\x00\xca&l\xc4k\x0c\x94Z\x95\x94\xdaP\x9a\xf1\xff\xa5+f1\xa4\xc98\xa0\xdf\x1d\x1f\xb8\t.\xf3\xa7\xe8gR\xab\x95\x1f\xe0F>\xd8\xa4\xc3\xcaZ\xc51\x80\xe8H\x9a\x9f\x94i\xfe\x19\xdd\xd8s|\x81\xca\x96\xde\x8e\xed\xb32\x05e\x844\xe6\xe6\xfdW\x10\xb5_v\xbf/\xb0\x10\r\xc5\x02\x03\x01\x00\x01"),
+    name_constraints: None
+  },
+
+  /*
+   * Issuer: CN=SecureSign Root CA14 O=Cybertrust Japan Co., Ltd.
+   * Subject: CN=SecureSign Root CA14 O=Cybertrust Japan Co., Ltd.
+   * Label: "SecureSign Root CA14"
+   * Serial: 575790784512929437950770173562378038616896959179
+   * SHA256 Fingerprint: 4b:00:9c:10:34:49:4f:9a:b5:6b:ba:3b:a1:d6:27:31:fc:4d:20:d8:95:5a:dc:ec:10:a9:25:60:72:61:e3:38
+   * -----BEGIN CERTIFICATE-----
+   * MIIFcjCCA1qgAwIBAgIUZNtaDCBO6Ncpd8hQJ6JaJ90t8sswDQYJKoZIhvcNAQEM
+   * BQAwUTELMAkGA1UEBhMCSlAxIzAhBgNVBAoTGkN5YmVydHJ1c3QgSmFwYW4gQ28u
+   * LCBMdGQuMR0wGwYDVQQDExRTZWN1cmVTaWduIFJvb3QgQ0ExNDAeFw0yMDA0MDgw
+   * NzA2MTlaFw00NTA0MDgwNzA2MTlaMFExCzAJBgNVBAYTAkpQMSMwIQYDVQQKExpD
+   * eWJlcnRydXN0IEphcGFuIENvLiwgTHRkLjEdMBsGA1UEAxMUU2VjdXJlU2lnbiBS
+   * b290IENBMTQwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQDF0nqh1oq/
+   * FjHQmNE6lPxauG4iwWL3pwon71D2LrGeaBLwbCRjOfHw3xDG3rdSINVSW0KZnvOg
+   * vlIfX8xnbacuUKLBl422+JX1sLrcneC+y9/3OPJH9aaakpUqYllQC6KxNedlsmGy
+   * 6pJxaeQp8E+BgQQ8sqVb1MWoWWd7VRxJq3qdwudzTe/NCcLEVxLbAQ4jeQkHO6Lo
+   * /IrPj8BGJJw4J+CDnRugv3gVEOuGTgpa/d/aLIJ+7sr2KeH6caH3iGicnPCNvg9J
+   * kdjqOvn90Ghx2+m1K06Ckm9mH+Dw3EzsytHqunQG+bOEkJTRX45zGRBdAuVwpcAQ
+   * 0BB8b8VYSbSwbprafZX1zNoCr7gsfXmPvkPx+SgojQlD+Ajda8iLLCSxjVIHvXib
+   * y8posqTdDEx5YMaZ0ZPxMBoH064iwurO8YQJzOAUbn8/ftKChazcqRZOhaBgy/ac
+   * 18izju3Gm5h1DVXoX+WViwKkrkMpKBGk5hIwAUt1ax5mnXkvpXYvHUC0bcl9eQjs
+   * 0Wq2XSqypWa9a4X0dFbD9ed1Uigspf9mR6XU/v6eVL9lfgHWMI+lNpyiUBzuOIAB
+   * SMbHdPTGrMNASRZhdCyvjG817XsYAFs2PJxQDcqSMxDxJklt33UkN4Ii1+iW/RVL
+   * ApY+B3KVfqs9TC7XyvDf4Fg/LS8EmjijAQIDAQABo0IwQDAPBgNVHRMBAf8EBTAD
+   * AQH/MA4GA1UdDwEB/wQEAwIBBjAdBgNVHQ4EFgQUBpOjCl4oaTeqYR3r6/wtbyPk
+   * 86AwDQYJKoZIhvcNAQEMBQADggIBAJaAcgkGfpzMkwQWu6A6jZJOtxEaCnFxEM0E
+   * rX+lRVAQZk5KQaID2RFPeje5S+LGjzJmdSX7684/AykmjbgWHfYfM25I5uj4V7Ib
+   * ed87hwriZLoAymzvftAj63iP/2SbNDefNWWipAA9EiOWWF3KY4fGoweITedpdopT
+   * zfFP7ELyk+OZpDc8h7hi2/DsHzc/N19DzFGdtfCXwreFamgLRB7lUe6TzktuhsHS
+   * DCRZNhqfLJGP4xjblJUK7ZGqDpncllPjYYPGFrojutzdfhrGe0K22VoF3Jpf1d+4
+   * 2kd92jjbrDnVHmtsKheMYc2xbXIBw8MgAGJoFjHVdqqGuw6qnsb58Nn4DSEC5MUo
+   * FlkRudlpcyqSeLiSV5sI8jrlL5WwWLdrIBRtFO8KvH7YVdiI2i/6GaX7i+B/OfVy
+   * K4XELKzvGUWSTLNhB9xNH27SgRNcmvMSZ4PPmz+Ln52kuaiWA3rF7iDeM9ovnhp6
+   * dB7h7sxaOgTdsxoEqBRjrLdHEoOabPXm6RUVkRqEGQ6UROcSjiVbgGcZ3GOTEAtl
+   * Lor6CZpO2oYofaphNdgOpygau1LgePhsumywbrmHXumZNTfxPWQrqaA0k89jL9WB
+   * 365jJ6UeTo3cKXhZ+PmhIIynJkBugnLNeLLIjzwec+fBH7/PzqUqm9tEZDKgu39c
+   * JRNItX+S
+   * -----END CERTIFICATE-----
+   */
+  TrustAnchor {
+    subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02JP1#0!\x06\x03U\x04\n\x13\x1aCybertrust Japan Co., Ltd.1\x1d0\x1b\x06\x03U\x04\x03\x13\x14SecureSign Root CA14"),
+    subject_public_key_info: Der::from_slice(b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x02\x0f\x000\x82\x02\n\x02\x82\x02\x01\x00\xc5\xd2z\xa1\xd6\x8a\xbf\x161\xd0\x98\xd1:\x94\xfcZ\xb8n\"\xc1b\xf7\xa7\n\'\xefP\xf6.\xb1\x9eh\x12\xf0l$c9\xf1\xf0\xdf\x10\xc6\xde\xb7R \xd5R[B\x99\x9e\xf3\xa0\xbeR\x1f_\xccgm\xa7.P\xa2\xc1\x97\x8d\xb6\xf8\x95\xf5\xb0\xba\xdc\x9d\xe0\xbe\xcb\xdf\xf78\xf2G\xf5\xa6\x9a\x92\x95*bYP\x0b\xa2\xb15\xe7e\xb2a\xb2\xea\x92qi\xe4)\xf0O\x81\x81\x04<\xb2\xa5[\xd4\xc5\xa8Yg{U\x1cI\xabz\x9d\xc2\xe7sM\xef\xcd\t\xc2\xc4W\x12\xdb\x01\x0e#y\t\x07;\xa2\xe8\xfc\x8a\xcf\x8f\xc0F$\x9c8\'\xe0\x83\x9d\x1b\xa0\xbfx\x15\x10\xeb\x86N\nZ\xfd\xdf\xda,\x82~\xee\xca\xf6)\xe1\xfaq\xa1\xf7\x88h\x9c\x9c\xf0\x8d\xbe\x0fI\x91\xd8\xea:\xf9\xfd\xd0hq\xdb\xe9\xb5+N\x82\x92of\x1f\xe0\xf0\xdcL\xec\xca\xd1\xea\xbat\x06\xf9\xb3\x84\x90\x94\xd1_\x8es\x19\x10]\x02\xe5p\xa5\xc0\x10\xd0\x10|o\xc5XI\xb4\xb0n\x9a\xda}\x95\xf5\xcc\xda\x02\xaf\xb8,}y\x8f\xbeC\xf1\xf9((\x8d\tC\xf8\x08\xddk\xc8\x8b,$\xb1\x8dR\x07\xbdx\x9b\xcb\xcah\xb2\xa4\xdd\x0cLy`\xc6\x99\xd1\x93\xf10\x1a\x07\xd3\xae\"\xc2\xea\xce\xf1\x84\t\xcc\xe0\x14n\x7f?~\xd2\x82\x85\xac\xdc\xa9\x16N\x85\xa0`\xcb\xf6\x9c\xd7\xc8\xb3\x8e\xed\xc6\x9b\x98u\rU\xe8_\xe5\x95\x8b\x02\xa4\xaeC)(\x11\xa4\xe6\x120\x01Kuk\x1ef\x9dy/\xa5v/\x1d@\xb4m\xc9}y\x08\xec\xd1j\xb6]*\xb2\xa5f\xbdk\x85\xf4tV\xc3\xf5\xe7uR(,\xa5\xfffG\xa5\xd4\xfe\xfe\x9eT\xbfe~\x01\xd60\x8f\xa56\x9c\xa2P\x1c\xee8\x80\x01H\xc6\xc7t\xf4\xc6\xac\xc3@I\x16at,\xaf\x8co5\xed{\x18\x00[6<\x9cP\r\xca\x923\x10\xf1&Im\xdfu$7\x82\"\xd7\xe8\x96\xfd\x15K\x02\x96>\x07r\x95~\xab=L.\xd7\xca\xf0\xdf\xe0X?-/\x04\x9a8\xa3\x01\x02\x03\x01\x00\x01"),
     name_constraints: None
   },
 
@@ -4948,6 +5072,33 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor<'static>] = &[
   TrustAnchor {
     subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02JP1%0#\x06\x03U\x04\n\x13\x1cSECOM Trust Systems CO.,LTD.1+0)\x06\x03U\x04\x03\x13\"Security Communication ECC RootCA1"),
     subject_public_key_info: Der::from_slice(b"0\x10\x06\x07*\x86H\xce=\x02\x01\x06\x05+\x81\x04\x00\"\x03b\x00\x04\xa4\xa5o`\x03\x03\xc3\xbd1\xf4\xd3\x17\x9c+\x84u\xac\xe5\xfd=Wn\xd7c\xbf\xe6\x04\x89\x92\x8e\x81\x9c\xe3\xe9Gn\xca\x90\x12\xc8\x13\xe0\xa7\x9d\xf7et\x1fl\x10\xb2\xe8\xe4\xe9\xefm\x852\x99D\xb1^\xfd\xccv\x10\xd8[\xbd\xa2\xc6\xf9\xd6B\xe4Wv\xdc\x90\xc25\xa9K\x88<\x12Gm\\\xffIO\x1aJP\xb1"),
+    name_constraints: None
+  },
+
+  /*
+   * Issuer: CN=SecureSign Root CA15 O=Cybertrust Japan Co., Ltd.
+   * Subject: CN=SecureSign Root CA15 O=Cybertrust Japan Co., Ltd.
+   * Label: "SecureSign Root CA15"
+   * Serial: 126083514594751269499665114766174399806381178503
+   * SHA256 Fingerprint: e7:78:f0:f0:95:fe:84:37:29:cd:1a:00:82:17:9e:53:14:a9:c2:91:44:28:05:e1:fb:1d:8f:b6:b8:88:6c:3a
+   * -----BEGIN CERTIFICATE-----
+   * MIICIzCCAamgAwIBAgIUFhXHw9hJp75pDIqI7fBw+d23PocwCgYIKoZIzj0EAwMw
+   * UTELMAkGA1UEBhMCSlAxIzAhBgNVBAoTGkN5YmVydHJ1c3QgSmFwYW4gQ28uLCBM
+   * dGQuMR0wGwYDVQQDExRTZWN1cmVTaWduIFJvb3QgQ0ExNTAeFw0yMDA0MDgwODMy
+   * NTZaFw00NTA0MDgwODMyNTZaMFExCzAJBgNVBAYTAkpQMSMwIQYDVQQKExpDeWJl
+   * cnRydXN0IEphcGFuIENvLiwgTHRkLjEdMBsGA1UEAxMUU2VjdXJlU2lnbiBSb290
+   * IENBMTUwdjAQBgcqhkjOPQIBBgUrgQQAIgNiAAQLUHSNZDKZmbPSYAi4Io5GdCx4
+   * wCtELW1fHcmuS1Iggz24FG1Th2CeX2yF2wYUleDHKP+dX+Sq8bOLbe1PL0vJSpSR
+   * ZHX+AezB2Ot6lHhWGENfa4HL9rzatAy2KZMIaY+jQjBAMA8GA1UdEwEB/wQFMAMB
+   * Af8wDgYDVR0PAQH/BAQDAgEGMB0GA1UdDgQWBBTrQciu/NWeUUj1vYv0hyCTQSvT
+   * 9DAKBggqhkjOPQQDAwNoADBlAjEA2S6Jfl5OpBEHvVnCB96rMjhTKkZEBhd6zlHp
+   * 4P9mLQlO4E/0BdGF9jVg3PVys0Z9AjBEmEYagoUeYWmJSwdLZrWeqrqgHkHZAXQ6
+   * bkU6iYAZezKYVWOr62Nuk22rGwlgMU4=
+   * -----END CERTIFICATE-----
+   */
+  TrustAnchor {
+    subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02JP1#0!\x06\x03U\x04\n\x13\x1aCybertrust Japan Co., Ltd.1\x1d0\x1b\x06\x03U\x04\x03\x13\x14SecureSign Root CA15"),
+    subject_public_key_info: Der::from_slice(b"0\x10\x06\x07*\x86H\xce=\x02\x01\x06\x05+\x81\x04\x00\"\x03b\x00\x04\x0bPt\x8dd2\x99\x99\xb3\xd2`\x08\xb8\"\x8eFt,x\xc0+D-m_\x1d\xc9\xaeKR \x83=\xb8\x14mS\x87`\x9e_l\x85\xdb\x06\x14\x95\xe0\xc7(\xff\x9d_\xe4\xaa\xf1\xb3\x8bm\xedO/K\xc9J\x94\x91du\xfe\x01\xec\xc1\xd8\xebz\x94xV\x18C_k\x81\xcb\xf6\xbc\xda\xb4\x0c\xb6)\x93\x08i\x8f"),
     name_constraints: None
   },
 
