@@ -35,7 +35,7 @@ pub async fn fetch_ccadb_roots() -> BTreeMap<String, CertificateMetadata> {
         .unwrap();
 
     let ccadb_url =
-        "https://ccadb-public.secure.force.com/mozilla/IncludedCACertificateReportPEMCSV";
+        "https://ccadb.my.salesforce-sites.com/mozilla/IncludedCACertificateReportPEMCSV";
     eprintln!("fetching {ccadb_url}...");
 
     let req = client.get(ccadb_url).build().unwrap();
