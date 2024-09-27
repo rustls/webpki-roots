@@ -141,7 +141,7 @@ const HEADER: &str = r#"//! A compiled-in copy of the root certificates trusted 
 //!
 //! ```rust
 //! let root_store = rustls::RootCertStore {
-//!   roots: webpki_roots::TLS_SERVER_ROOTS.iter().cloned().collect(),
+//!   roots: webpki_roots::TLS_SERVER_ROOTS.to_vec(),
 //! };
 //! ```
 //!
