@@ -1,7 +1,8 @@
 use std::cmp::Ordering;
 use std::collections::{BTreeMap, HashSet};
+use std::ops::Add;
 
-use chrono::NaiveDate;
+use chrono::{Duration, NaiveDate, Utc};
 use num_bigint::BigUint;
 use pki_types::CertificateDer;
 use serde::Deserialize;
@@ -55,7 +56,7 @@ pub async fn fetch_ccadb_roots() -> BTreeMap<String, CertificateMetadata> {
         .collect::<Result<Vec<_>, _>>()
         .unwrap();
 
-    // Filter for just roots with the TLS trust bit that are not distrusted as of today's date.
+    // Filter for just roots we trust for TLS.
     let trusted_tls_roots = metadata
         .into_iter()
         .filter(CertificateMetadata::trusted_for_tls)
@@ -102,23 +103,37 @@ pub struct CertificateMetadata {
 }
 
 impl CertificateMetadata {
-    /// Returns true iff the certificate has valid TrustBits that include TrustBits::Websites,
-    /// and the certificate has no distrust for TLS after date. In all other cases this function
-    /// returns false.
+    /// Returns true if-and-only-if the issuer certificate should be considered trusted to issue TLS
+    /// certificates.
     ///
-    /// Notably this means a trust anchor with a distrust after date _in the future_ is treated
-    /// as untrusted irrespective of the distrust after date. An end-to-end distrust after solution
-    /// is NYI: https://github.com/rustls/webpki/issues/259
+    /// In practice this means it must have valid TrustBits that include TrustBits::Websites,
+    /// and if the certificate has a distrust for TLS after date, that it's in the past or
+    /// within a 398-day grace period, and that the fingerprint isn't in the EXCLUDED_FINGERPRINTS
+    /// list.
+    ///
+    /// This grace period allows extant certificates issued before the distrust date to
+    /// remain valid for their lifetime. At the time of writing the CA/B forum baseline
+    /// reqs[0] peg this to 398 days (§ 6.3.2).
+    ///
+    /// [0]: <https://cabforum.org/working-groups/server/baseline-requirements/documents/CA-Browser-Forum-TLS-BR-2.0.9.pdf>
     fn trusted_for_tls(&self) -> bool {
+        // If the fingerprint is in the excluded list, it's not trusted based on policy
+        // we're imposing ourselves.
+        if EXCLUDED_FINGERPRINTS.contains(&self.sha256_fingerprint.as_str()) {
+            return false;
+        }
+
         let has_tls_trust_bit = self.trust_bits().contains(&TrustBits::Websites);
 
         match (has_tls_trust_bit, self.tls_distrust_after()) {
             // No website trust bit - not trusted for tls.
             (false, _) => false,
-            // Trust bit, populated distrust after - not trusted for tls.
-            (true, Some(_)) => false,
             // Has website trust bit, no distrust after - trusted for tls.
             (true, None) => true,
+            // Trust bit, populated distrust after - check if we're within the grace period.
+            (true, Some(distrust_after)) => {
+                Utc::now().naive_utc() < distrust_after.add(Duration::days(398)).into()
+            }
         }
     }
 
@@ -244,5 +259,66 @@ impl From<&str> for TrustBits {
             "Email" => TrustBits::Email,
             val => panic!("unknown trust bit: {:?}", val),
         }
+    }
+}
+
+static EXCLUDED_FINGERPRINTS: &[&str] = &[
+    // CN=GLOBALTRUST 2020 O=e-commerce monitoring GmbH
+    // This CA is being distrusted by the Mozilla root program for TLS certificates issued after 2024.06.30.
+    // but since it has <100 extant trusted certificates we exclude it from the generated root bundle
+    // immediately.
+    "9A296A5182D1D451A2E37F439B74DAAFA267523329F90F9A0D2007C334E23C9A",
+];
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_trusted_for_tls() {
+        let mut metadata = CertificateMetadata {
+            common_name_or_certificate_name: "Test".to_string(),
+            certificate_serial_number: "1".to_string(),
+            sha256_fingerprint: "1".to_string(),
+            trust_bits: "Websites".to_string(),
+            distrust_for_tls_after_date: "".to_string(),
+            mozilla_applied_constraints: "".to_string(),
+            pem_info: "".to_string(),
+        };
+        // Trust bit set for Websites, no distrust date.
+        assert!(metadata.trusted_for_tls());
+
+        // Trust bit _not_ set for Websites.
+        metadata.trust_bits = "Email".to_string();
+        assert!(!metadata.trusted_for_tls());
+
+        // Trust bit set for Websites, no distrut date.
+        metadata.trust_bits = "Websites;Email".to_string();
+        assert!(metadata.trusted_for_tls());
+
+        // Trust bit set for Websites, distrust date far in the past.
+        metadata.trust_bits = "Websites".to_string();
+        metadata.distrust_for_tls_after_date = "2000.01.01".to_string();
+        assert!(!metadata.trusted_for_tls());
+
+        // Trust bit set for Websites, distrust date in the future.
+        let now = Utc::now().naive_utc();
+        let future_distrust = now.add(Duration::days(365 * 5));
+        metadata.distrust_for_tls_after_date = future_distrust.format("%Y.%m.%d").to_string();
+        assert!(metadata.trusted_for_tls());
+
+        // Trust bit set for Websites, distrust date has passed, but within grace period.
+        let past_distrust = now.add(Duration::days(-397));
+        metadata.distrust_for_tls_after_date = past_distrust.format("%Y.%m.%d").to_string();
+        assert!(metadata.trusted_for_tls());
+
+        // Trust bit set for Websites, distrust date has passed, outside grace period.
+        let past_distrust = now.add(Duration::days(-398));
+        metadata.distrust_for_tls_after_date = past_distrust.format("%Y.%m.%d").to_string();
+        assert!(!metadata.trusted_for_tls());
+
+        // Certificate FP is excluded.
+        metadata.sha256_fingerprint = EXCLUDED_FINGERPRINTS[0].to_string();
+        assert!(!metadata.trusted_for_tls());
     }
 }
