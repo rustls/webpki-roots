@@ -27,6 +27,8 @@ and revocation data.
 
 # License
 
-The underlying data is MPL-licensed, and the data in `webpki-roots` and `webpki-root-certs`
-is therefore a derived work. The tooling in `webpki-ccadb` is licensed under
-both MIT and Apache licenses.
+The underlying data is from Common CA Database (CCADB) and is used under the CDLA-2.0-Permissive
+license.  See [CCADB Data Usage Terms](https://www.ccadb.org/rootstores/usage#ccadb-data-usage-terms).
+The data in `webpki-roots` and `webpki-root-certs` is a derived work of the CCADB data.
+
+The tooling in `webpki-ccadb` is licensed under both MIT and Apache licenses.

@@ -24,7 +24,8 @@ DER data for each trust anchor is included in `webpki_roots`.
 
 # License
 
-The underlying data is MPL-licensed, and `src/lib.rs` is therefore a derived work.
+The underlying data is used via the [CCADB Data Usage Terms](https://www.ccadb.org/rootstores/usage#ccadb-data-usage-terms) (see [`LICENSE`](LICENSE)).
+The data in this crate is a derived work of the CCADB data.
 
 # Regenerating sources
 

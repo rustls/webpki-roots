@@ -3,7 +3,7 @@ name = "webpki-roots"
 version = "0.26.8"
 edition = { workspace = true }
 readme = "README.md"
-license = "MPL-2.0"
+license = "CDLA-Permissive-2.0"
 homepage = { workspace = true }
 repository = { workspace = true }
 description = "Mozilla's CA root certificates for use with webpki"
