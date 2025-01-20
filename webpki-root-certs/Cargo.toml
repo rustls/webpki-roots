@@ -8,6 +8,15 @@ homepage.workspace = true
 repository.workspace = true
 description = "Mozilla trusted certificate authorities in self-signed X.509 format for use with crates other than webpki"
 
+# The following notice applies to all the files in this source subtree:
+#
+#     This Source Code Form is subject to the terms of the Mozilla Public
+#     License, v. 2.0. If a copy of the MPL was not distributed with this
+#     file, You can obtain one at http://mozilla.org/MPL/2.0/.
+#
+# (If you copy files from here into another program which is not
+# licenced MPL-2.0, you should add that notice to each copied file.)
+
 [dependencies]
 pki-types = { workspace = true }
 
