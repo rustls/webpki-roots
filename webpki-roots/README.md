@@ -10,8 +10,8 @@ uses the data provided by the [Common CA Database (CCADB)](https://www.ccadb.org
 [![Crate](https://img.shields.io/crates/v/webpki-roots.svg)](https://crates.io/crates/webpki-roots)
 
 # License
-The underlying data is MPL-licensed, and `src/lib.rs`
-is therefore a derived work.
+The underlying data is used via the [CCADB Data Usage Terms](https://www.ccadb.org/rootstores/usage#ccadb-data-usage-terms) (see [`LICENSE`](LICENSE)).
+The data in this crate is a derived work of the CCADB data.
 
 # Regenerating sources
 Sources are generated in an integration test, in `tests/codegen.rs`. The test
