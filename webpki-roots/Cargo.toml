@@ -1,6 +1,6 @@
 [package]
 name = "webpki-roots"
-version = "0.26.7"
+version = "0.26.8"
 edition = { workspace = true }
 readme = "README.md"
 license = "MPL-2.0"
