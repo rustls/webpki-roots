@@ -250,6 +250,8 @@ pub enum TrustBits {
     Websites,
     /// certificate is trusted for Email (e.g. S/MIME).
     Email,
+    /// certificate is trusted for code signing
+    Code,
 }
 
 impl From<&str> for TrustBits {
@@ -257,6 +259,7 @@ impl From<&str> for TrustBits {
         match value {
             "Websites" => TrustBits::Websites,
             "Email" => TrustBits::Email,
+            "Code" => TrustBits::Code,
             val => panic!("unknown trust bit: {:?}", val),
         }
     }
