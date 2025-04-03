@@ -115,10 +115,7 @@ fn name_to_string(name: &X509Name) -> String {
     let mut append_attrs = |attrs: Vec<&AttributeTypeAndValue>, label| {
         let str_parts = attrs
             .iter()
-            .filter_map(|attr| match attr.as_str() {
-                Ok(s) => Some(s),
-                Err(_) => None,
-            })
+            .filter_map(|attr| attr.as_str().ok())
             .collect::<Vec<_>>()
             .join("/");
         if !str_parts.is_empty() {
