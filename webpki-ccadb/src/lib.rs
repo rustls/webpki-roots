@@ -188,7 +188,7 @@ impl CertificateMetadata {
             date if date.is_empty() => None,
             date => Some(
                 NaiveDate::parse_from_str(date, "%Y.%m.%d")
-                    .unwrap_or_else(|_| panic!("invalid distrust for tls after date: {:?}", date)),
+                    .unwrap_or_else(|_| panic!("invalid distrust for tls after date: {date:?}")),
             ),
         }
     }
@@ -260,7 +260,7 @@ impl From<&str> for TrustBits {
             "Websites" => TrustBits::Websites,
             "Email" => TrustBits::Email,
             "Code" => TrustBits::Code,
-            val => panic!("unknown trust bit: {:?}", val),
+            val => panic!("unknown trust bit: {val:?}"),
         }
     }
 }
