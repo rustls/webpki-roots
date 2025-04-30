@@ -1,8 +1,9 @@
 [workspace]
 members = ["webpki-ccadb", "webpki-root-certs", "webpki-roots"]
+resolver = "2"
 
 [workspace.package]
-edition = "2018"
+edition = "2021"
 homepage = "https://github.com/rustls/webpki-roots"
 repository = "https://github.com/rustls/webpki-roots"
 
