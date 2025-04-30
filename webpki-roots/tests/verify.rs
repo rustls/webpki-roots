@@ -83,7 +83,7 @@ impl ConstraintTest {
                 .iter()
                 .filter_map(|subtree| match subtree {
                     rcgen::GeneralSubtree::DnsName(dns_name) => Some(rcgen_ee_for_name(
-                        format!("valid{}{}", dns_name, suffix),
+                        format!("valid{dns_name}{suffix}"),
                         &trust_anchor,
                         &key_pair,
                     )),
@@ -152,7 +152,7 @@ fn rcgen_name_constraints(der: &[u8]) -> rcgen::NameConstraints {
             .iter()
             .map(|subtree| match &subtree.base {
                 GeneralName::DNSName(base) => rcgen::GeneralSubtree::DnsName(base.to_string()),
-                name => panic!("unexpected subtree base general name type: {}", name),
+                name => panic!("unexpected subtree base general name type: {name}"),
             })
             .collect(),
     };
