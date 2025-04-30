@@ -1,6 +1,6 @@
 [package]
 name = "webpki-roots"
-version = "0.26.9"
+version = "0.26.10"
 edition = { workspace = true }
 readme = "README.md"
 license = "CDLA-Permissive-2.0"
