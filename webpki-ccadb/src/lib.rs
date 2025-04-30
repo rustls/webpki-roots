@@ -220,7 +220,18 @@ impl CertificateMetadata {
     /// Returns the set of trust bits expressed for this certificate. Panics if the raw
     /// trust bits are invalid/unknown.
     fn trust_bits(&self) -> HashSet<TrustBits> {
-        self.trust_bits.split(';').map(TrustBits::from).collect()
+        let bits = self
+            .trust_bits
+            .split(';')
+            .map(TrustBits::from)
+            .collect::<HashSet<_>>();
+        if bits.contains(&TrustBits::AllTrustBitsTurnedOff) && bits.len() > 1 {
+            panic!(
+                "unexpected trust bits: AllTrustBitsTurnedOff \
+                   is mutually exclusive (found {bits:?})"
+            );
+        }
+        bits
     }
 
     /// Returns the PEM metadata for the certificate with the leading/trailing single quotes
@@ -252,6 +263,8 @@ pub enum TrustBits {
     Email,
     /// certificate is trusted for code signing
     Code,
+    /// certificate is not trusted for anything
+    AllTrustBitsTurnedOff,
 }
 
 impl From<&str> for TrustBits {
@@ -260,6 +273,7 @@ impl From<&str> for TrustBits {
             "Websites" => TrustBits::Websites,
             "Email" => TrustBits::Email,
             "Code" => TrustBits::Code,
+            "All Trust Bits Turned Off" => TrustBits::AllTrustBitsTurnedOff,
             val => panic!("unknown trust bit: {val:?}"),
         }
     }
