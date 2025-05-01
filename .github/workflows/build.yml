@@ -2,6 +2,7 @@ name: webpki-roots
 
 on:
   push:
+    branches: ['main', 'ci/*']
   pull_request:
   schedule:
     - cron: '0 18 * * *'
