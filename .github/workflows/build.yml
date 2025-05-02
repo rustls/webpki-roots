@@ -32,3 +32,15 @@ jobs:
 
       - name: cargo test (debug; default features)
         run: cargo test
+
+  semver:
+    name: Check semver compatibility
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Check semver
+        uses: obi1kenobi/cargo-semver-checks-action@v2
