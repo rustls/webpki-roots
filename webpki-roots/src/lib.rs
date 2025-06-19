@@ -4096,52 +4096,6 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor<'static>] = &[
   },
 
   /*
-   * Issuer: O=Chunghwa Telecom Co., Ltd. OU=ePKI Root Certification Authority
-   * Subject: O=Chunghwa Telecom Co., Ltd. OU=ePKI Root Certification Authority
-   * Label: "ePKI Root Certification Authority"
-   * Serial: 28956088682735189655030529057352760477
-   * SHA256 Fingerprint: c0:a6:f4:dc:63:a2:4b:fd:cf:54:ef:2a:6a:08:2a:0a:72:de:35:80:3e:2f:f5:ff:52:7a:e5:d8:72:06:df:d5
-   * -----BEGIN CERTIFICATE-----
-   * MIIFsDCCA5igAwIBAgIQFci9ZUdcr7iXAF7kBtK8nTANBgkqhkiG9w0BAQUFADBe
-   * MQswCQYDVQQGEwJUVzEjMCEGA1UECgwaQ2h1bmdod2EgVGVsZWNvbSBDby4sIEx0
-   * ZC4xKjAoBgNVBAsMIWVQS0kgUm9vdCBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTAe
-   * Fw0wNDEyMjAwMjMxMjdaFw0zNDEyMjAwMjMxMjdaMF4xCzAJBgNVBAYTAlRXMSMw
-   * IQYDVQQKDBpDaHVuZ2h3YSBUZWxlY29tIENvLiwgTHRkLjEqMCgGA1UECwwhZVBL
-   * SSBSb290IENlcnRpZmljYXRpb24gQXV0aG9yaXR5MIICIjANBgkqhkiG9w0BAQEF
-   * AAOCAg8AMIICCgKCAgEA4SUP7o3biDN1Z82tH306Tm2d0y8U82N0ywEhajfqhFAH
-   * SyZbCUNsIZ5qyNUD9WBpj8zwIuQf5/dqIjG3LBXy4P4AakP/h2XGtRrBp0xtInAh
-   * ijHyl3SJCRImHJ7K2RKilTza6We/CKBk49ZCt0Xvl/T29de1ShUCWH2YWEtgvM3X
-   * DZoTM1PRYfl61dd4s5oz9wCGzh1NlDivqOx4UXCKXBCDUSH3ET00hl7lSM2XgYI1
-   * TBnsZfZrxQWh7kcT1rMhJ5QQCtkkO7q+RBNGMD+XPNjX12ruOzjjK9SXDrkb5wdJ
-   * fzcq+Xd4z1TtW0ado4AOkUPB1ltfFLqfpo0kR0BZv3I4sjZsN/+Z0V0OWQqraffA
-   * sgRFelQArr5T9rXn4fg8ozHSqf4hUmTFpmfwdQcGlBSBVcYn5AGPF8Fqcde+S/uU
-   * WH1+ETOxQvdibBjWzwloPn9s9h6PYq2lY9sJpx8iQkEeb5mKPtf5P0B6ebClAZLS
-   * nT0IFaUQAS2zMnaolQ2zepr7BxB4EW/hj8e6DyUadCrlHJhBmd8hh+iVBmoKs2pH
-   * dmX2Os+PYhcZewoozRrSgx4hxyy/vv9haLdnG7t4TY3OZ+XkwY63I2binZB1NJip
-   * NiuKmpS5nezMirH4JYlcWrYvjB9teSSnUmjDhDXiZo1jDiVN1Rmy5nk3pyKdVDEC
-   * AwEAAaNqMGgwHQYDVR0OBBYEFB4M97Zn8uGSJglFwFU5Lnc/QkqiMAwGA1UdEwQF
-   * MAMBAf8wOQYEZyoHAAQxMC8wLQIBADAJBgUrDgMCGgUAMAcGBWcqAwAABBRFsMLH
-   * ClZ87lt4DJX5GFPBphzYEDANBgkqhkiG9w0BAQUFAAOCAgEACbODU1kBPpVJufGB
-   * uvl2ICO1J2B01GqZNF5sAFPZn/KmsSQHRGoqxqWOeBLoR9lYGxMqXnmbnwoqZ6Yl
-   * PwZpVnPDimZI+ymBV3QGypzqKOg4ZyYr8dW1P2WT+DZdjo2NQCCHGervJ8A9tDkP
-   * JXtoUHRVnAxZfVo9QZQlUgjgRywVMRnVvwdVxrsStZf0X4OFunHB2WyBEXYKCrC/
-   * gpf36j36+uwtqSiUO1bd0lEursC9CBWMd1I0ltabrNMdjmEPNXubrjlpC2JgQCA2
-   * j6/7Nu4tCEoduL+bXPjqpRugc6bY+G7gMwRfaKonh+3ZwZCc7b3jajWvY9+rGNm6
-   * 5ulK6lCKD2GTHuItGeIwlDWSXQ62B68ZgI9HkFFLLk3dheLSClIKF5r8GrBQAuUB
-   * o2M3IUxExJtRmREOc5wGj1QupyheRDmHVi03vYVElOEMSyycw5KFNGHLD7ibSkNS
-   * /jQ6fbjpKdx2qcgw+BRxgMYeNkh0IkFch4LoGHGLQYlE535YW6i4jRPpp2zDR+2z
-   * Gp1iro2C6pSe3VkQw63d4k3jMdXH7OjysP6SHhYKGvzZ8/gntsm+HbRsZJB/9OTE
-   * W9c3rkIO3aQab3yIVMUWbuF6aC74Or8NpDyJO3inTmODBCEIZ43ygknQW/2xzQ+D
-   * hNQ+IIX3Sj0rnP0qCglN6oH4EZw=
-   * -----END CERTIFICATE-----
-   */
-  TrustAnchor {
-    subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02TW1#0!\x06\x03U\x04\n\x0c\x1aChunghwa Telecom Co., Ltd.1*0(\x06\x03U\x04\x0b\x0c!ePKI Root Certification Authority"),
-    subject_public_key_info: Der::from_slice(b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x02\x0f\x000\x82\x02\n\x02\x82\x02\x01\x00\xe1%\x0f\xee\x8d\xdb\x883ug\xcd\xad\x1f}:Nm\x9d\xd3/\x14\xf3ct\xcb\x01!j7\xea\x84P\x07K&[\tCl!\x9ej\xc8\xd5\x03\xf5`i\x8f\xcc\xf0\"\xe4\x1f\xe7\xf7j\"1\xb7,\x15\xf2\xe0\xfe\x00jC\xff\x87e\xc6\xb5\x1a\xc1\xa7Lm\"p!\x8a1\xf2\x97t\x89\t\x12&\x1c\x9e\xca\xd9\x12\xa2\x95<\xda\xe9g\xbf\x08\xa0d\xe3\xd6B\xb7E\xef\x97\xf4\xf6\xf5\xd7\xb5J\x15\x02X}\x98XK`\xbc\xcd\xd7\r\x9a\x133S\xd1a\xf9z\xd5\xd7x\xb3\x9a3\xf7\x00\x86\xce\x1dM\x948\xaf\xa8\xecxQp\x8a\\\x10\x83Q!\xf7\x11=4\x86^\xe5H\xcd\x97\x81\x825L\x19\xece\xf6k\xc5\x05\xa1\xeeG\x13\xd6\xb3!\'\x94\x10\n\xd9$;\xba\xbeD\x13F0?\x97<\xd8\xd7\xd7j\xee;8\xe3+\xd4\x97\x0e\xb9\x1b\xe7\x07I\x7f7*\xf9wx\xcfT\xed[F\x9d\xa3\x80\x0e\x91C\xc1\xd6[_\x14\xba\x9f\xa6\x8d$G@Y\xbfr8\xb26l7\xff\x99\xd1]\x0eY\n\xabi\xf7\xc0\xb2\x04EzT\x00\xae\xbeS\xf6\xb5\xe7\xe1\xf8<\xa31\xd2\xa9\xfe!Rd\xc5\xa6g\xf0u\x07\x06\x94\x14\x81U\xc6\'\xe4\x01\x8f\x17\xc1jq\xd7\xbeK\xfb\x94X}~\x113\xb1B\xf7bl\x18\xd6\xcf\th>\x7fl\xf6\x1e\x8fb\xad\xa5c\xdb\t\xa7\x1f\"BA\x1eo\x99\x8a>\xd7\xf9?@zy\xb0\xa5\x01\x92\xd2\x9d=\x08\x15\xa5\x10\x01-\xb32v\xa8\x95\r\xb3z\x9a\xfb\x07\x10x\x11o\xe1\x8f\xc7\xba\x0f%\x1at*\xe5\x1c\x98A\x99\xdf!\x87\xe8\x95\x06j\n\xb3jGve\xf6:\xcf\x8fb\x17\x19{\n(\xcd\x1a\xd2\x83\x1e!\xc7,\xbf\xbe\xffah\xb7g\x1b\xbbxM\x8d\xceg\xe5\xe4\xc1\x8e\xb7#f\xe2\x9d\x90u4\x98\xa96+\x8a\x9a\x94\xb9\x9d\xec\xcc\x8a\xb1\xf8%\x89\\Z\xb6/\x8c\x1fmy$\xa7Rh\xc3\x845\xe2f\x8dc\x0e%M\xd5\x19\xb2\xe6y7\xa7\"\x9dT1\x02\x03\x01\x00\x01"),
-    name_constraints: None
-  },
-
-  /*
    * Issuer: CN=SSL.com TLS ECC Root CA 2022 O=SSL Corporation
    * Subject: CN=SSL.com TLS ECC Root CA 2022 O=SSL Corporation
    * Label: "SSL.com TLS ECC Root CA 2022"
