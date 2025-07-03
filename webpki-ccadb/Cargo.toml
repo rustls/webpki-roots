@@ -9,14 +9,14 @@ repository = { workspace = true }
 description = "Common CA Database (CCADB) interface for use with webpki-roots"
 
 [dependencies]
-chrono = { version = "0.4.26", default-features = false, features = ["clock"] }
-csv = "1.2.2"
+chrono = { workspace = true }
+csv = { workspace = true }
 hex = { workspace = true }
-num-bigint = "0.4.3"
+num-bigint = { workspace = true }
 pki-types = { workspace = true }
-reqwest = { version = "0.12", features = ["rustls-tls-manual-roots"] }
-rustls-pemfile = "2.0.0"
-serde = { version = "1.0.183", features = ["derive"] }
+reqwest = { workspace = true }
+rustls-pemfile = { workspace = true }
+serde = { workspace = true }
 webpki = { workspace = true }
 x509-parser = { workspace = true }
 yasna = { workspace = true }
