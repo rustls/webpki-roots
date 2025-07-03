@@ -44,3 +44,14 @@ jobs:
 
       - name: Check semver
         uses: obi1kenobi/cargo-semver-checks-action@v2
+
+  msrv:
+    name: Check MSRV
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: 1.64.0
+      - run: cargo check --locked --lib -p webpki-roots
+      - run: cargo check --locked --lib -p webpki-root-certs
