@@ -4,6 +4,7 @@ use std::ops::Add;
 
 use chrono::{Duration, NaiveDate, Utc};
 use num_bigint::BigUint;
+use pki_types::pem::PemObject;
 use pki_types::CertificateDer;
 use serde::Deserialize;
 
@@ -196,10 +197,7 @@ impl CertificateMetadata {
     /// Returns the DER encoding of the certificate contained in the metadata PEM. Panics if
     /// there is an error, or no certificate in the PEM content.
     pub fn der(&self) -> CertificateDer<'static> {
-        rustls_pemfile::certs(&mut self.pem().as_bytes())
-            .next()
-            .unwrap()
-            .expect("invalid PEM")
+        CertificateDer::from_pem_slice(self.pem().as_bytes()).expect("invalid PEM")
     }
 
     /// Returns the serial number for the certificate. Panics if the certificate serial number
