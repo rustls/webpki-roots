@@ -60,21 +60,26 @@ struct ConstraintTest {
 
 impl ConstraintTest {
     fn new(webpki_name_constraints: &[u8]) -> Self {
-        // Create a trust anchor CA certificate that has the name constraints we want to test.
-        let mut trust_anchor = CertificateParams::new([]).unwrap();
-        trust_anchor
-            .distinguished_name
-            .push(DnType::CommonName, "Name Constraint Test CA");
-        trust_anchor.is_ca = IsCa::Ca(BasicConstraints::Unconstrained);
-        trust_anchor.key_usages = vec![
-            KeyUsagePurpose::KeyCertSign,
-            KeyUsagePurpose::DigitalSignature,
-        ];
         let name_constraints = rcgen_name_constraints(webpki_name_constraints);
-        trust_anchor.name_constraints = Some(name_constraints.clone());
-        let key_pair = KeyPair::generate().unwrap();
-        let trust_anchor_cert = trust_anchor.self_signed(&key_pair).unwrap();
-        let trust_anchor = Issuer::new(trust_anchor, key_pair);
+
+        // Create a trust anchor CA certificate that has the name constraints we want to test.
+        let trust_anchor = {
+            let mut params = CertificateParams::new([]).unwrap();
+            params
+                .distinguished_name
+                .push(DnType::CommonName, "Name Constraint Test CA");
+            params.is_ca = IsCa::Ca(BasicConstraints::Unconstrained);
+            params.key_usages = vec![
+                KeyUsagePurpose::KeyCertSign,
+                KeyUsagePurpose::DigitalSignature,
+            ];
+            params.name_constraints = Some(name_constraints.clone());
+
+            let key = KeyPair::generate().unwrap();
+            let cert = params.self_signed(&key).unwrap();
+            let issuer = Issuer::new(params, key);
+            (issuer, cert)
+        };
 
         let certs_for_subtrees = |suffix| {
             name_constraints
@@ -83,7 +88,7 @@ impl ConstraintTest {
                 .filter_map(|subtree| match subtree {
                     rcgen::GeneralSubtree::DnsName(dns_name) => Some(rcgen_ee_for_name(
                         format!("valid{dns_name}{suffix}"),
-                        &trust_anchor,
+                        &trust_anchor.0,
                     )),
                     _ => None,
                 })
@@ -97,7 +102,7 @@ impl ConstraintTest {
             // For each permitted subtree in the name constraints, issue an end entity certificate
             // that contains a DNS name that will **not** match the permitted subtree base.
             forbidden_certs: certs_for_subtrees(".invalid"),
-            trust_anchor: trust_anchor_cert.into(),
+            trust_anchor: trust_anchor.1.into(),
         }
     }
 }
