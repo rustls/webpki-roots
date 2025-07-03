@@ -8,8 +8,19 @@ homepage = "https://github.com/rustls/webpki-roots"
 repository = "https://github.com/rustls/webpki-roots"
 
 [workspace.dependencies]
+chrono = { version = "0.4.26", default-features = false, features = ["clock"] }
+csv = "1.2.2"
 hex = "0.4.3"
+num-bigint = "0.4.3"
+percent-encoding = "2.3"
 pki-types = { package = "rustls-pki-types", version = "1.8", default-features = false }
+rcgen = "0.13"
+reqwest = { version = "0.12", features = ["rustls-tls-manual-roots"] }
+ring = "0.17.0"
+rustls = "0.23"
+rustls-pemfile = "2.0.0"
+serde = { version = "1.0.183", features = ["derive"] }
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
 webpki = { package = "rustls-webpki", version = "0.103", features = ["alloc"] }
 x509-parser = "0.17.0"
 yasna = "0.5.2"
