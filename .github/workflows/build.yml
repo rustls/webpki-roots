@@ -22,16 +22,16 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
 
       - name: cargo build (debug; default features)
-        run: cargo build --all-targets
+        run: cargo build --locked --all-targets
 
       - name: cargo fmt
         run: cargo fmt -- --check
 
       - name: cargo clippy
-        run: cargo clippy --all-targets -- -D warnings
+        run: cargo clippy --locked --all-targets -- -D warnings
 
       - name: cargo test (debug; default features)
-        run: cargo test
+        run: cargo test --locked
 
   semver:
     name: Check semver compatibility
