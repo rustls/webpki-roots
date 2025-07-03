@@ -15,7 +15,6 @@ hex = { workspace = true }
 num-bigint = { workspace = true }
 pki-types = { workspace = true }
 reqwest = { workspace = true }
-rustls-pemfile = { workspace = true }
 serde = { workspace = true }
 webpki = { workspace = true }
 x509-parser = { workspace = true }
