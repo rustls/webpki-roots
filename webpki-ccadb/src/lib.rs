@@ -241,7 +241,7 @@ impl CertificateMetadata {
 
 impl PartialOrd for CertificateMetadata {
     fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
-        Some(self.sha256_fingerprint.cmp(&other.sha256_fingerprint))
+        Some(self.cmp(other))
     }
 }
 
