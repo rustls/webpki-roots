@@ -2,7 +2,10 @@ use core::time::Duration;
 use std::convert::TryFrom;
 
 use pki_types::{CertificateDer, ServerName, SignatureVerificationAlgorithm, UnixTime};
-use rcgen::{BasicConstraints, CertificateParams, DnType, IsCa, Issuer, KeyPair, KeyUsagePurpose};
+use rcgen::{
+    BasicConstraints, CertificateParams, CertifiedIssuer, DnType, IsCa, Issuer, KeyPair,
+    KeyUsagePurpose,
+};
 use webpki::{anchor_from_trusted_cert, EndEntityCert, Error, KeyUsage};
 use x509_parser::extensions::{GeneralName, NameConstraints as X509ParserNameConstraints};
 use x509_parser::prelude::FromDer;
@@ -76,9 +79,7 @@ impl ConstraintTest {
             params.name_constraints = Some(name_constraints.clone());
 
             let key = KeyPair::generate().unwrap();
-            let cert = params.self_signed(&key).unwrap();
-            let issuer = Issuer::new(params, key);
-            (issuer, cert)
+            CertifiedIssuer::self_signed(params, key).unwrap()
         };
 
         let certs_for_subtrees = |suffix| {
@@ -88,7 +89,7 @@ impl ConstraintTest {
                 .filter_map(|subtree| match subtree {
                     rcgen::GeneralSubtree::DnsName(dns_name) => Some(rcgen_ee_for_name(
                         format!("valid{dns_name}{suffix}"),
-                        &trust_anchor.0,
+                        &trust_anchor,
                     )),
                     _ => None,
                 })
@@ -102,7 +103,7 @@ impl ConstraintTest {
             // For each permitted subtree in the name constraints, issue an end entity certificate
             // that contains a DNS name that will **not** match the permitted subtree base.
             forbidden_certs: certs_for_subtrees(".invalid"),
-            trust_anchor: trust_anchor.1.into(),
+            trust_anchor: trust_anchor.der().to_owned(),
         }
     }
 }

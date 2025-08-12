@@ -15,7 +15,7 @@ hex = "0.4.3"
 num-bigint = "0.4.3"
 percent-encoding = "2.3"
 pki-types = { package = "rustls-pki-types", version = "1.8", default-features = false }
-rcgen = "0.14"
+rcgen = "0.14.3"
 reqwest = { version = "0.12", default-features = false, features = ["rustls-tls-manual-roots"] }
 ring = "0.17.0"
 rustls = "0.23"
