@@ -3718,6 +3718,51 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor<'static>] = &[
   },
 
   /*
+   * Issuer: CN=OISTE Server Root RSA G1 O=OISTE Foundation
+   * Subject: CN=OISTE Server Root RSA G1 O=OISTE Foundation
+   * Label: "OISTE Server Root RSA G1"
+   * Serial: 113845518112613905024960613408179309848
+   * SHA256 Fingerprint: 9a:e3:62:32:a5:18:9f:fd:db:35:3d:fd:26:52:0c:01:53:95:d2:27:77:da:c5:9d:b5:7b:98:c0:89:a6:51:e6
+   * -----BEGIN CERTIFICATE-----
+   * MIIFgzCCA2ugAwIBAgIQVaXZZ5Qoxu0M+ifdWwFNGDANBgkqhkiG9w0BAQwFADBL
+   * MQswCQYDVQQGEwJDSDEZMBcGA1UECgwQT0lTVEUgRm91bmRhdGlvbjEhMB8GA1UE
+   * AwwYT0lTVEUgU2VydmVyIFJvb3QgUlNBIEcxMB4XDTIzMDUzMTE0MzcxNloXDTQ4
+   * MDUyNDE0MzcxNVowSzELMAkGA1UEBhMCQ0gxGTAXBgNVBAoMEE9JU1RFIEZvdW5k
+   * YXRpb24xITAfBgNVBAMMGE9JU1RFIFNlcnZlciBSb290IFJTQSBHMTCCAiIwDQYJ
+   * KoZIhvcNAQEBBQADggIPADCCAgoCggIBAKqu9KuCz/vlNwvn1ZatkOhLKdxVYOPM
+   * vLO8LZK55KN68YG0nnJyQ98/qwsmtO57Gmn7KNByXEptaZnwYx4M0rH/1ow00O7b
+   * rEi56rAUjtgHqSSY3ekJvqgiG1k50SeH3BzN+Puz6+mTeO0Pzjd8JnduodgsIUzk
+   * ik/HEzxux9UTl7Ko2yRpg1bTacuCErudG/L4NPKYKyqOBGf244ehHa1uzjZ0Dl4z
+   * O8vbUZeUapU8zhhabkvG/AePLhq5SvdkNCncpo1Q4Y2LS+VIG24ugBA/5J8bZT8R
+   * tOpXaZ+0AOuFJJkk9SGdl6r7NH8CaxWQrbueWhl/pIzY+m0o/DjH40ytas7ZTpOS
+   * jswMZ78LS5bOZmdTaMsXEY5Z96ycG7mOaES3GK/m5Q9l3JUJsJMStR8+lKXHiHUh
+   * sd4JJCpM4rzsTGdHwimIuQq6+cF0zowYJmXa92/GjHtoXAvuY8BeS/FOzJ8vD+Ho
+   * mnqT8eDI278n5mUpezbgMxVz8p1rhAhoKzYHKyfMeNhqhw5HdPSqoBNdZH702xSu
+   * +zrkL8Fl47l6QGzwBrd7KJvX4V84c5Ss2XCTLdyEr0YconosP4EmQufU2MVshGYR
+   * i3drVByjtdgQ8K4p92cIiBdcuJd5z+orKu5YM+Vt6SmqZQENghPsJQtdLEByFSnT
+   * kCz3GkPVavBpAgMBAAGjYzBhMA8GA1UdEwEB/wQFMAMBAf8wHwYDVR0jBBgwFoAU
+   * 8snBDw1jALvsRQ5KH7WxszbNDo0wHQYDVR0OBBYEFPLJwQ8NYwC77EUOSh+1sbM2
+   * zQ6NMA4GA1UdDwEB/wQEAwIBhjANBgkqhkiG9w0BAQwFAAOCAgEANGd5sjrG5T33
+   * I3K5Ce+SrScfoE4KsvXaFwyihdJ+klH9FWXXXGtkFu6KRcoMQzZENdl//nk6HOjG
+   * 5D1rd9QhEOP28yBOqb6J8xycqd+8MDoX0TJD0KqKchxRKEzdNsjkLWd9kYccnbz8
+   * qyiWXmFcuCIzGEgWUOrKL+mlSdx/PKQZvDatkuK59EvV6wit53j+F8Bdh3foZ3dP
+   * AGav9LEDOr4SfEE15fSmG0eLy3n31r8Xbk5l8PjaV8GUgeV6Vg27Rn9vkf195hfk
+   * gSe7BYhW3SCl95gtkRlpMV+bMPKZrXJAlszYd2abtNUOshD+FKrDgHGdPY3ofRRs
+   * YWSGRqbXVMW215AWRqWFyp464+YTFrYVI8ypKVL9AMb2kI5Wj4kI3Zaq5tNqqYY1
+   * 9tVFeEJKRvwDyF7YZvZFZSS0vod7VSCd9521Kvy5YhnLbDuv0204bKt7ph6N/Ome
+   * /msVuduCmsuY33OhkKCgxeDoAaijFJzIwZqsFVAzje18KotzlUBDJvyBpCpfOZC3
+   * J8tRd/iWkx7P8nd9H0aTolkelUTFLXVksNb54Dxp6gS1HAviRkRNQzuXSXERvSS2
+   * wq1yVAb+axj5d9spLFKebXd7Yv0PTY6YMjAwcRLWJTXjn/hvnLXrahut6hDTlhZy
+   * BiElxky8j3C7DOReIoMt0r7+hVu05L0=
+   * -----END CERTIFICATE-----
+   */
+  TrustAnchor {
+    subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02CH1\x190\x17\x06\x03U\x04\n\x0c\x10OISTE Foundation1!0\x1f\x06\x03U\x04\x03\x0c\x18OISTE Server Root RSA G1"),
+    subject_public_key_info: Der::from_slice(b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x02\x0f\x000\x82\x02\n\x02\x82\x02\x01\x00\xaa\xae\xf4\xab\x82\xcf\xfb\xe57\x0b\xe7\xd5\x96\xad\x90\xe8K)\xdcU`\xe3\xcc\xbc\xb3\xbc-\x92\xb9\xe4\xa3z\xf1\x81\xb4\x9errC\xdf?\xab\x0b&\xb4\xee{\x1ai\xfb(\xd0r\\Jmi\x99\xf0c\x1e\x0c\xd2\xb1\xff\xd6\x8c4\xd0\xee\xdb\xacH\xb9\xea\xb0\x14\x8e\xd8\x07\xa9$\x98\xdd\xe9\t\xbe\xa8\"\x1bY9\xd1\'\x87\xdc\x1c\xcd\xf8\xfb\xb3\xeb\xe9\x93x\xed\x0f\xce7|&wn\xa1\xd8,!L\xe4\x8aO\xc7\x13<n\xc7\xd5\x13\x97\xb2\xa8\xdb$i\x83V\xd3i\xcb\x82\x12\xbb\x9d\x1b\xf2\xf84\xf2\x98+*\x8e\x04g\xf6\xe3\x87\xa1\x1d\xadn\xce6t\x0e^3;\xcb\xdbQ\x97\x94j\x95<\xce\x18ZnK\xc6\xfc\x07\x8f.\x1a\xb9J\xf7d4)\xdc\xa6\x8dP\xe1\x8d\x8bK\xe5H\x1bn.\x80\x10?\xe4\x9f\x1be?\x11\xb4\xeaWi\x9f\xb4\x00\xeb\x85$\x99$\xf5!\x9d\x97\xaa\xfb4\x7f\x02k\x15\x90\xad\xbb\x9eZ\x19\x7f\xa4\x8c\xd8\xfam(\xfc8\xc7\xe3L\xadj\xce\xd9N\x93\x92\x8e\xcc\x0cg\xbf\x0bK\x96\xcefgSh\xcb\x17\x11\x8eY\xf7\xac\x9c\x1b\xb9\x8ehD\xb7\x18\xaf\xe6\xe5\x0fe\xdc\x95\t\xb0\x93\x12\xb5\x1f>\x94\xa5\xc7\x88u!\xb1\xde\t$*L\xe2\xbc\xecLgG\xc2)\x88\xb9\n\xba\xf9\xc1t\xce\x8c\x18&e\xda\xf7o\xc6\x8c{h\\\x0b\xeec\xc0^K\xf1N\xcc\x9f/\x0f\xe1\xe8\x9az\x93\xf1\xe0\xc8\xdb\xbf\'\xe6e){6\xe03\x15s\xf2\x9dk\x84\x08h+6\x07+\'\xccx\xd8j\x87\x0eGt\xf4\xaa\xa0\x13]d~\xf4\xdb\x14\xae\xfb:\xe4/\xc1e\xe3\xb9z@l\xf0\x06\xb7{(\x9b\xd7\xe1_8s\x94\xac\xd9p\x93-\xdc\x84\xafF\x1c\xa2z,?\x81&B\xe7\xd4\xd8\xc5l\x84f\x11\x8bwkT\x1c\xa3\xb5\xd8\x10\xf0\xae)\xf7g\x08\x88\x17\\\xb8\x97y\xcf\xea+*\xeeX3\xe5m\xe9)\xaae\x01\r\x82\x13\xec%\x0b],@r\x15)\xd3\x90,\xf7\x1aC\xd5j\xf0i\x02\x03\x01\x00\x01"),
+    name_constraints: None
+  },
+
+  /*
    * Issuer: CN=UCA Global G2 Root O=UniTrust
    * Subject: CN=UCA Global G2 Root O=UniTrust
    * Label: "UCA Global G2 Root"
@@ -5073,6 +5118,33 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor<'static>] = &[
   TrustAnchor {
     subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02DE1\x150\x13\x06\x03U\x04\n\x0c\x0cD-Trust GmbH1*0(\x06\x03U\x04\x03\x0c!D-TRUST Root Class 3 CA 2 EV 2009"),
     subject_public_key_info: Der::from_slice(b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\n\x02\x82\x01\x01\x00\x99\xf1\x844p\xba/\xb70\xa0\x8e\xbd|\x04\xcf\xbeb\xbc\x99\xfd\x82\x97\xd2z\ng\x968\t\xf6\x10N\x95\"s\x99\x8d\xda\x15-\xe7\x05\xfc\x19s\"\xb7\x8e\x98\x00\xbc<=\xac\xa1l\xfb\xd6y%K\xad\xf0\xccd\xda\x88>)\xb8\x0f\t\xd34\xdd3\xf5b\xd1\xe1\xcd\x19\xe9\xee\x18OLX\xae\xe2\x1e\xd6\x0c[\x15Z\xd8:\xb8\xc4\x18d\x1e\xe33\xb2\xb5\x89wN\x0c\xbf\xd9\x94k\x13\x97o\x12\xa3\xfe\x99\xa9\x04\xcc\x15\xec`h6\xed\x08{\xb7\xf5\xbf\x93\xedf1\x83\x8c\xc6q4\x87N\x17\xea\xaf\x8b\x91\x8d\x1cVA\xae\"7^7\xf2\x1d\xd9\xd1-\r/iQ\xa7\xbef\xa6\x8a:*\xbd\xc7\x1a\xb1\xe1\x14\xf0\xbe:\x1d\xb9\xcf[\xb1j\xfe\xb4\xb1F \xa2\xfb\x1e;p\xef\x93\x98}\x8cs\x96\xf2\xc5\xef\x85p\xad)&\xfc\x1e\x04>\x1c\xa0\xd8\x0f\xcbR\x83b|\xee\x8bS\x95\x90\xa9W\xa2\xeaa\x05\xd8\xf9M\xc4\'\xfan\xad\xed\xf9\xd7Q\xf7k\xa5\x02\x03\x01\x00\x01"),
+    name_constraints: None
+  },
+
+  /*
+   * Issuer: CN=OISTE Server Root ECC G1 O=OISTE Foundation
+   * Subject: CN=OISTE Server Root ECC G1 O=OISTE Foundation
+   * Label: "OISTE Server Root ECC G1"
+   * Serial: 47819833811561661340092227008453318557
+   * SHA256 Fingerprint: ee:c9:97:c0:c3:0f:21:6f:7e:3b:8b:30:7d:2b:ae:42:41:2d:75:3f:c8:21:9d:af:d1:52:0b:25:72:85:0f:49
+   * -----BEGIN CERTIFICATE-----
+   * MIICNTCCAbqgAwIBAgIQI/nD1jWvjyhLH/BU6n6XnTAKBggqhkjOPQQDAzBLMQsw
+   * CQYDVQQGEwJDSDEZMBcGA1UECgwQT0lTVEUgRm91bmRhdGlvbjEhMB8GA1UEAwwY
+   * T0lTVEUgU2VydmVyIFJvb3QgRUNDIEcxMB4XDTIzMDUzMTE0NDIyOFoXDTQ4MDUy
+   * NDE0NDIyN1owSzELMAkGA1UEBhMCQ0gxGTAXBgNVBAoMEE9JU1RFIEZvdW5kYXRp
+   * b24xITAfBgNVBAMMGE9JU1RFIFNlcnZlciBSb290IEVDQyBHMTB2MBAGByqGSM49
+   * AgEGBSuBBAAiA2IABBcv+hK8rBjzCvRE1nZCnrPoH7d5qVi2+GXROiFPqOujvqQy
+   * cvO2Ackr/XeFblPdreqqLiWStukhEaivtUwL85Zgmjvn6hp4LrQ95SjeHIC6XG4N
+   * 2xml4z+cKrhAS93mT6NjMGEwDwYDVR0TAQH/BAUwAwEB/zAfBgNVHSMEGDAWgBQ3
+   * TYhlz/w9itWj8UnATgwQb0K0nDAdBgNVHQ4EFgQUN02IZc/8PYrVo/FJwE4MEG9C
+   * tJwwDgYDVR0PAQH/BAQDAgGGMAoGCCqGSM49BAMDA2kAMGYCMQCpKjAd0MKfkFFR
+   * QD6VVCHNFmb3U2wIFjnQEnx/Yxvf4zgAOdktUyBFCxxgZzFDJe0CMQCSia7pXGKD
+   * YmH5LVerVrkR3SW+ak5KGoJr3M/TvEqzPNcum9v4KGm8ay3sMaE641c=
+   * -----END CERTIFICATE-----
+   */
+  TrustAnchor {
+    subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02CH1\x190\x17\x06\x03U\x04\n\x0c\x10OISTE Foundation1!0\x1f\x06\x03U\x04\x03\x0c\x18OISTE Server Root ECC G1"),
+    subject_public_key_info: Der::from_slice(b"0\x10\x06\x07*\x86H\xce=\x02\x01\x06\x05+\x81\x04\x00\"\x03b\x00\x04\x17/\xfa\x12\xbc\xac\x18\xf3\n\xf4D\xd6vB\x9e\xb3\xe8\x1f\xb7y\xa9X\xb6\xf8e\xd1:!O\xa8\xeb\xa3\xbe\xa42r\xf3\xb6\x01\xc9+\xfdw\x85nS\xdd\xad\xea\xaa.%\x92\xb6\xe9!\x11\xa8\xaf\xb5L\x0b\xf3\x96`\x9a;\xe7\xea\x1ax.\xb4=\xe5(\xde\x1c\x80\xba\\n\r\xdb\x19\xa5\xe3?\x9c*\xb8@K\xdd\xe6O"),
     name_constraints: None
   },
 
