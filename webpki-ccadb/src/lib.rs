@@ -97,6 +97,9 @@ pub struct CertificateMetadata {
     #[serde(rename = "Distrust for TLS After Date")]
     pub distrust_for_tls_after_date: String,
 
+    #[serde(rename = "Test Website - Revoked")]
+    pub test_website_revoked: String,
+
     #[serde(rename = "Mozilla Applied Constraints")]
     pub mozilla_applied_constraints: String,
 
@@ -298,6 +301,7 @@ mod tests {
             sha256_fingerprint: "1".to_string(),
             trust_bits: "Websites".to_string(),
             distrust_for_tls_after_date: "".to_string(),
+            test_website_revoked: "".to_string(),
             mozilla_applied_constraints: "".to_string(),
             pem_info: "".to_string(),
         };
