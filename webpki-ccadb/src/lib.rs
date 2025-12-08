@@ -79,6 +79,7 @@ pub async fn fetch_ccadb_roots() -> BTreeMap<String, CertificateMetadata> {
     tls_roots_map
 }
 
+#[non_exhaustive]
 #[derive(Debug, Clone, Hash, Eq, PartialEq, Deserialize)]
 pub struct CertificateMetadata {
     #[serde(rename = "Common Name or Certificate Name")]
