@@ -1,7 +1,7 @@
 use std::fmt::Write;
 use std::fs;
 
-use ring::digest;
+use aws_lc_rs::digest;
 
 use webpki_ccadb::fetch_ccadb_roots;
 
