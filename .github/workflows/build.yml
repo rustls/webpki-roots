@@ -55,5 +55,5 @@ jobs:
       - uses: dtolnay/rust-toolchain@master
         with:
           toolchain: 1.64.0
-      - run: cargo check --locked --lib -p webpki-roots
-      - run: cargo check --locked --lib -p webpki-root-certs
+      - run: cargo check --locked --lib --manifest-path webpki-roots/Cargo.toml
+      - run: cargo check --locked --lib --manifest-path webpki-root-certs/Cargo.toml

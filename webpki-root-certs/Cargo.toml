@@ -13,9 +13,9 @@ description = "Mozilla trusted certificate authorities in self-signed X.509 form
 pki-types = { workspace = true }
 
 [dev-dependencies]
+aws-lc-rs = { workspace = true }
 hex = { workspace = true }
 percent-encoding = { workspace = true }
-ring = { workspace = true }
 tokio = { workspace = true }
 webpki = { workspace = true }
 webpki-ccadb = { path = "../webpki-ccadb" }
