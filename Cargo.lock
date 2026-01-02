@@ -1701,7 +1701,7 @@ dependencies = [
 
 [[package]]
 name = "webpki-root-certs"
-version = "1.0.4"
+version = "1.0.5"
 dependencies = [
  "hex",
  "percent-encoding",
@@ -1715,7 +1715,7 @@ dependencies = [
 
 [[package]]
 name = "webpki-roots"
-version = "1.0.4"
+version = "1.0.5"
 dependencies = [
  "hex",
  "percent-encoding",
