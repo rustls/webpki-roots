@@ -5138,4 +5138,27 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor<'static>] = &[
     name_constraints: None
   },
 
+  /*
+   * Issuer: CN=ROOTCA O=NRCAC
+   * Subject: CN=ROOTCA O=NRCAC
+   * Label: "ROOTCA"
+   * -----BEGIN CERTIFICATE-----
+   * MIIBszCCAVegAwIBAgIIaeL+wBcKxnswDAYIKoEcz1UBg3UFADAuMQswCQYDVQQG
+   * EwJDTjEOMAwGA1UECgwFTlJDQUMxDzANBgNVBAMMBlJPT1RDQTAeFw0xMjA3MTQw
+   * MzExNTlaFw00MjA3MDcwMzExNTlaMC4xCzAJBgNVBAYTAkNOMQ4wDAYDVQQKDAVO
+   * UkNBQzEPMA0GA1UEAwwGUk9PVENBMFkwEwYHKoZIzj0CAQYIKoEcz1UBgi0DQgAE
+   * MPCca6pmgcchsTf2UnBeL9rtp4nw+itk1Kzrmbnqo05lUwkwlWK+4OIrtFdAqnRT
+   * V7Q9v1htkv42TsIutzd126NdMFswHwYDVR0jBBgwFoAUTDKxl9kzG8SmBcHG5Yti
+   * W/CXdlgwDAYDVR0TBAUwAwEB/zALBgNVHQ8EBAMCAQYwHQYDVR0OBBYEFEwysZfZ
+   * MxvEpgXBxuWLYlvwl3ZYMAwGCCqBHM9VAYN1BQADSAAwRQIgG1bSLeOXp3oB8H7b
+   * 53W+CKOPl2PknmWEq/lMhtn25HkCIQDaHDgWxWFtnCrBjH16/W3Ezn7/U/Vjo5xI
+   * pDoiVhsLwg==
+   * -----END CERTIFICATE-----
+   */
+  TrustAnchor {
+    subject:Der::from_slice(b"\x31\x0b\x30\x09\x06\x03U\x04\x06\x13\x02CN\x31\x0e\x30\x0c\x06\x03U\x04\x0a\x0c\x05NRCAC\x31\x0f\x30\x0d\x06\x03U\x04\x03\x0c\x06ROOTCA"),
+    subject_public_key_info: Der::from_slice(b"\x30\x13\x06\x07\x2a\x86\x48\xce\x3d\x02\x01\x06\x08\x2a\x81\x1c\xcf\x55\x01\x82\x2d\x03\x42\x00\x04\x30\xf0\x9c\x6b\xaa\x66\x81\xc7\x21\xb1\x37\xf6\x52\x70\x5e\x2f\xda\xed\xa7\x89\xf0\xfa\x2b\x64\xd4\xac\xeb\x99\xb9\xea\xa3\x4e\x65\x53\x09\x30\x95\x62\xbe\xe0\xe2\x2b\xb4\x57\x40\xaa\x74\x53\x57\xb4\x3d\xbf\x58\x6d\x92\xfe\x36\x4e\xc2\x2e\xb7\x37\x75\xdb"),
+    name_constraints: None
+  },
+
 ];
