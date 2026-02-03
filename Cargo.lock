@@ -1040,7 +1040,7 @@ dependencies = [
  "rustls-webpki",
  "security-framework",
  "security-framework-sys",
- "webpki-root-certs 1.0.5 (registry+https://github.com/rust-lang/crates.io-index)",
+ "webpki-root-certs 1.0.5",
  "windows-sys 0.61.2",
 ]
 
@@ -1585,6 +1585,15 @@ dependencies = [
 [[package]]
 name = "webpki-root-certs"
 version = "1.0.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "36a29fc0408b113f68cf32637857ab740edfafdf460c326cd2afaa2d84cc05dc"
+dependencies = [
+ "rustls-pki-types",
+]
+
+[[package]]
+name = "webpki-root-certs"
+version = "1.0.6"
 dependencies = [
  "aws-lc-rs",
  "hex",
@@ -1597,17 +1606,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "webpki-root-certs"
-version = "1.0.5"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "36a29fc0408b113f68cf32637857ab740edfafdf460c326cd2afaa2d84cc05dc"
-dependencies = [
- "rustls-pki-types",
-]
-
-[[package]]
 name = "webpki-roots"
-version = "1.0.5"
+version = "1.0.6"
 dependencies = [
  "aws-lc-rs",
  "hex",
