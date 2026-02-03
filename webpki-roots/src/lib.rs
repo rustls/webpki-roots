@@ -3650,6 +3650,37 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor<'static>] = &[
   },
 
   /*
+   * Issuer: CN=e-Szigno TLS Root CA 2023 O=Microsec Ltd.
+   * Subject: CN=e-Szigno TLS Root CA 2023 O=Microsec Ltd.
+   * Label: "e-Szigno TLS Root CA 2023"
+   * Serial: 71934828665710877219916191754
+   * SHA256 Fingerprint: b4:91:41:50:2d:00:66:3d:74:0f:2e:7e:c3:40:c5:28:00:96:26:66:12:1a:36:d0:9c:f7:dd:2b:90:38:4f:b4
+   * -----BEGIN CERTIFICATE-----
+   * MIICzzCCAjGgAwIBAgINAOhvGHvWOWuYSkmYCjAKBggqhkjOPQQDBDB1MQswCQYD
+   * VQQGEwJIVTERMA8GA1UEBwwIQnVkYXBlc3QxFjAUBgNVBAoMDU1pY3Jvc2VjIEx0
+   * ZC4xFzAVBgNVBGEMDlZBVEhVLTIzNTg0NDk3MSIwIAYDVQQDDBllLVN6aWdubyBU
+   * TFMgUm9vdCBDQSAyMDIzMB4XDTIzMDcxNzE0MDAwMFoXDTM4MDcxNzE0MDAwMFow
+   * dTELMAkGA1UEBhMCSFUxETAPBgNVBAcMCEJ1ZGFwZXN0MRYwFAYDVQQKDA1NaWNy
+   * b3NlYyBMdGQuMRcwFQYDVQRhDA5WQVRIVS0yMzU4NDQ5NzEiMCAGA1UEAwwZZS1T
+   * emlnbm8gVExTIFJvb3QgQ0EgMjAyMzCBmzAQBgcqhkjOPQIBBgUrgQQAIwOBhgAE
+   * AGgP36J8PKp0iGEKjcJMpQEiFNT3YHdCnAo4YKGMZz6zY+n6kbCLS+Y53wLCMAFS
+   * AL/fjO1ZrTJlqwlZULUZwmgcAOAFX9pQJhzDrAQixTpN7+lXWDajwRlTEArRzT/v
+   * SzUaQ49CE0y5LBqcvjC2xN7cS53kpDzLLtmt3999Cd8ukv+ho2MwYTAPBgNVHRMB
+   * Af8EBTADAQH/MA4GA1UdDwEB/wQEAwIBBjAdBgNVHQ4EFgQUWYQCYlpGePVd3I8K
+   * ECgj3NXW+0UwHwYDVR0jBBgwFoAUWYQCYlpGePVd3I8KECgj3NXW+0UwCgYIKoZI
+   * zj0EAwQDgYsAMIGHAkIBLdqu9S54tma4n7Zwf2Z0z+yOfP7AAXmazlIC58PRDHpt
+   * y7Ve7hekm9sEdu4pKeiv+62sUvTXK9Z3hBC9xdIoaDQCQTV2WnXzkoYI9bIeCvZl
+   * C9p2x1L/Cx6AcCIwwzPbGO2E14vs7dOoY4G1VnxHx1YwlGhza9IuqbnZLBwpvQy6
+   * uWWL
+   * -----END CERTIFICATE-----
+   */
+  TrustAnchor {
+    subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02HU1\x110\x0f\x06\x03U\x04\x07\x0c\x08Budapest1\x160\x14\x06\x03U\x04\n\x0c\rMicrosec Ltd.1\x170\x15\x06\x03U\x04a\x0c\x0eVATHU-235844971\"0 \x06\x03U\x04\x03\x0c\x19e-Szigno TLS Root CA 2023"),
+    subject_public_key_info: Der::from_slice(b"0\x10\x06\x07*\x86H\xce=\x02\x01\x06\x05+\x81\x04\x00#\x03\x81\x86\x00\x04\x00h\x0f\xdf\xa2|<\xaat\x88a\n\x8d\xc2L\xa5\x01\"\x14\xd4\xf7`wB\x9c\n8`\xa1\x8cg>\xb3c\xe9\xfa\x91\xb0\x8bK\xe69\xdf\x02\xc20\x01R\x00\xbf\xdf\x8c\xedY\xad2e\xab\tYP\xb5\x19\xc2h\x1c\x00\xe0\x05_\xdaP&\x1c\xc3\xac\x04\"\xc5:M\xef\xe9WX6\xa3\xc1\x19S\x10\n\xd1\xcd?\xefK5\x1aC\x8fB\x13L\xb9,\x1a\x9c\xbe0\xb6\xc4\xde\xdcK\x9d\xe4\xa4<\xcb.\xd9\xad\xdf\xdf}\t\xdf.\x92\xff\xa1"),
+    name_constraints: None
+  },
+
+  /*
    * Issuer: CN=Certum Trusted Network CA 2 O=Unizeto Technologies S.A. OU=Certum Certification Authority
    * Subject: CN=Certum Trusted Network CA 2 O=Unizeto Technologies S.A. OU=Certum Certification Authority
    * Label: "Certum Trusted Network CA 2"
