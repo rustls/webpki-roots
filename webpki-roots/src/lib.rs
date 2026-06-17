@@ -974,40 +974,6 @@ pub const TLS_SERVER_ROOTS: &[TrustAnchor<'static>] = &[
   },
 
   /*
-   * Issuer: CN=SecureSign Root CA12 O=Cybertrust Japan Co., Ltd.
-   * Subject: CN=SecureSign Root CA12 O=Cybertrust Japan Co., Ltd.
-   * Label: "SecureSign Root CA12"
-   * Serial: 587887345431707215246142177076162061960426065942
-   * SHA256 Fingerprint: 3f:03:4b:b5:70:4d:44:b2:d0:85:45:a0:20:57:de:93:eb:f3:90:5f:ce:72:1a:cb:c7:30:c0:6d:da:ee:90:4e
-   * -----BEGIN CERTIFICATE-----
-   * MIIDcjCCAlqgAwIBAgIUZvnHwa/swlG07VOX5uaCwysckBYwDQYJKoZIhvcNAQEL
-   * BQAwUTELMAkGA1UEBhMCSlAxIzAhBgNVBAoTGkN5YmVydHJ1c3QgSmFwYW4gQ28u
-   * LCBMdGQuMR0wGwYDVQQDExRTZWN1cmVTaWduIFJvb3QgQ0ExMjAeFw0yMDA0MDgw
-   * NTM2NDZaFw00MDA0MDgwNTM2NDZaMFExCzAJBgNVBAYTAkpQMSMwIQYDVQQKExpD
-   * eWJlcnRydXN0IEphcGFuIENvLiwgTHRkLjEdMBsGA1UEAxMUU2VjdXJlU2lnbiBS
-   * b290IENBMTIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQC6OcE3emhF
-   * KxS06+QT61d1I02PJC0W6K6OyX2kVzsqdiUzg2zqMoqUm048luT9Ub+ZyZN+v/mt
-   * p7JIKwccJ/VMvHASd6SFVLX9kHrko+RRWAPNEHl57muTH2SOa2SroxPjcf59q5zd
-   * J1M3s6oYwlkm7Fsf0uZlfO+TvdhYXAvA42VvPMfKWeP+bl+sg779XSVOKik71gur
-   * FzJ4pOE+lEa+Ym6b3kaosRbnhW70CEBFEaCeVESE99g2zvVQR9wsMJvuwPWW0v4J
-   * hscGWa5Pro4RmHvzC1KqYiaqId+OJTN5lxZJjfU+1UefNzFJM3IFTQy2VYzxV4+K
-   * h9GtxRESOaCtAgMBAAGjQjBAMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQD
-   * AgEGMB0GA1UdDgQWBBRXNPN0zwRL1SXm8UC2LEzZLemgrTANBgkqhkiG9w0BAQsF
-   * AAOCAQEAPrvbFxbS8hQBICw4g0utvsqFepq2m2um4fylOqyttCg6r9cBg0krY6Ld
-   * mmQOmFxv3Y67ilQiLUoT865AQ9tPkbeGGuwAtEGBpE/6aouIs3YIcipJQMPTw4WJ
-   * mBClnW8Zt7vPemVV2zfrPIpyMpcemik+rY3moxtt9XUa5rBouVui7mlHJzWhhpmA
-   * 8zNL4WukJsPvdFlseqJkth5Ew1DgDzk9qTPxpfPSvWKErI4cqc1avTc7bgoitPQV
-   * 55FYxTpE05Uo2cBl6XLK0A+9H7MV2anjpEcJnuDLN/v9vZfVvhgaaaI5gdka9at/
-   * yOPiZwud9AzqVN/Ssq+xIvEg37xEHA==
-   * -----END CERTIFICATE-----
-   */
-  TrustAnchor {
-    subject: Der::from_slice(b"1\x0b0\t\x06\x03U\x04\x06\x13\x02JP1#0!\x06\x03U\x04\n\x13\x1aCybertrust Japan Co., Ltd.1\x1d0\x1b\x06\x03U\x04\x03\x13\x14SecureSign Root CA12"),
-    subject_public_key_info: Der::from_slice(b"0\r\x06\t*\x86H\x86\xf7\r\x01\x01\x01\x05\x00\x03\x82\x01\x0f\x000\x82\x01\n\x02\x82\x01\x01\x00\xba9\xc17zhE+\x14\xb4\xeb\xe4\x13\xebWu#M\x8f$-\x16\xe8\xae\x8e\xc9}\xa4W;*v%3\x83l\xea2\x8a\x94\x9bN<\x96\xe4\xfdQ\xbf\x99\xc9\x93~\xbf\xf9\xad\xa7\xb2H+\x07\x1c\'\xf5L\xbcp\x12w\xa4\x85T\xb5\xfd\x90z\xe4\xa3\xe4QX\x03\xcd\x10yy\xeek\x93\x1fd\x8ekd\xab\xa3\x13\xe3q\xfe}\xab\x9c\xdd\'S7\xb3\xaa\x18\xc2Y&\xec[\x1f\xd2\xe6e|\xef\x93\xbd\xd8X\\\x0b\xc0\xe3eo<\xc7\xcaY\xe3\xfen_\xac\x83\xbe\xfd]%N*);\xd6\x0b\xab\x172x\xa4\xe1>\x94F\xbebn\x9b\xdeF\xa8\xb1\x16\xe7\x85n\xf4\x08@E\x11\xa0\x9eTD\x84\xf7\xd86\xce\xf5PG\xdc,0\x9b\xee\xc0\xf5\x96\xd2\xfe\t\x86\xc7\x06Y\xaeO\xae\x8e\x11\x98{\xf3\x0bR\xaab&\xaa!\xdf\x8e%3y\x97\x16I\x8d\xf5>\xd5G\x9f71I3r\x05M\x0c\xb6U\x8c\xf1W\x8f\x8a\x87\xd1\xad\xc5\x11\x129\xa0\xad\x02\x03\x01\x00\x01"),
-    name_constraints: None
-  },
-
-  /*
    * Issuer: CN=TWCA CYBER Root CA O=TAIWAN-CA OU=Root CA
    * Subject: CN=TWCA CYBER Root CA O=TAIWAN-CA OU=Root CA
    * Label: "TWCA CYBER Root CA"
