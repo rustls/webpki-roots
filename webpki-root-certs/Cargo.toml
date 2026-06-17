@@ -1,6 +1,6 @@
 [package]
 name = "webpki-root-certs"
-version = "1.0.7"
+version = "1.0.8"
 edition.workspace = true
 rust-version = { workspace = true }
 readme = "README.md"
