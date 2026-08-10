@@ -20,7 +20,7 @@ pub async fn fetch_ccadb_roots() -> BTreeMap<String, CertificateMetadata> {
     // likely indicates that the upstream service has changed certificate authorities. In this
     // case the vendored root CA will need to be updated. You can find the current root in use with
     // Chrome by:
-    //  1. Navigating to `https://ccadb-public.secure.force.com/mozilla/`
+    //  1. Navigating to `https://ccadb.my.salesforce-sites.com/mozilla/`
     //  2. Clicking the lock icon.
     //  3. Clicking "Connection is secure"
     //  4. Clicking "Certificate is valid"
@@ -28,11 +28,11 @@ pub async fn fetch_ccadb_roots() -> BTreeMap<String, CertificateMetadata> {
     //  6. Selecting the topmost "System Trust" entry.
     //  7. Clicking "Export..." and saving the certificate to `webpki-roots/webpki-ccadb/src/data/`.
     //  8. Committing the updated .pem root CA, and updating the `include_bytes!` path.
-    let root = include_bytes!("data/DigiCertGlobalRootCA.pem");
+    let root = include_bytes!("data/DigiCertGlobalRootG2.pem");
     let root = reqwest::Certificate::from_pem(root).unwrap();
     let client = reqwest::Client::builder()
         .user_agent(format!("webpki-ccadb/v{}", env!("CARGO_PKG_VERSION")))
-        .add_root_certificate(root)
+        .tls_certs_only([root])
         .build()
         .unwrap();
 
