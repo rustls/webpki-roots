@@ -1,6 +1,7 @@
 # webpki-ccadb
-This is a crate to fetch Mozilla's root certificates for use with
-[webpki-roots](https://github.com/rustls/webpki-roots) crate.
+This is a crate to fetch Mozilla's root certificates for use with the
+[webpki-roots](https://github.com/rustls/webpki-roots) crate, and certificate records from the
+CCADB All Certificate Records V5 report.
 
 This crate is inspired by [certifi.io](https://certifi.io/en/latest/) and
 uses the data provided by the [Common CA Database (CCADB)](https://www.ccadb.org/).
