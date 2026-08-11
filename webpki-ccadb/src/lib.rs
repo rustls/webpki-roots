@@ -8,11 +8,7 @@ use pki_types::pem::PemObject;
 use pki_types::CertificateDer;
 use serde::Deserialize;
 
-// Fetch root certificate data from the CCADB server.
-//
-// Returns an ordered BTreeMap of the root certificates, keyed by the SHA256 fingerprint of the
-// certificate. Panics if there are any duplicate fingerprints.
-pub async fn fetch_ccadb_roots() -> BTreeMap<String, CertificateMetadata> {
+fn ccadb_client() -> reqwest::Client {
     // Configure a Reqwest client that only trusts the CA certificate expected to be the
     // root of trust for the CCADB server.
     //
@@ -30,11 +26,19 @@ pub async fn fetch_ccadb_roots() -> BTreeMap<String, CertificateMetadata> {
     //  8. Committing the updated .pem root CA, and updating the `include_bytes!` path.
     let root = include_bytes!("data/DigiCertGlobalRootG2.pem");
     let root = reqwest::Certificate::from_pem(root).unwrap();
-    let client = reqwest::Client::builder()
+    reqwest::Client::builder()
         .user_agent(format!("webpki-ccadb/v{}", env!("CARGO_PKG_VERSION")))
         .tls_certs_only([root])
         .build()
-        .unwrap();
+        .unwrap()
+}
+
+// Fetch root certificate data from the CCADB server.
+//
+// Returns an ordered BTreeMap of the root certificates, keyed by the SHA256 fingerprint of the
+// certificate. Panics if there are any duplicate fingerprints.
+pub async fn fetch_ccadb_roots() -> BTreeMap<String, CertificateMetadata> {
+    let client = ccadb_client();
 
     let ccadb_url =
         "https://ccadb.my.salesforce-sites.com/mozilla/IncludedCACertificateReportPEMCSV";
@@ -77,6 +81,81 @@ pub async fn fetch_ccadb_roots() -> BTreeMap<String, CertificateMetadata> {
     }
 
     tls_roots_map
+}
+
+/// Fetches certificate records from the CCADB All Certificate Records V5 report.
+///
+/// Records are returned in report order. The report can contain more than one record with the
+/// same certificate fingerprint, so the result is not keyed by fingerprint.
+pub async fn fetch_ccadb_certificate_records() -> Vec<CertificateRecord> {
+    let client = ccadb_client();
+    let ccadb_url = "https://ccadb.my.salesforce-sites.com/ccadb/AllCertificateRecordsCSVFormatV5";
+    eprintln!("fetching {ccadb_url}...");
+
+    let req = client.get(ccadb_url).build().unwrap();
+    let csv_data = client
+        .execute(req)
+        .await
+        .expect("failed to fetch CSV")
+        .text()
+        .await
+        .unwrap();
+
+    parse_certificate_records(csv_data.as_bytes())
+}
+
+fn parse_certificate_records(csv_data: &[u8]) -> Vec<CertificateRecord> {
+    csv::ReaderBuilder::new()
+        .has_headers(true)
+        .from_reader(csv_data)
+        .into_deserialize::<CertificateRecord>()
+        .collect::<Result<Vec<_>, _>>()
+        .unwrap()
+}
+
+/// A certificate record from the CCADB All Certificate Records V5 report.
+#[non_exhaustive]
+#[derive(Debug, Clone, Hash, Eq, PartialEq, Deserialize)]
+pub struct CertificateRecord {
+    /// The unique identifier assigned to this certificate record by CCADB.
+    ///
+    /// See the [CCADB field descriptions] for details.
+    ///
+    /// [CCADB field descriptions]: https://docs.google.com/document/d/1S3u0-_YACA7m-3LPpjE-t4WCh2cww_SQFh2C9DJeXHA/edit?usp=sharing
+    #[serde(rename = "Salesforce Record ID")]
+    pub salesforce_record_id: String,
+
+    /// The certificate name in CCADB.
+    #[serde(rename = "Certificate Name")]
+    pub certificate_name: String,
+
+    /// The SHA-256 fingerprint of the certificate represented by this record.
+    #[serde(rename = "SHA-256 Fingerprint")]
+    pub certificate_sha256_fingerprint: String,
+
+    #[serde(rename = "Certificate Record Type")]
+    pub certificate_record_type: String,
+
+    #[serde(rename = "Chrome Status")]
+    pub chrome_status: String,
+
+    #[serde(rename = "Revocation Status")]
+    pub revocation_status: String,
+
+    #[serde(rename = "Technically Constrained")]
+    pub technically_constrained: String,
+
+    #[serde(rename = "Derived Trust Bits")]
+    pub derived_trust_bits: String,
+
+    #[serde(rename = "TLS Capable")]
+    pub tls_capable: String,
+
+    #[serde(rename = "JSON Array of All Full CRL URLs")]
+    pub json_array_of_all_full_crl_urls: String,
+
+    #[serde(rename = "JSON Array of Partitioned CRLs")]
+    pub json_array_of_partitioned_crls: String,
 }
 
 #[non_exhaustive]
@@ -292,6 +371,71 @@ static EXCLUDED_FINGERPRINTS: &[&str] = &[
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn certificate_records_preserve_selected_fields_and_duplicate_fingerprints() {
+        let mut csv = csv::Writer::from_writer(Vec::new());
+        csv.write_record([
+            "Salesforce Record ID",
+            "Certificate Name",
+            "SHA-256 Fingerprint",
+            "Certificate Record Type",
+            "Chrome Status",
+            "Revocation Status",
+            "Technically Constrained",
+            "Derived Trust Bits",
+            "TLS Capable",
+            "JSON Array of All Full CRL URLs",
+            "JSON Array of Partitioned CRLs",
+        ])
+        .unwrap();
+        csv.write_record([
+            "a0A1",
+            "First certificate",
+            "AA",
+            "Root Certificate",
+            "Included",
+            "Not Revoked",
+            "No",
+            "Server Authentication",
+            "true",
+            r#"["https://example.com/root.crl"]"#,
+            "[]",
+        ])
+        .unwrap();
+        csv.write_record([
+            "a0A2",
+            "Second certificate",
+            "AA",
+            "Intermediate Certificate",
+            "",
+            "Not Revoked",
+            "Yes",
+            "",
+            "false",
+            "[]",
+            r#"[{"Partition":"https://example.com/partition.crl"}]"#,
+        ])
+        .unwrap();
+
+        let records = parse_certificate_records(&csv.into_inner().unwrap());
+
+        assert_eq!(records.len(), 2);
+        assert_eq!(records[0].salesforce_record_id, "a0A1");
+        assert_eq!(records[0].certificate_name, "First certificate");
+        assert_eq!(records[0].certificate_sha256_fingerprint, "AA");
+        assert_eq!(
+            records[0].json_array_of_all_full_crl_urls,
+            r#"["https://example.com/root.crl"]"#
+        );
+        assert_eq!(records[1].salesforce_record_id, "a0A2");
+        assert_eq!(records[1].certificate_name, "Second certificate");
+        assert_eq!(records[1].certificate_sha256_fingerprint, "AA");
+        assert_eq!(
+            records[1].json_array_of_partitioned_crls,
+            r#"[{"Partition":"https://example.com/partition.crl"}]"#
+        );
+    }
 
     #[test]
     fn test_trusted_for_tls() {
