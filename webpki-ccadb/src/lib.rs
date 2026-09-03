@@ -1,12 +1,15 @@
+use std::borrow::Cow;
 use std::cmp::Ordering;
 use std::collections::{BTreeMap, HashSet};
 use std::ops::Add;
 
-use chrono::{Duration, NaiveDate, Utc};
+use chrono::{Datelike, Duration, NaiveDate, Utc};
 use num_bigint::BigUint;
 use pki_types::pem::PemObject;
 use pki_types::CertificateDer;
-use serde::Deserialize;
+use serde::de::DeserializeOwned;
+use serde::{Deserialize, Serialize};
+use url::Url;
 
 // Fetch root certificate data from the CCADB server.
 //
@@ -259,6 +262,224 @@ impl From<&str> for TrustBits {
     }
 }
 
+pub async fn crl_hosts(store: RootStore) -> Result<HashSet<String>, Box<dyn core::error::Error>> {
+    let ccadb_url = "https://ccadb.my.site.com/services/apexrest/v1/allcertificaterecords";
+    let client = build_client(ISRG_ROOT_X2)?;
+
+    let mut records = HashSet::default();
+    let mut page_number = 1;
+    let mut decade = 2000;
+    let last_decade = (Utc::now().year() / 10 * 10) as u16;
+    let today = Utc::now().naive_utc().date();
+    loop {
+        let input = AllCertificateRecordsRequest {
+            filters: Some(AllCertificateRecordsRequestFilters {
+                not_before_decade: Some(decade),
+                page_number,
+            }),
+            field_sets: vec![
+                AllCertificateRecordsRequestFieldSet::PertainingToCertificatesIssued,
+                AllCertificateRecordsRequestFieldSet::Capabilities,
+            ],
+        };
+
+        let req = client.post(ccadb_url).json(&input).build()?;
+        let rsp = client.execute(req).await?.error_for_status()?;
+        let json = rsp.text().await?;
+        let data = serde_json::from_str::<AllCertificateRecordsResponse>(&json)?;
+        for info in data.data {
+            if info.certificate_data.valid_to < today
+                || !matches!(
+                    info.trusted(store),
+                    StoreStatus::Trusted | StoreStatus::Included
+                )
+                || !info.for_tls()
+            {
+                continue;
+            }
+
+            let Some(pertaining) = info.pertaining_to_certificates_issued else {
+                continue;
+            };
+
+            let iter = pertaining
+                .all_full_crl_urls
+                .iter()
+                .chain(pertaining.partitioned_crls.iter());
+            for url in iter {
+                if url.trim().is_empty() {
+                    continue;
+                }
+
+                let Ok(url) = Url::parse(url) else {
+                    println!("invalid URL: {url}");
+                    continue;
+                };
+
+                if let Some(host) = url.host_str() {
+                    records.insert(host.to_string());
+                }
+            }
+        }
+
+        page_number += 1;
+        if data.meta.pagination.current_page_number < data.meta.pagination.total_pages {
+            continue;
+        }
+
+        if decade >= last_decade {
+            break;
+        }
+
+        decade += 10;
+        page_number = 1;
+    }
+
+    Ok(records)
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "PascalCase")]
+struct AllCertificateRecordsResponse {
+    meta: AllCertificateRecordsResponseMeta,
+    data: Vec<RecordData>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "PascalCase")]
+struct RecordData {
+    root_store_status: RootStoreStatus,
+    certificate_data: CertificateData,
+    pertaining_to_certificates_issued: Option<PertainingToCertificatesIssued>,
+    capabilities: Option<Capabilities>,
+}
+
+impl RecordData {
+    fn trusted(&self, store: RootStore) -> StoreStatus {
+        match store {
+            RootStore::Apple => self.root_store_status.apple_status,
+            RootStore::Chrome => self.root_store_status.chrome_status,
+            RootStore::Microsoft => self.root_store_status.microsoft_status,
+            RootStore::Mozilla => self.root_store_status.mozilla_status,
+        }
+    }
+
+    fn for_tls(&self) -> bool {
+        match &self.capabilities {
+            Some(capabilities) => capabilities.tls_capable || capabilities.tls_ev_capable,
+            None => false,
+        }
+    }
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "PascalCase")]
+struct RootStoreStatus {
+    apple_status: StoreStatus,
+    chrome_status: StoreStatus,
+    microsoft_status: StoreStatus,
+    mozilla_status: StoreStatus,
+}
+
+#[derive(Clone, Copy, Debug, Deserialize, Eq, PartialEq)]
+enum StoreStatus {
+    Trusted,
+    #[serde(rename = "Not Trusted")]
+    NotTrusted,
+    #[serde(rename = "Not Included")]
+    NotIncluded,
+    #[serde(rename = "Not Yet Included")]
+    NotYetIncluded,
+    Disabled,
+    Included,
+    NotBefore,
+    Removed,
+    Blocked,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "PascalCase")]
+struct CertificateData {
+    valid_to: NaiveDate,
+}
+
+#[derive(Debug, Deserialize)]
+struct PertainingToCertificatesIssued {
+    #[serde(rename = "JSONArrayOfAllFullCRLURLs", deserialize_with = "json_string")]
+    all_full_crl_urls: Vec<String>,
+    #[serde(
+        rename = "JSONArrayOfPartitionedCRLs",
+        deserialize_with = "json_string"
+    )]
+    partitioned_crls: Vec<String>,
+}
+
+fn json_string<'de, D: serde::Deserializer<'de>, T: DeserializeOwned + Default>(
+    deserializer: D,
+) -> Result<T, D::Error> {
+    let s = <Cow<'de, str>>::deserialize(deserializer)?;
+    if s.is_empty() || s == "\"\"" {
+        return Ok(T::default());
+    }
+
+    serde_json::from_str(s.as_ref()).map_err(serde::de::Error::custom)
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "PascalCase")]
+struct Capabilities {
+    #[serde(rename = "TLSCapable")]
+    tls_capable: bool,
+    #[serde(rename = "TLSEVCapable")]
+    tls_ev_capable: bool,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "PascalCase")]
+struct AllCertificateRecordsResponseMeta {
+    pagination: AllCertificateRecordsResponsePagination,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "PascalCase")]
+struct AllCertificateRecordsResponsePagination {
+    total_pages: u16,
+    current_page_number: u16,
+}
+
+#[derive(Debug, Serialize)]
+struct AllCertificateRecordsRequest {
+    filters: Option<AllCertificateRecordsRequestFilters>,
+    #[serde(rename = "fieldSets")]
+    field_sets: Vec<AllCertificateRecordsRequestFieldSet>,
+}
+
+#[derive(Debug, Serialize)]
+struct AllCertificateRecordsRequestFilters {
+    #[serde(rename = "notBeforeDecade")]
+    not_before_decade: Option<u16>,
+    #[serde(rename = "PageNumber")]
+    page_number: u16,
+}
+
+/// Field sets that can be requested as part of an [`AllCertificateRecordsRequest`].
+///
+/// https://github.com/mozilla/CCADB-Tools/blob/master/API_AllCertificateRecords/README.md#3-dynamic-field-sets
+#[derive(Debug, Serialize)]
+enum AllCertificateRecordsRequestFieldSet {
+    Capabilities,
+    PertainingToCertificatesIssued,
+}
+
+#[non_exhaustive]
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum RootStore {
+    Apple,
+    Chrome,
+    Microsoft,
+    Mozilla,
+}
+
 /// Build a reqwest client that only trusts the CA certificate authenticating the CCADB server
 fn build_client(root_pem: &str) -> Result<reqwest::Client, reqwest::Error> {
     // If we see Unknown CA TLS validation failures from the Reqwest client in the future it
@@ -280,6 +501,8 @@ fn build_client(root_pem: &str) -> Result<reqwest::Client, reqwest::Error> {
         .build()
 }
 
+// https://letsencrypt.org/certs/isrg-root-x2-cross-signed.pem
+const ISRG_ROOT_X2: &str = include_str!("data/isrg-root-x2-cross-signed.pem");
 const DIGI_CERT_GLOBAL_ROOT_G2: &str = include_str!("data/DigiCertGlobalRootG2.pem");
 
 static EXCLUDED_FINGERPRINTS: &[&str] = &[
@@ -293,6 +516,15 @@ static EXCLUDED_FINGERPRINTS: &[&str] = &[
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[tokio::test]
+    async fn test_crl_hosts() {
+        let hosts = crl_hosts(RootStore::Chrome).await.unwrap();
+        dbg!(&hosts);
+        assert!(hosts.contains("x2.c.lencr.org"));
+        assert!(hosts.contains("crl.apple.com"));
+        assert!(hosts.contains("crl.pki.goog"));
+    }
 
     #[test]
     fn test_trusted_for_tls() {

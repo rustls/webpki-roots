@@ -16,6 +16,11 @@ num-bigint = { workspace = true }
 pki-types = { workspace = true }
 reqwest = { workspace = true }
 serde = { workspace = true }
+serde_json = { workspace = true }
+url = { workspace = true }
 webpki = { workspace = true }
 x509-parser = { workspace = true }
 yasna = { workspace = true }
+
+[dev-dependencies]
+tokio = { workspace = true }
