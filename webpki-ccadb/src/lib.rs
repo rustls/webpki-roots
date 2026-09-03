@@ -13,7 +13,7 @@ use serde::Deserialize;
 // Returns an ordered BTreeMap of the root certificates, keyed by the SHA256 fingerprint of the
 // certificate. Panics if there are any duplicate fingerprints.
 pub async fn fetch_ccadb_roots() -> BTreeMap<String, CertificateMetadata> {
-    let client = build_client().expect("failed to build reqwest client");
+    let client = build_client(DIGI_CERT_GLOBAL_ROOT_G2).expect("failed to build reqwest client");
     let ccadb_url =
         "https://ccadb.my.salesforce-sites.com/mozilla/IncludedCACertificateReportPEMCSV";
     eprintln!("fetching {ccadb_url}...");
@@ -260,7 +260,7 @@ impl From<&str> for TrustBits {
 }
 
 /// Build a reqwest client that only trusts the CA certificate authenticating the CCADB server
-fn build_client() -> Result<reqwest::Client, reqwest::Error> {
+fn build_client(root_pem: &str) -> Result<reqwest::Client, reqwest::Error> {
     // If we see Unknown CA TLS validation failures from the Reqwest client in the future it
     // likely indicates that the upstream service has changed certificate authorities. In this
     // case the vendored root CA will need to be updated. You can find the current root in use with
@@ -273,13 +273,14 @@ fn build_client() -> Result<reqwest::Client, reqwest::Error> {
     //  6. Selecting the topmost "System Trust" entry.
     //  7. Clicking "Export..." and saving the certificate to `webpki-roots/webpki-ccadb/src/data/`.
     //  8. Committing the updated .pem root CA, and updating the `include_bytes!` path.
-    let root = include_bytes!("data/DigiCertGlobalRootG2.pem");
-    let root = reqwest::Certificate::from_pem(root)?;
+    let root = reqwest::Certificate::from_pem(root_pem.as_bytes())?;
     reqwest::Client::builder()
         .user_agent(format!("webpki-ccadb/v{}", env!("CARGO_PKG_VERSION")))
         .tls_certs_only([root])
         .build()
 }
+
+const DIGI_CERT_GLOBAL_ROOT_G2: &str = include_str!("data/DigiCertGlobalRootG2.pem");
 
 static EXCLUDED_FINGERPRINTS: &[&str] = &[
     // CN=GLOBALTRUST 2020 O=e-commerce monitoring GmbH
