@@ -3,7 +3,9 @@ use std::cmp::Ordering;
 use std::collections::{BTreeMap, HashSet};
 use std::ops::Add;
 
-use chrono::{Datelike, Duration, NaiveDate, Utc};
+use jiff::civil::Date;
+use jiff::tz::TimeZone;
+use jiff::{Span, Zoned};
 use num_bigint::BigUint;
 use pki_types::pem::PemObject;
 use pki_types::CertificateDer;
@@ -118,7 +120,7 @@ impl CertificateMetadata {
             (true, None) => true,
             // Trust bit, populated distrust after - check if we're within the grace period.
             (true, Some(distrust_after)) => {
-                Utc::now().naive_utc() < distrust_after.add(Duration::days(398)).into()
+                Zoned::now().date() < distrust_after.add(Span::new().days(398))
             }
         }
     }
@@ -169,11 +171,11 @@ impl CertificateMetadata {
 
     /// Return the NaiveDate after which this certificate should not be trusted for TLS (if any).
     /// Panics if there is a distrust for TLS after date value that can not be parsed.
-    fn tls_distrust_after(&self) -> Option<NaiveDate> {
+    fn tls_distrust_after(&self) -> Option<Date> {
         match &self.distrust_for_tls_after_date {
             date if date.is_empty() => None,
             date => Some(
-                NaiveDate::parse_from_str(date, "%Y.%m.%d")
+                Date::strptime("%Y.%m.%d", date)
                     .unwrap_or_else(|_| panic!("invalid distrust for tls after date: {date:?}")),
             ),
         }
@@ -269,8 +271,10 @@ pub async fn crl_hosts(store: RootStore) -> Result<HashSet<String>, Box<dyn core
     let mut records = HashSet::default();
     let mut page_number = 1;
     let mut decade = 2000;
-    let last_decade = (Utc::now().year() / 10 * 10) as u16;
-    let today = Utc::now().naive_utc().date();
+
+    let now = Zoned::now().with_time_zone(TimeZone::UTC);
+    let last_decade = (now.year() / 10 * 10) as u16;
+    let today = now.date();
     loop {
         let input = AllCertificateRecordsRequest {
             filters: Some(AllCertificateRecordsRequestFilters {
@@ -400,7 +404,7 @@ enum StoreStatus {
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "PascalCase")]
 struct CertificateData {
-    valid_to: NaiveDate,
+    valid_to: Date,
 }
 
 #[derive(Debug, Deserialize)]
@@ -555,19 +559,19 @@ mod tests {
         assert!(!metadata.trusted_for_tls());
 
         // Trust bit set for Websites, distrust date in the future.
-        let now = Utc::now().naive_utc();
-        let future_distrust = now.add(Duration::days(365 * 5));
-        metadata.distrust_for_tls_after_date = future_distrust.format("%Y.%m.%d").to_string();
+        let now = Zoned::now().with_time_zone(TimeZone::UTC);
+        let future_distrust = now.clone().add(Span::new().years(365 * 5));
+        metadata.distrust_for_tls_after_date = future_distrust.strftime("%Y.%m.%d").to_string();
         assert!(metadata.trusted_for_tls());
 
         // Trust bit set for Websites, distrust date has passed, but within grace period.
-        let past_distrust = now.add(Duration::days(-397));
-        metadata.distrust_for_tls_after_date = past_distrust.format("%Y.%m.%d").to_string();
+        let past_distrust = now.clone().add(Span::new().days(-397));
+        metadata.distrust_for_tls_after_date = past_distrust.strftime("%Y.%m.%d").to_string();
         assert!(metadata.trusted_for_tls());
 
         // Trust bit set for Websites, distrust date has passed, outside grace period.
-        let past_distrust = now.add(Duration::days(-398));
-        metadata.distrust_for_tls_after_date = past_distrust.format("%Y.%m.%d").to_string();
+        let past_distrust = now.add(Span::new().days(-398));
+        metadata.distrust_for_tls_after_date = past_distrust.strftime("%Y.%m.%d").to_string();
         assert!(!metadata.trusted_for_tls());
 
         // Certificate FP is excluded.
