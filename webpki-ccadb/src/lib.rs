@@ -515,6 +515,8 @@ static EXCLUDED_FINGERPRINTS: &[&str] = &[
     // but since it has <100 extant trusted certificates we exclude it from the generated root bundle
     // immediately.
     "9A296A5182D1D451A2E37F439B74DAAFA267523329F90F9A0D2007C334E23C9A",
+    // CN=emSign ECC Root CA - G3 O=eMudhra Technologies Limited OU=emSign PKI
+    "86A1ECBA089C4A8D3BBE2734C612BA341D813E043CF9E8A862CD5C57A36BBE6B",
 ];
 
 #[cfg(test)]
