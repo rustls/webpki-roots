@@ -1705,7 +1705,7 @@ dependencies = [
 
 [[package]]
 name = "webpki-root-certs"
-version = "1.0.10"
+version = "1.0.11"
 dependencies = [
  "aws-lc-rs",
  "hex",
@@ -1719,7 +1719,7 @@ dependencies = [
 
 [[package]]
 name = "webpki-roots"
-version = "1.0.10"
+version = "1.0.11"
 dependencies = [
  "aws-lc-rs",
  "hex",
