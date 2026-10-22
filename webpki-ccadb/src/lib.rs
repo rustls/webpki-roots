@@ -509,15 +509,7 @@ fn build_client(root_pem: &str) -> Result<reqwest::Client, reqwest::Error> {
 const ISRG_ROOT_X2: &str = include_str!("data/isrg-root-x2-cross-signed.pem");
 const DIGI_CERT_GLOBAL_ROOT_G2: &str = include_str!("data/DigiCertGlobalRootG2.pem");
 
-static EXCLUDED_FINGERPRINTS: &[&str] = &[
-    // CN=GLOBALTRUST 2020 O=e-commerce monitoring GmbH
-    // This CA is being distrusted by the Mozilla root program for TLS certificates issued after 2024.06.30.
-    // but since it has <100 extant trusted certificates we exclude it from the generated root bundle
-    // immediately.
-    "9A296A5182D1D451A2E37F439B74DAAFA267523329F90F9A0D2007C334E23C9A",
-    // CN=emSign ECC Root CA - G3 O=eMudhra Technologies Limited OU=emSign PKI
-    "86A1ECBA089C4A8D3BBE2734C612BA341D813E043CF9E8A862CD5C57A36BBE6B",
-];
+static EXCLUDED_FINGERPRINTS: &[&str] = &[];
 
 #[cfg(test)]
 mod tests {
@@ -576,8 +568,10 @@ mod tests {
         metadata.distrust_for_tls_after_date = past_distrust.strftime("%Y.%m.%d").to_string();
         assert!(!metadata.trusted_for_tls());
 
-        // Certificate FP is excluded.
-        metadata.sha256_fingerprint = EXCLUDED_FINGERPRINTS[0].to_string();
-        assert!(!metadata.trusted_for_tls());
+        if let Some(excluded_fp) = EXCLUDED_FINGERPRINTS.first() {
+            // Certificate FP is excluded.
+            metadata.sha256_fingerprint = excluded_fp.to_string();
+            assert!(!metadata.trusted_for_tls());
+        }
     }
 }
