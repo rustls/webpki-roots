@@ -149,6 +149,10 @@ impl CertificateMetadata {
                 // GeneralSubtrees
                 writer.write_sequence(|writer| {
                     for included_subtree in included_subtrees {
+                        if included_subtree.trim().is_empty() {
+                            continue;
+                        }
+
                         // base GeneralName
                         writer.next().write_sequence(|writer| {
                             writer
@@ -572,6 +576,42 @@ mod tests {
             // Certificate FP is excluded.
             metadata.sha256_fingerprint = excluded_fp.to_string();
             assert!(!metadata.trusted_for_tls());
+        }
+    }
+
+    #[test]
+    fn test_mozilla_applied_constraints() {
+        let mut metadata = CertificateMetadata {
+            common_name_or_certificate_name: "Test".to_string(),
+            certificate_serial_number: "1".to_string(),
+            sha256_fingerprint: "1".to_string(),
+            trust_bits: "Websites".to_string(),
+            distrust_for_tls_after_date: "".to_string(),
+            test_website_revoked: "".to_string(),
+            mozilla_applied_constraints: "".to_string(),
+            pem_info: "".to_string(),
+        };
+        // No constraints.
+        assert_eq!(metadata.mozilla_applied_constraints(), None);
+
+        // permittedSubtrees [0] { GeneralSubtree { dNSName [2] ".tr" } }
+        let expected = b"\xa0\x07\x30\x05\x82\x03.tr".to_vec();
+
+        // Single constraint.
+        metadata.mozilla_applied_constraints = "*.tr".to_string();
+        assert_eq!(
+            metadata.mozilla_applied_constraints(),
+            Some(expected.clone())
+        );
+
+        // Empty subtrees (trailing, leading or repeated separators) are skipped.
+        for constraints in ["*.tr,", "*.tr, ", ",*.tr", "*.tr,,", " ,*.tr"] {
+            metadata.mozilla_applied_constraints = constraints.to_string();
+            assert_eq!(
+                metadata.mozilla_applied_constraints(),
+                Some(expected.clone()),
+                "{constraints:?}"
+            );
         }
     }
 }
