@@ -35,6 +35,9 @@
 
 use pki_types::{Der, TrustAnchor};
 
+#[cfg(no_embedded_webpki_roots)]
+pub const TLS_SERVER_ROOTS: &[TrustAnchor<'static>] = &[];
+#[cfg(not(no_embedded_webpki_roots))]
 pub const TLS_SERVER_ROOTS: &[TrustAnchor<'static>] = &[
   /*
    * Issuer: CN=DigiCert TLS ECC P384 Root G5 O=DigiCert, Inc.
