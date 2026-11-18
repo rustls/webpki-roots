@@ -5,7 +5,6 @@ edition.workspace = true
 rust-version = { workspace = true }
 readme = "README.md"
 license = "CDLA-Permissive-2.0"
-homepage.workspace = true
 repository.workspace = true
 description = "Mozilla trusted certificate authorities in self-signed X.509 format for use with crates other than webpki"
 
