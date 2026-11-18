@@ -5,7 +5,7 @@ use std::ops::Add;
 
 use jiff::civil::Date;
 use jiff::tz::TimeZone;
-use jiff::{Span, Zoned};
+use jiff::{Span, ZonedDateTime};
 use num_bigint::BigUint;
 use pki_types::pem::PemObject;
 use pki_types::CertificateDer;
@@ -120,7 +120,7 @@ impl CertificateMetadata {
             (true, None) => true,
             // Trust bit, populated distrust after - check if we're within the grace period.
             (true, Some(distrust_after)) => {
-                Zoned::now().date() < distrust_after.add(Span::new().days(398))
+                ZonedDateTime::now().date() < distrust_after.add(Span::new().days(398))
             }
         }
     }
@@ -276,7 +276,7 @@ pub async fn crl_hosts(store: RootStore) -> Result<HashSet<String>, Box<dyn core
     let mut page_number = 1;
     let mut decade = 2000;
 
-    let now = Zoned::now().with_time_zone(TimeZone::UTC);
+    let now = ZonedDateTime::now().with_time_zone(TimeZone::UTC);
     let last_decade = (now.year() / 10 * 10) as u16;
     let today = now.date();
     loop {
@@ -557,7 +557,7 @@ mod tests {
         assert!(!metadata.trusted_for_tls());
 
         // Trust bit set for Websites, distrust date in the future.
-        let now = Zoned::now().with_time_zone(TimeZone::UTC);
+        let now = ZonedDateTime::now().with_time_zone(TimeZone::UTC);
         let future_distrust = now.clone().add(Span::new().years(365 * 5));
         metadata.distrust_for_tls_after_date = future_distrust.strftime("%Y.%m.%d").to_string();
         assert!(metadata.trusted_for_tls());
