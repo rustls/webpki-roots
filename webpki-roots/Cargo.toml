@@ -5,7 +5,6 @@ edition = { workspace = true }
 rust-version = { workspace = true }
 readme = "README.md"
 license = "CDLA-Permissive-2.0"
-homepage = { workspace = true }
 repository = { workspace = true }
 description = "Mozilla's CA root certificates for use with webpki"
 

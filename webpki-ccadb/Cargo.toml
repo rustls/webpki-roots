@@ -4,7 +4,6 @@ version = "0.2.4"
 edition = { workspace = true }
 readme = "README.md"
 license = "MIT OR Apache-2.0"
-homepage = { workspace = true }
 repository = { workspace = true }
 description = "Common CA Database (CCADB) interface for use with webpki-roots"
 
